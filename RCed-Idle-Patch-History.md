@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.21.0**, assembled on **27 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.22.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.21.0**, assembled on **27 October 
 
 | Version | Main update |
 | --- | --- |
+| [0.22.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.22.0) | Hair colors and Classic item controls |
 | [0.21.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.21.0) | Expanded NX catalog and shared storage |
 | [0.20.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.20.0) | Special shop and boss rewards |
 | [0.19.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.19.0) | Magicians, progression bosses and NX |
@@ -30,6 +31,72 @@ Complete recorded release history through **0.21.0**, assembled on **27 October 
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.22.0 — Hair colors and Classic item controls
+
+Released 28 October 2026. App version **0.22.0**, content version **1.18.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+1. Export a complete account backup from **HUD menu → Settings** before updating.
+2. Download the APK attached to this release and open it on your Android phone. Allow your browser or file app to install it if Android asks.
+3. **Install over the existing RCed Idle app. Do not uninstall first or clear its data.** The application ID and signing certificate are unchanged.
+4. Existing characters retain their saved content rules. Choose **Review content update → Back up & upgrade** separately for each character to enable content 1.18 and the new style/color coupon rules. Pending time settles under the old rules and a safety backup is kept. New characters start on content 1.18.0.
+
+### Separate hairstyles and hair colors
+
+**Shop → Special** now offers two distinct choices:
+
+| Item | Price | What it does |
+| --- | ---: | --- |
+| Hairstyle Coupon | 1,000,000 mesos | Unlocks a new hairstyle while keeping your current hair color |
+| Hair Color Coupon | 500,000 mesos | Changes the color of your currently worn hairstyle |
+
+- Saved hairstyles appear once in Styling. The catalog contains **190 source styles with 1,496 exact variants**, plus the two existing starter styles, Zeta and Unkempt Hair: **192 displayed style groups** in total.
+- Switching to an owned style keeps your current color when that style has a matching variant. A style without that color is clearly unavailable; the game does not silently substitute another color.
+- A color coupon is consumed only after a valid confirmation and saves the resulting exact variant for that character. Already-saved colors remain free to select on their matching currently worn style; the current color or an already-saved color cannot consume another coupon.
+- Style and color ownership remain per character. This does not unlock one color globally across every hairstyle or every character.
+- Your existing saved variants and worn appearance are retained. Upgrading does not recolor your character, consume a coupon or reroll a pending boss reward.
+
+The source hairstyles have their original palettes, including styles available only in Black. Color matching respects actual artwork colors, including White/Silver and nonstandard Brown/Purple palettes.
+
+### Clearer Styling previews
+
+Browse named hairstyles with **Back/Next arrows**. Use **Hide worn equipment** to see the hairstyle on the bare-character preview. This toggle is only a preview: it does not unequip real gear. Previewing a style or color does not spend a coupon or change the save; closing without saving keeps your original appearance.
+
+Characters still pinned to content 1.17 retain its exact-variant coupon rules and access to their previously saved hair until they accept the content upgrade.
+
+### Classic item details and equipment actions
+
+- Equipment, consumable and storage details use compact **Classic navy tooltips**, with item icons, requirements, stat lines and the relevant actions.
+- Open an item's **Auto-sell** control directly from its tooltip to select that item's future monster drops. Claim the **level-40 milestone** to unlock it. Items already in Inventory or storage are kept, and farming targets, wishlisted items, active quest materials, NX items and equipped, locked or scrolled gear retain their protections. The control also explains locked, paused or protected rules.
+- Unmet level, job, stat and availability requirements are shown clearly. Equip attempts provide rejection feedback without changing the save when an item is ineligible.
+- Permanent bonuses from gear that will remain equipped now count toward equipment requirements. For example, 27 base STR plus a retained hat giving +3 STR can meet a 30 STR weapon requirement.
+- An item's own bonuses, gear it replaces or displaces, temporary buffs and NX appearance items do not help qualify it. Comparisons and armor guidance use the same eligibility checks.
+- Worn real equipment exposes **Unequip** and **Compare**. Unequip returns the exact item to the Equip bag, keeping its rolls, scroll results, remaining slots, history and lock. It needs a free Equip slot; if the bag is full, nothing moves and the game explains how to make room.
+
+The Special items receive five source icons: Full AP Reset, Full SP Reset, Random NX Box, the two-hour EXP coupon and the new Hair Color Coupon.
+
+### Shared storage presentation
+
+Shared Storage uses square item cells, type tabs and the matching class, type, category, search and sorting controls. Open an item directly from its grid to inspect the Classic tooltip. Existing storage capacity and transfer rules are retained.
+
+### Progress and verification
+
+The cosmetic equipment catalog, character artwork, global cosmetic and hairstyle-coupon chances, boss rewards and NX Box pool are unchanged. The new color coupon is a shop addition; this release does not introduce a new color-coupon drop rate.
+
+The completed release verified **1,009 unique Flutter cases** through the full sweep and affected-file reruns. Android update and full-account restoration checks preserved character progress, profile and shared storage. Native checks covered the updated UI without committing transactions; the new coupon behavior, upgrade preservation and Unequip actions were covered by engine, widget and SQLite tests. No physical-phone performance claim is made.
+
+The game remains fully offline. Check GitHub manually for future updates.
+
+### Game guide and release history
+
+- [Read the main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Read the complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+Both documents are also attached below as downloadable Markdown assets.
 
 ---
 

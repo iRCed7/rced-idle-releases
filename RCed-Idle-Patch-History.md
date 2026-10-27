@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.22.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.23.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.22.0**, updated on **28 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.23.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.23.0) | Attack potions, regional music and faster forecasts |
 | [0.22.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.22.0) | Hair colors and Classic item controls |
 | [0.21.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.21.0) | Expanded NX catalog and shared storage |
 | [0.20.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.20.0) | Special shop and boss rewards |
@@ -31,6 +32,82 @@ Complete recorded release history through **0.22.0**, updated on **28 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.23.0 — Attack potions, regional music and faster forecasts
+
+Released 28 October 2026. App version **0.23.0**, content version **1.19.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+1. Export a complete account backup from **HUD menu → Settings** before updating.
+2. Download the APK attached to this release and open it on your Android phone. Allow your browser or file app to install it if Android asks.
+3. **Install over the existing RCed Idle app. Do not uninstall first or clear its data.** The application ID and signing certificate are unchanged.
+4. Existing characters retain their saved content rules. Choose **Review content update → Back up & upgrade** separately for each character to enable content 1.19, including timed attack potions and the weapon-shop restriction. Pending time settles under the old rules and a safety backup is kept. New characters start on content 1.19.0.
+
+The forecast, Hunt interface and music improvements arrive with the app update. Installing the APK alone does not change a character's content pack.
+
+### Timed attack potions
+
+On content 1.19, two shop potions offer a ten-minute bonus:
+
+| Potion | Effect | Duration | Shop price |
+| --- | --- | --- | ---: |
+| Warrior Potion | +10 Attack Power | 10 minutes | 500 mesos |
+| Magic Potion | +10 Magic Attack | 10 minutes | 500 mesos |
+
+**Attack Power is distinct from Weapon Attack.** The benefit depends on your attack and build; neither potion promises a fixed EXP increase.
+
+- Use an owned potion from its item popup, or enable that character's optional automatic reuse. Automatic reuse consumes an owned copy at the next combat action when its effect is inactive; it does not buy stock.
+- Both different potion types can be active together. An already-active copy cannot be consumed again to stack strength or extend its duration.
+- Timers continue while grinding offline and while paused. Paused time does not consume replacements. Disabling automatic reuse keeps the remaining paid duration but prevents renewal.
+- Empty optional potion stock does not stop grinding. Supply planning reports shortages, and forecasts include consumed potions' replacement costs. Drinking an already-purchased potion does not charge mesos again.
+
+### Skill and potion bonuses work together
+
+For each stat, the **strongest positive skill bonus and the strongest potion bonus add together**. Multiple skill bonuses to the same stat do not add together, and neither do multiple potion bonuses to that stat. Permanent gear and passive bonuses remain separate; skill drawbacks still apply.
+
+For example, rank-20 Meditation gives +25 Magic Attack and Magic Potion adds +10. Rank-30 Rage gives +40 Attack Power and Warrior Potion adds +10, while Rage keeps its defense drawback. These are RCed's content 1.19 rules; older pinned content retains its previous behavior.
+
+### Find higher-level weapons through play
+
+The weapon shop now sells weapons requiring **level 30 or below** on content 1.19. The 55 weapons above that limit retain their existing monster-drop routes. Owned weapons, rolls, scrolling, stats, sale values and existing crafting recipes are preserved. Non-weapon equipment stock is unchanged.
+
+### More responsive comparisons and maps
+
+- Equipment, shop, skill, Ability Point and scroll comparisons reuse a shared controlled baseline. Immediate stat differences remain visible while the first hourly estimate finishes, and completed estimates are available when reopened.
+- World Map prepares accessible primary routes in the background after relevant build changes, beginning with the current Hunt map. Closing and reopening the map keeps completed results and ongoing work.
+- Unlocking a boss route adds its estimates without discarding the existing rates for that build. Earlier Routes calculates retired alternatives when requested.
+- A failed forecast shows an error and can be retried. Ordinary stock changes do not restart controlled map comparisons; finite supply plans still use the quantities you actually own.
+
+Controlled comparisons use consistent conditions, ample supplies and reset temporary effects. They help compare builds; live sessions can differ with stock, remaining buff time, accuracy, travel and other conditions.
+
+### Compact Hunt controls
+
+Hunt groups **Start grinding, Home and Restock** in rounded controls below the map, with complete labels and accessible touch targets at narrow widths and larger text sizes. Attack-potion controls show the available choices without consuming a potion merely by opening them, and guard against duplicate commands.
+
+### Regional background music
+
+**Ten locally bundled tracks cover all 38 maps**, with regional and biome assignments chosen for RCed. Settings provides a music toggle and volume slider, initially set to 30% volume. Moving within the same music region keeps the track playing without restarting it.
+
+Music stops when the app leaves the foreground, loses audio focus or headphones disconnect. Returning to the foreground starts the assigned track again. Playback uses local files and needs no streaming or internet connection. This release adds background music; attack and monster sound effects are not included.
+
+### Progress and verification
+
+Existing character artwork, cosmetic rewards and saved progress are preserved. The completed verification covers **1,057 unique Flutter cases** across the full sweep and affected-file reruns: the sweep's two obsolete expectations were corrected, and the final affected run passed all 81 cases, including three added checks. This total is combined coverage, not a new all-green full-suite run.
+
+Android update, comparison and music lifecycle checks passed on the QA emulator. Normal full-account restoration matched all 27 checked gameplay groups, profile and shared storage. Current-content potion behavior was covered by automated engine and interface tests while native checks retained the account's older pinned rules. Desktop forecast measurements and emulator playback checks do not establish physical-phone frame rates or audible speaker quality.
+
+The game remains fully offline. Check GitHub manually for future updates.
+
+### Game guides and release history
+
+- [Read the main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Read the grinding reference](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Grinding-Reference.md) for combat formulas, 35 variable groups and all 94 skills
+- [Read the complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+The main game features and patch history are also attached below as downloadable Markdown assets. The grinding reference is a readable guide in the repository.
 
 ---
 

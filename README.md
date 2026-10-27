@@ -1,77 +1,86 @@
+<p align="center">
+  <img src="media/rced-idle-logo.png" width="180" alt="RCed Idle game logo">
+</p>
+
 # RCed Idle
 
 An offline idle RPG for **Android 8.0+**. Build your characters, hunt for equipment, develop your skills and progress while the game is closed.
 
-[Latest update](#latest-update) · [Game features](#game-features) · [Install or update](#install-or-update) · [Patch history](RCed-Idle-Patch-History.md)
+[Latest update](#latest-update) · [Screenshots](#screenshots) · [Game features](#game-features) · [Install or update](#install-or-update) · [Patch history](RCed-Idle-Patch-History.md)
 
 ## Latest update
 
-**0.20.0 — Special shop and boss rewards** · 27 October 2026
+**0.21.0 — Expanded NX catalog and shared storage** · 27 October 2026
 
 **[Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk)** · [Open the release page](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-- **New Special shop:** buy AP/SP resets, hair coupons, NX boxes and two-hour 2× EXP coupons with mesos.
-- **Use purchases when ready:** activate items from your inventory; extra EXP coupons extend the duration at the same 2× multiplier.
-- **Six-hour boss cooldowns:** tracked separately for each boss and character, with unsuccessful attempts remaining retryable.
-- **Guaranteed first-clear NX:** every boss grants one random cosmetic on its first clear. Earlier clears receive their entitlement once on content upgrade.
-- **Stronger boss rewards:** each victory gives EXP, mesos and equipment, plus chances for scrolls, NX cosmetics and EXP coupons.
-- **Rewards wait for bag space:** boss rewards that cannot fit remain saved for later claiming.
-- **Easier navigation:** Armor sits beside Journey with class/type/search controls, and Inventory has a direct Auto-sell shortcut.
+- **2,090 NX appearances:** expanded clothing, accessories and compatible weapon covers join universal drops, NX boxes and boss rewards. Cosmetics keep combat stats unchanged.
+- **190 hairstyles, 1,496 color variants:** preview and unlock a chosen variant permanently for each character with a hair coupon.
+- **Larger shared storage:** start with 100 slots, then automatically gain six for each character's ten-level milestone through level 70. Existing levels count; three level-70 characters provide 226 slots.
+- **Store directly from Inventory:** send one item, one selected stack or a multi-selection, with complete batches transferred together.
+- **Easier storage browsing:** matching search, class, type, category and sort controls, plus reduced transfer work while keeping existing forecasts.
+- **Lupin startup logo:** the logo appears during Android and in-game startup.
+- **Clear catalog limits:** rings, chat bubbles and partner effects are excluded; seven Pirate-only weapon covers remain reserved. Upgrade each character to content 1.17 to enable the expanded rewards.
 
 > **Updating?** Install over your existing app; do not uninstall first. Export a complete account backup from Settings. Existing characters enable new content through **Review content update → Back up & upgrade**.
 
 <details>
-<summary>Full patch notes for 0.20.0</summary>
+<summary>Full patch notes for 0.21.0</summary>
 
-Released 27 October 2026. App version **0.20.0**, content version **1.16.0**. Requires **Android 8.0 or later**.
+Released 27 October 2026. App version **0.21.0**, content version **1.17.0**. Requires **Android 8.0 or later**.
 
-### New Special shop
+### Expanded cosmetics and hairstyles
 
-Open **Shop → Special** to buy:
+The reward catalog grows from eight cosmetics to **2,090 appearance-only equipment items and weapon covers**. It includes hats, face and eye accessories, earrings, tops, overalls, bottoms, gloves, shields, shoes, capes and **247 compatible weapon covers**.
 
-| Item | Price |
-| --- | ---: |
-| Full AP Reset Coupon | 300,000 mesos |
-| Full SP Reset Coupon | 300,000 mesos |
-| Classic Hair Coupon | 1,000,000 mesos |
-| Random NX Box | 500,000 mesos |
-| 2× EXP Coupon, two hours | 2,000,000 mesos |
+- Universal monster drops, Random NX Boxes, guaranteed first-clear boss cosmetics and repeat-clear rare boss cosmetics all draw from the expanded eligible catalog.
+- NX Boxes select uniformly from the 2,090 appearances. Duplicates remain possible; previews can be searched before opening a box.
+- Hair coupons offer **190 base hairstyles across 1,496 color variants**. A coupon permanently unlocks the selected variant for that character's Styling collection.
+- Cosmetic equipment changes appearance while normal gear retains its combat stats. Weapon covers use their supported weapon types and source poses; incompatible or intentionally empty source poses can hide the cover.
+- Outfit artwork loads as needed, with bounded caches. Source-layer fixes include completed Red Boxing Gloves and Teddy Bear coverage.
 
-Purchases go into your inventory; activate them when ready. Hair coupons permanently unlock a chosen hairstyle for that character. NX boxes contain one of the eight current cosmetics with equal odds; duplicates are possible. Cosmetics change appearance without changing combat stats.
+This imports the supported physical cash equipment and hairstyles from the game's **GMS95 artwork source**. It does not include every cosmetic from every MapleStory version. **Rings, chat bubbles and partner effects are excluded.** Seven gun/knuckle-only covers remain reserved until a compatible Pirate class exists. The NX inventory pocket remains **200 slots**.
 
-EXP coupons begin counting down when activated, including while paused or offline. Extra coupons extend the duration at the same 2× multiplier. They do not increase mesos or item drop chances.
+### Drop chances and boss rewards
 
-### Boss rewards and cooldowns
+Each defeated monster has a **1-in-60,000 cosmetic chance** and a **1-in-120,000 hair-coupon chance**. These are alternative outcomes of one global roll, not guaranteed rewards after a fixed number of kills. Enlarging the catalog does not increase the total drop chance, and Steal does not add global cosmetic rolls.
 
-- Each boss now has a **six-hour cooldown after a victory**, tracked independently for every boss and character. Losses and retreats remain retryable. Cooldowns pass while paused or offline.
-- The first clear of each boss grants **one guaranteed random NX cosmetic**. Characters with earlier clears receive that entitlement once when upgrading their content.
-- Every victory grants the EXP and mesos below, plus **one ordinary equipment item**. Equipment can belong to any of the four class families.
-- Each victory also has independent chances for a functional 60% upgrade scroll (**25%**), an NX cosmetic (**1%**) and a two-hour 2× EXP coupon (**0.5%**).
-- If a boss reward cannot fit in your inventory, it remains saved for later claiming. Claiming delivers the original result without rerolling it.
+Bosses also use their separate guaranteed and rare reward rules. **Six-hour boss cooldowns, ordinary equipment drops, EXP, mesos, combat formulas and Special shop prices are unchanged.** Pending boss rewards keep their original results through the catalog upgrade. Ordinary global drops that cannot fit are skipped under the existing full-bag policy; they do not become pending boss rewards.
 
-| Boss | Base EXP | Mesos |
-| --- | ---: | ---: |
-| Mano | 18,000 | 30,000 |
-| Stumpy | 32,000 | 70,000 |
-| Mushmom | 52,000 | 150,000 |
-| Shade | 78,000 | 160,000 |
-| Zombie Mushmom | 87,000 | 170,000 |
-| Jr. Balrog | 110,000 | 180,000 |
+### Shared storage improvements
 
-An active EXP coupon doubles the listed EXP. Boss difficulty, normal-field combat and ordinary drop rates are unchanged.
+- Shared storage starts at **100 slots** and automatically gains **six slots for every ten-level milestone from 10 through 70 reached by each character**. Three level-70 characters provide **226 slots**.
+- Existing levels count retroactively. Storage bonuses do not require claiming inventory milestones or upgrading a character's content pack. Mesos use no item slots.
+- Send one item or selected stack directly from Inventory to storage, or transfer a multi-selection together. Selecting one stack transfers only that stack's quantity.
+- A batch moves the complete selection together. If capacity or eligibility checks fail, none of its items move.
+- Storage has matching search, class, type, category and sorting controls. Transfer processing preserves existing forecasts and keeps browsing available.
+- Existing overflow remains stored and withdrawable. Gear keeps its rolls, scroll results, history and locks; equipped combat items and the last copy of an equipped NX appearance remain protected.
 
-### Navigation improvements
+Storage responsiveness was improved and checked with batch-transfer workloads and Android interactions. These checks do not establish a specific frame rate or input latency on every phone.
 
-- **Armor** now sits beside Journey in the HUD menu, starts with **My class** selected, and includes class, type and search controls.
-- The former armor-guide shortcut in Inventory now opens **Auto-sell** directly. Character's equipment page still provides access to the armor guide.
+### Startup and saved progress
 
-The game remains fully offline. This release includes eight NX cosmetics and six coupon hairstyles.
+The **Lupin logo now appears during both Android and in-game startup**. Existing characters bypass character creation and retain their progress. The save format is unchanged, and Android update, transfer, cosmetic-use and full-account restoration checks completed successfully.
+
+The game remains fully offline. Check GitHub manually for future releases; this update does not add an automatic update checker.
 
 </details>
 
+## Screenshots
+
+Android screenshots from **0.21.0**, using example characters. Select an image to view it at full size.
+
+<p>
+  <a href="media/screenshots/v0.21.0-hunt.png"><img src="media/screenshots/v0.21.0-hunt.png" width="240" alt="Hunt view with a character and monsters in Snail Hunting Ground II" title="Hunt view"></a>
+  <a href="media/screenshots/v0.21.0-storage.png"><img src="media/screenshots/v0.21.0-storage.png" width="240" alt="Shared storage showing capacity, search and item filters" title="Shared storage"></a>
+  <a href="media/screenshots/v0.21.0-cosmetic-preview.png"><img src="media/screenshots/v0.21.0-cosmetic-preview.png" width="240" alt="Shooting Star cosmetic appearance preview" title="Cosmetic preview"></a>
+</p>
+
+[Hunt view](media/screenshots/v0.21.0-hunt.png) · [Shared storage](media/screenshots/v0.21.0-storage.png) · [Cosmetic preview](media/screenshots/v0.21.0-cosmetic-preview.png)
+
 ## Game features
 
-**Published game: 0.20.0 · Content: 1.16.0 · Overview dated 27 October 2026**
+**Published game: 0.21.0 · Content: 1.17.0 · Overview dated 27 October 2026**
 
 ### Play at your own pace
 
@@ -132,13 +141,21 @@ The **Special shop** sells full AP/SP resets, hair coupons, random NX boxes and 
 
 Create up to three characters with independent jobs, equipment and grinding sessions. The second slot requires the first character to reach level 30; the third requires any character to reach level 70. Other characters can keep grinding while you play a different slot.
 
-Shared storage transfers mesos, stackable items and unequipped gear between characters. Equipment keeps its rolls, scroll results and locks. Characters on older content may need to upgrade before receiving newer items.
+Shared storage starts at **100 item slots**, with **six additional slots for every ten-level milestone from 10 through 70 reached by each character**. Bonuses are automatic and retroactive, independent of inventory milestone claims and each character's content pack. Three level-70 characters provide **226 shared slots**. Mesos use no item slots, and any existing overflow remains stored and withdrawable.
+
+Send an individual item, one selected stack or a multi-selection directly from Inventory to storage. A selected stack moves only its own quantity; a batch transfers the complete selection together or leaves it unchanged if validation fails. Storage provides matching search, class, type, category and sorting controls, with browsing available during transfers.
+
+Shared storage transfers mesos, stackable items and unequipped gear between characters. Equipment keeps its rolls, scroll results, history and locks. Equipped combat items and the last copy of an equipped NX appearance are protected. Characters on older content may need to upgrade before receiving newer items.
 
 ### Customize your appearance
 
 Choose a name, skin, hairstyle and face, then watch equipped gear change your character's appearance. Styling remains available after creation, with a one-time character rename.
 
-The published release includes **eight NX cosmetics and six coupon hairstyles**. NX equipment changes appearance without replacing normal combat stats. Hair coupons permanently unlock a selected hairstyle for that character. Cosmetics can come from rare drops, NX boxes and boss rewards; the full classic cosmetic archive is not included in 0.20.0.
+Content 1.17 includes **2,090 reward-eligible NX equipment items and weapon covers**, including **247 compatible weapon covers**, plus **190 base hairstyles across 1,496 color variants**. NX equipment changes appearance without replacing normal combat stats. Hair coupons permanently unlock a selected variant for that character's Styling collection. The separate NX inventory pocket holds **200 slots**.
+
+The same eligible cosmetic catalog appears in rare universal drops, Random NX Boxes and boss rewards. Boxes select equally among the 2,090 appearances, and duplicates are possible. Each defeated monster has a **1-in-60,000 cosmetic chance** and a **1-in-120,000 hair-coupon chance** as alternative global outcomes. Those are probabilities, not guaranteed rewards after that many kills. Boss-specific cosmetic rewards are separate. Ordinary drops that cannot fit are skipped; pending boss rewards retain their existing protection.
+
+The catalog covers the supported physical cash equipment and hairstyles from the **GMS95 artwork source**, rather than every cosmetic from every region or era. **Rings, chat bubbles and partner effects are excluded**, and seven Pirate-only covers remain reserved. Weapon covers follow their supported weapon types and original pose availability; incompatible or deliberately hidden poses can leave a cover invisible. Artwork loads for requested outfits instead of loading the entire wardrobe on each screen change.
 
 ### Plan, track and stay informed
 
@@ -148,7 +165,7 @@ Optional local notifications cover level-ups, target and rare drops, supply stop
 
 ### Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which creates a safety backup.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to content 1.17 for the expanded cosmetic rewards. New characters start on 1.17. Storage capacity and transfer improvements apply immediately without a content upgrade.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.
 
@@ -165,7 +182,7 @@ The game stays offline. Check the [Releases page](https://github.com/iRCed7/rced
 
 - [Complete patch history](RCed-Idle-Patch-History.md) — all recorded releases and their changes.
 - [Standalone game features](RCed-Idle-Game-Features.md) — the feature guide as its own readable document.
-- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.20.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.20.0/RCed-Idle-Patch-History.md) as a file.
+- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.21.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.21.0/RCed-Idle-Patch-History.md) as a file.
 - [Browse all releases](https://github.com/iRCed7/rced-idle-releases/releases) — earlier archive entries contain patch notes only, without old game binaries. The staged 0.11.0 changes shipped in 0.12.0.
 
 The APK's SHA-256 checksum is attached to each game release.

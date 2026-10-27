@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.20.0**, assembled on **27 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.21.0**, assembled on **27 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.20.0**, assembled on **27 October 
 
 | Version | Main update |
 | --- | --- |
+| [0.21.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.21.0) | Expanded NX catalog and shared storage |
 | [0.20.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.20.0) | Special shop and boss rewards |
 | [0.19.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.19.0) | Magicians, progression bosses and NX |
 | [0.18.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.18.0) | Thief, Assassin and Bandit |
@@ -29,6 +30,61 @@ Complete recorded release history through **0.20.0**, assembled on **27 October 
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.21.0 — Expanded NX catalog and shared storage
+
+Released 27 October 2026. App version **0.21.0**, content version **1.17.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+1. Export a complete account backup from **HUD menu → Settings** before updating.
+2. Download the APK attached to this release and open it on your Android phone. Allow your browser or file app to install it if Android asks.
+3. **Install over the existing RCed Idle app. Do not uninstall first or clear its data.** The application ID and signing certificate are unchanged.
+4. Storage improvements and the startup logo apply immediately. To enable the expanded cosmetic rewards, choose **Review content update → Back up & upgrade** independently for each existing character. Pending time settles under the old rules, and a safety backup is kept. New characters start on content 1.17.0.
+
+### Expanded cosmetics and hairstyles
+
+The reward catalog grows from eight cosmetics to **2,090 appearance-only equipment items and weapon covers**. It includes hats, face and eye accessories, earrings, tops, overalls, bottoms, gloves, shields, shoes, capes and **247 compatible weapon covers**.
+
+- Universal monster drops, Random NX Boxes, guaranteed first-clear boss cosmetics and repeat-clear rare boss cosmetics all draw from the expanded eligible catalog.
+- NX Boxes select uniformly from the 2,090 appearances. Duplicates remain possible; previews can be searched before opening a box.
+- Hair coupons offer **190 base hairstyles across 1,496 color variants**. A coupon permanently unlocks the selected variant for that character's Styling collection.
+- Cosmetic equipment changes appearance while normal gear retains its combat stats. Weapon covers use their supported weapon types and source poses; incompatible or intentionally empty source poses can hide the cover.
+- Outfit artwork loads as needed, with bounded caches. Source-layer fixes include completed Red Boxing Gloves and Teddy Bear coverage.
+
+This imports the supported physical cash equipment and hairstyles from the game's **GMS95 artwork source**. It does not include every cosmetic from every MapleStory version. **Rings, chat bubbles and partner effects are excluded.** Seven gun/knuckle-only covers remain reserved until a compatible Pirate class exists. The NX inventory pocket remains **200 slots**.
+
+### Drop chances and boss rewards
+
+Each defeated monster has a **1-in-60,000 cosmetic chance** and a **1-in-120,000 hair-coupon chance**. These are alternative outcomes of one global roll, not guaranteed rewards after a fixed number of kills. Enlarging the catalog does not increase the total drop chance, and Steal does not add global cosmetic rolls.
+
+Bosses also use their separate guaranteed and rare reward rules. **Six-hour boss cooldowns, ordinary equipment drops, EXP, mesos, combat formulas and Special shop prices are unchanged.** Pending boss rewards keep their original results through the catalog upgrade. Ordinary global drops that cannot fit are skipped under the existing full-bag policy; they do not become pending boss rewards.
+
+### Shared storage improvements
+
+- Shared storage starts at **100 slots** and automatically gains **six slots for every ten-level milestone from 10 through 70 reached by each character**. Three level-70 characters provide **226 slots**.
+- Existing levels count retroactively. Storage bonuses do not require claiming inventory milestones or upgrading a character's content pack. Mesos use no item slots.
+- Send one item or selected stack directly from Inventory to storage, or transfer a multi-selection together. Selecting one stack transfers only that stack's quantity.
+- A batch moves the complete selection together. If capacity or eligibility checks fail, none of its items move.
+- Storage has matching search, class, type, category and sorting controls. Transfer processing preserves existing forecasts and keeps browsing available.
+- Existing overflow remains stored and withdrawable. Gear keeps its rolls, scroll results, history and locks; equipped combat items and the last copy of an equipped NX appearance remain protected.
+
+Storage responsiveness was improved and checked with batch-transfer workloads and Android interactions. These checks do not establish a specific frame rate or input latency on every phone.
+
+### Startup and saved progress
+
+The **Lupin logo now appears during both Android and in-game startup**. Existing characters bypass character creation and retain their progress. The save format is unchanged, and Android update, transfer, cosmetic-use and full-account restoration checks completed successfully.
+
+The game remains fully offline. Check GitHub manually for future releases; this update does not add an automatic update checker.
+
+### Game guide and release history
+
+- [Read the main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Read the complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+Both documents are also attached below as downloadable Markdown assets.
 
 ---
 

@@ -10,6 +10,13 @@ An offline idle RPG for Android. This repository hosts APK downloads and patch n
 
 Requires Android 8.0 or later. The download link stays the same when a new release is published.
 
+## Game features and patch history
+
+- [Main game features](RCed-Idle-Game-Features.md) — classes, combat, bosses, equipment, crafting, quests, characters, cosmetics and saves.
+- [Complete patch history](RCed-Idle-Patch-History.md) — every recorded release through 0.20.0, including the earlier notes-only entries.
+
+Both documents are also available as downloadable Markdown assets on the [0.20.0 release](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.20.0).
+
 ## Install or update
 
 1. If you already play, export a complete account backup from **HUD menu → Settings**.
@@ -21,4 +28,4 @@ Requires Android 8.0 or later. The download link stays the same when a new relea
 
 Check the [Releases page](https://github.com/iRCed7/rced-idle-releases/releases) for new versions and their patch notes, then download and install the latest APK over your current app. The game does not check for or download updates automatically.
 
-Each release includes `RCed-Idle.apk` and its `RCed-Idle.apk.sha256` checksum. Versioned releases remain available in the release history; install the latest version when updating.
+Game releases include `RCed-Idle.apk` and its `RCed-Idle.apk.sha256` checksum. Earlier historical entries contain patch notes only, without old game binaries. Version 0.11.0 was an intermediate checkpoint incorporated into 0.12.0, so it has no separate release entry. Install the latest game version when updating.

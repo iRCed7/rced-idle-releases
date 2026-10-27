@@ -1,2 +1,24 @@
-# rced-idle-releases
-RCed Idle for Android — official APK downloads and release notes. Install updates over your existing app to keep progress.
+# RCed Idle
+
+An offline idle RPG for Android. This repository hosts APK downloads and patch notes.
+
+## Download
+
+**[Download the latest RCed Idle APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk)**
+
+**[Latest version and patch notes](https://github.com/iRCed7/rced-idle-releases/releases/latest)** · [All releases](https://github.com/iRCed7/rced-idle-releases/releases)
+
+Requires Android 8.0 or later. The download link stays the same when a new release is published.
+
+## Install or update
+
+1. If you already play, export a complete account backup from **HUD menu → Settings**.
+2. Download the APK above and open it on your Android device. If prompted, allow your browser or file app to install apps from this source.
+3. **Install over your existing RCed Idle app. Do not uninstall first.** Uninstalling removes the game's local data.
+4. Launch the game and continue playing. If a release includes a new content version, existing characters retain their current rules until you choose **Review content update → Back up & upgrade** for each character.
+
+## Getting future updates
+
+Check the [Releases page](https://github.com/iRCed7/rced-idle-releases/releases) for new versions and their patch notes, then download and install the latest APK over your current app. The game does not check for or download updates automatically.
+
+Each release includes `RCed-Idle.apk` and its `RCed-Idle.apk.sha256` checksum. Versioned releases remain available in the release history; install the latest version when updating.

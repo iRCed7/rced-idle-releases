@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.23.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.24.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.23.0**, updated on **28 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.24.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.24.0) | Animated opening, compact Hunt and inventory improvements |
 | [0.23.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.23.0) | Attack potions, regional music and faster forecasts |
 | [0.22.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.22.0) | Hair colors and Classic item controls |
 | [0.21.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.21.0) | Expanded NX catalog and shared storage |
@@ -32,6 +33,56 @@ Complete recorded release history through **0.23.0**, updated on **28 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.24.0 — Animated opening, compact Hunt and inventory improvements
+
+Released 28 October 2026. App version **0.24.0**, content version **1.20.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+1. Export a complete account backup from **HUD menu → Settings** before updating.
+2. Download the attached APK and open it on your Android phone. Allow installation from your browser or file app if Android asks.
+3. **Install over the existing RCed Idle app. Do not uninstall first or clear its data.** The application ID and signing certificate are unchanged.
+4. Choose **Review content update → Back up & upgrade** separately for each existing character to enable content 1.20. Pending time settles under the old rules and a safety backup is kept. New characters start on 1.20.0; older characters keep their pinned rules until upgraded.
+
+The opening, music and interface improvements arrive with the app update. Installing the APK alone does not change a character's content pack.
+
+### Welcome to Victoria Island
+
+- An animated opening uses the game's illustrated artwork and an **Enter Victoria Island** button.
+- Classic login music accompanies the opening, then hands off to the current map's regional track after entry. The login track and ten regional tracks are bundled for offline play.
+
+### More room for the hunt
+
+- A compact Hunt layout brings the character, live minimap, map/details shortcuts and potion quickslots into the map area, with portrait and landscape layouts.
+- Potion controls show their actual icons and owned counts, with quick access to supply setup.
+- Hide individual tracked quests without abandoning them or losing progress or rewards. Tracking visibility is saved per character.
+- Combat presentation distinguishes actual attacks from periodic damage and retaliation. Combat formulas, reward rules and random outcomes are unchanged.
+
+### Inventory improvements on content 1.20
+
+- Bow and crossbow arrows now stack to **5,000**. Throwing stars remain at 1,000; ammunition consumption, prices and drop quantities are unchanged.
+- All six Special shop items now use the **NX pocket**: Full AP Reset, Full SP Reset, Hairstyle Coupon, Hair Color Coupon, Random NX Box and the two-hour 2× EXP coupon. Buying still does not activate an item.
+- Existing quantities are preserved when upgrading. The NX pocket remains **200 slots**; existing overflow is retained, but cannot grow while over capacity.
+- Ordinary zero-value items can be manually batch sold or selected for future Auto-sell, yielding **0 mesos**. Manual batches remove exactly the selected quantities and validate the whole selection before applying it.
+- Equipped and locked equipment remains protected from manual sale; scrolled gear requires confirmation. Wishlist, farming-target and quest protections apply to automatic sales, while intentional manual sales remain available.
+- Auto-sell still requires the claimed level-40 milestone and explicit item selection. It affects only future drops, never carried inventory, and retains its protections for NX/Special items, targets, wishlist items, quest materials and equipped, locked or scrolled gear.
+
+### Combat bonuses and saved progress
+
+The strongest positive skill bonus and strongest potion bonus still add per stat. Multiple bonuses within either group do not add together; permanent equipment and passive bonuses remain separate, and skill drawbacks still apply.
+
+Regression checks and startup/music checks passed. Installing over 0.23.0 and restoring through the normal import flow preserved all 27 checked account values, shared storage and existing backups. Older content remains available until you opt in to the upgrade.
+
+### Game guides and release history
+
+- [Full game features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+- [Grinding reference](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Grinding-Reference.md) — the 0.23 combat formulas remain applicable; see these notes for the new inventory rules.
+
+The feature guide and patch history are also attached as downloadable Markdown files. Check GitHub manually for future updates.
 
 ---
 

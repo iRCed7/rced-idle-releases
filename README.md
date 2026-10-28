@@ -10,55 +10,51 @@ An offline idle RPG for **Android 8.0+**. Build your characters, hunt for equipm
 
 ## Latest update
 
-**0.28.0 — Progression economy and net income** · 28 October 2026
+**0.29.0 — Professions and offline crafting** · 29 October 2026
 
 **[Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk)** · [Open the release page](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-- **Keep farming familiar maps:** content 1.24 removes the field-mesos penalty for outleveling monsters; EXP decay remains.
-- **Reduced potion pressure:** ordinary-monster attack attempts move from 1.5 to 2.4 seconds, retaining defense and skill mechanics.
-- **Different map goals:** retuned reward profiles offer distinct EXP and income choices.
-- **NET MESO on Hunt:** see supply-adjusted income, with warning colors for negative estimates.
-- All 70 controlled builds had a profitable tested route; some routes and rotations still lose mesos.
-- Install over the existing app, then select **Back up & upgrade** per character for content 1.24.
+- Learn two of six professions per character, with ranks 1–8. Specializations are permanent in this update.
+- Craft from 279 recipes, including all 54 earlier recipes.
+- Queue timed batches that progress while hunting, resting or offline.
+- Collect finished items after freeing bag space; cancel to refund unfinished materials and fees.
+- Browse mastery, recipe search, filters and output stats, plus new Crafting shop supplies.
+- Install over your existing app, then back up and upgrade each character to content 1.25. Claim the level-10 milestone to unlock Crafting.
 
 > **Updating?** Install over your existing app; do not uninstall first. Export a complete account backup from Settings. Existing characters enable new content through **Review content update → Back up & upgrade**.
 
 <details>
-<summary>Full patch notes for 0.28.0</summary>
+<summary>Full patch notes for 0.29.0</summary>
 
-Released 28 October 2026. App version **0.28.0**, content version **1.24.0**. Requires **Android 8.0 or later**.
+Released 29 October 2026. App version **0.29.0**, content version **1.25.0**. Requires **Android 8.0 or later**.
 
-### Progression and farming choices
+### Six professions, two specializations
 
-- Field mesos no longer receive a penalty for outleveling monsters. Familiar maps can remain useful money-farming routes; existing EXP decay for substantially outleveled monsters remains.
-- Fixed map reward profiles are retuned to offer distinct EXP, income and item-farming choices. They do not dynamically adjust to your character's forecast.
-- Ordinary field monsters attempt incoming attacks every **2.4 seconds**, previously 1.5 seconds, reducing sustained potion pressure.
-- Per-hit defense, Magic Guard, monster stats, skill MP costs and potion prices remain intact. Total potion spending does not fall by one fixed percentage: movement, kills, buffs, recovery and attack costs still matter.
-- Boss attack behavior, cooldowns and rewards are unchanged. Ordinary item-drop probabilities are not globally increased.
+Choose from **Smithing, Weaponcrafting, Tailoring, Woodcrafting, Leatherworking and Arcforge**. Each character can learn two professions, with confirmation. **Choices cannot be reset in this update.** Share materials and finished items between characters using shared storage.
 
-The balance goal is satisfying solo progression rather than matching exact Classic hourly rates. Movement, attack speed, spawn capacity and respawn delays still limit throughput.
+Each discipline has ranks **1–8**, gated by character levels 10, 10, 15, 20, 25, 30, 35 and 40. A full mastery bar waits at its level gate; overflow is discarded, and another completed craft advances the rank after the level requirement is met. Earlier recorded crafts credit mastery when the matching profession is learned, without granting duplicate items or selecting a specialization for you.
 
-### Net mesos on Hunt
+### Timed batches and safe collection
 
-Hunt now shows **NET MESO /h**, matching World Map's supply-adjusted estimate. Negative values use the warning color. Adventure details retain the gross coins, auto-sale proceeds and supply-cost breakdown.
+- **279 usable recipes**, retaining the IDs, ingredients, quantities and fees of all 54 earlier recipes.
+- Start batches of **1, 10 or 100** crafts. One queue runs per character while resting, hunting or offline; each execution takes three, five or seven seconds.
+- Materials and mesos are reserved at the start. Cancellation refunds only unfinished work; completed output and mastery are retained.
+- Output that cannot fit in inventory waits in the workshop for collection. Depositing items into shared storage can free room.
+- Equipment-input recipes run one at a time, with exact-item selection and a consumption confirmation. Equipped, locked, scrolled, wishlisted and targeted gear is protected. Cancelling before completion restores the reserved item's identity and rolls.
 
-Net means monster coins plus configured auto-sales, minus the purchase value of consumed supplies still missing after matching retained drops. It does not assume that every equipment, ETC, scroll or cosmetic drop is sold. Wallet changes also include purchases, manual sales and rewards, so they are a different measure.
+### Workshop and supplies
 
-Estimates reuse the existing controlled-build forecast cache. They describe stocked potential, not a guarantee that your currently carried supplies last an hour.
+The workshop adds profession selection, mastery, recipe search and filters, output stats and efficient scrolling lists. A Crafting shop tab adds **18 supply entries**, and the catalog includes **118 new item definitions**. No weapon above level 30 returns to NPC stock. Some recipes require another specialization's materials; every two-profession pairing is not self-sufficient.
 
-### Balance evidence and limits
+### Scope and limits
 
-The paired audit covered **70 builds across ten branches**, at levels 10, 20, 30, 40, 52, 60 and 70. Every tested build had a profitable route even before supply-drop credit, and each had different EXP and net-income winners. All new twenty-minute samples completed.
-
-This does not mean every route or rotation is profitable. Some costly setups remain negative, and a documented Burnt Land routing case earns less after a damage upgrade because it spends more time traveling. The checks support generally improving progression and useful alternatives, not guaranteed profit increases from every individual upgrade or universal class parity.
+Ranks 9–10, housing, unsupported advanced-arrow and Fame recipes, optional catalysts and profession kits are deferred. Added shop supply routes and estimated prices are RCed adaptations. **Simulated parties are not enabled.** Field EXP, mesos, monster drops, class formulas and boss balance retain content 1.24 rules. All 18 music tracks and 49 combat sounds remain unchanged.
 
 ### Verification and saved progress
 
-**1,346 Flutter tests and 83 source/data checks passed**, with clean analysis and signed APK validation. A disposable synthetic Android account passed in-place installation, two complete cold launches and the normal backed-up 1.23 → 1.24 upgrade.
+Verification covered **1,369 distinct Flutter cases** across the full regression run and successful corrected reruns, plus **89 Node checks** and clean analysis. The signed APK passed package, alignment and offline-permission checks.
 
-All **38 checked gameplay groups** matched expected behavior: 35 were unchanged and three matched normal paused-time buff expiry under frozen rules. Owned player fields, equipment, inventory, shared storage, profile and all **53 prior backup rows** were preserved. The original emulator account and phone were untouched. These checks do not certify physical-phone performance.
-
-Existing artwork, excavation scenery, all 18 music tracks and 49 combat clips are unchanged.
+A synthetic diagnostic Android account passed in-place installation, two cold launches, the normal backed-up content upgrade and workshop restart/cancellation checks. All **54 prior backup records** and nine immutable backup exports were preserved. The original emulator and phone were untouched; physical-phone performance was not measured.
 
 </details>
 
@@ -76,7 +72,7 @@ Hunt is a **0.28.0** example-character preview; Opening, Inventory and Quests re
 
 ## Game features
 
-**Published game: 0.28.0 · Content: 1.24.0 · Overview dated 28 October 2026**
+**Published game: 0.29.0 · Content: 1.25.0 · Overview dated 29 October 2026**
 
 ### Enter Victoria Island
 
@@ -195,8 +191,8 @@ Six boss encounters are available: **Mano, Stumpy, Mushmom, Shade, Zombie Mushmo
 - Unequip a real item into a free Equip slot while keeping its rolls, scroll results, remaining slots, history and lock. If the bag has no room, the item stays equipped and the game explains how to make space.
 - Use compatible scrolls with visible success and destruction odds. View the outcome, stat changes and scrolling history.
 - Browse armor progression from Settings by class, item type and search, including ordinary gear through level 70.
-- Buy supplies, equipment and scrolls with mesos. On content 1.19, shop weapons require **level 30 or below**; all 55 higher-level weapons retain monster-drop routes, existing crafting recipes and their owned copies, stats, upgrades and sale values. Non-weapon equipment stock is unchanged. Review and sell multiple inventory items together. Stack sales offer an **All** shortcut and explicit confirmation.
-- Unlock **54 crafting recipes** through the level-10 milestone, including material refining and equipment crafting.
+- Buy supplies, equipment and scrolls with mesos. On content 1.19, shop weapons require **level 30 or below**; all 55 higher-level weapons retain monster-drop routes, existing crafting recipes and their owned copies, stats, upgrades and sale values. Content 1.25 adds a separate Crafting shop tab with 18 supply entries, including materials and base armor. Review and sell multiple inventory items together. Stack sales offer an **All** shortcut and explicit confirmation.
+- Claim the level-10 milestone to unlock **279 recipes** across six professions on content 1.25; choose two permanent specializations per character. Earlier pinned packs retain their original crafting rules.
 - Claim the level-40 milestone to unlock optional **Auto-sell**, then use an item's tooltip control to select its future-drop rule. It applies only to future monster drops, keeping existing inventory and storage intact. Farming targets, wishlisted items, active quest materials, NX items and equipped, locked or scrolled gear are protected; the control explains locked, paused and protected rules.
 
 On content 1.20 or later, bow and crossbow arrows stack to **5,000**; throwing stars remain at 1,000. Ordinary zero-value items can be batch sold or selected for future Auto-sell for **0 mesos**. Manual sales remove the selected quantities together; equipped and locked gear is protected and scrolled gear requires confirmation. Automatic target, wishlist and quest protections do not prevent intentional manual sales.
@@ -206,10 +202,24 @@ On current content, full bags do not stop EXP and mesos from ordinary hunting, b
 <p>
   <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png" width="240" alt="RCed Idle 0.24.0 Use inventory tab with potions, ammunition, food, search and item filters."></a>
   <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png" width="240" alt="RCed Idle 0.22.0 compact classic tooltip for a Brown Pole-Feather Hat with requirements, stats and Unequip, Compare and Scroll actions."></a>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-crafting.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-crafting.png" width="240" alt="RCed Idle 0.22.0 Workshop crafting panel with a Bronze Ingot recipe, batch sizes, ingredient requirements and Craft button."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-professions.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-professions.png" width="240" alt="RCed Idle 0.29.0 profession workshop showing two specializations, Arcforge mastery, recipe filters and reserved crafting costs."></a>
 </p>
 
-[Inventory](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png) · [Item details](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png) · [Crafting](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-crafting.png)
+[Inventory](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png) · [Item details](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png) · [Professions (0.29.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-professions.png)
+
+### Professions and timed crafting
+
+Choose two permanent specializations per character from **Smithing, Weaponcrafting, Tailoring, Woodcrafting, Leatherworking and Arcforge**. Claim the level-10 milestone first. Each profession advances through ranks 1–8; character-level gates apply. Historical recorded crafts grant matching mastery when you learn the discipline, without duplicating items.
+
+Browse **279 recipes**, search and filter by equipment needs, and review output stats. Run one queue per character in batches of 1, 10 or 100. Crafting continues while resting, hunting and offline. Materials and fees are reserved up front; cancelling refunds only unfinished work. Finished output waits safely if your bag is full. Equipment-input recipes require exact-item confirmation and protect equipped, locked, scrolled, wishlisted and targeted gear.
+
+Use shared storage to exchange supplies and output between characters. Some recipes need another specialization's materials. Ranks 9–10, housing, advanced-arrow and Fame recipes, optional catalysts and kits remain deferred. Parties are not enabled.
+
+<p>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-crafting-output.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-crafting-output.png" width="240" alt="RCed Idle 0.29.0 Tailoring rank 2, equipment output stats and returned unfinished crafting materials."></a>
+</p>
+
+[Tailoring and output stats (0.29.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-crafting-output.png)
 
 ### Quests, milestones and the Special shop
 
@@ -286,7 +296,7 @@ Optional local notifications cover level-ups, target and rare drops, supply stop
 
 ### Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.24** for retuned progression rewards, removal of the field-mesos level penalty and reduced ordinary-monster attack frequency, alongside prior content changes; new characters start on 1.24. Packs through 1.23 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.25** for professions and timed crafting alongside earlier progression changes; new characters start on 1.25. Packs through 1.24 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.
 
@@ -304,7 +314,7 @@ The game stays offline. Check the [Releases page](https://github.com/iRCed7/rced
 - [Complete patch history](RCed-Idle-Patch-History.md) — all recorded releases and their changes.
 - [Standalone game features](RCed-Idle-Game-Features.md) — the feature guide as its own readable document.
 - [Grinding reference](RCed-Idle-Grinding-Reference.md) — how stats, skills, supplies and hourly estimates work.
-- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.28.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.28.0/RCed-Idle-Patch-History.md) as a file.
+- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.29.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.29.0/RCed-Idle-Patch-History.md) as a file.
 - [Browse all releases](https://github.com/iRCed7/rced-idle-releases/releases) — earlier archive entries contain patch notes only, without old game binaries. The staged 0.11.0 changes shipped in 0.12.0.
 
 The APK's SHA-256 checksum is attached to each game release.

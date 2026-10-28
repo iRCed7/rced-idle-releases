@@ -1,12 +1,12 @@
 # RCed Idle — Main Game Features
 
-**Published game: 0.28.0 · Content: 1.24.0 · Overview dated 28 October 2026**
+**Published game: 0.29.0 · Content: 1.25.0 · Overview dated 29 October 2026**
 
 [Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk) · [Latest release and patch notes](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.28.0; later releases may change or expand these features. The Lupin logo welcomes you during Android and in-game startup.
+RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.29.0; later releases may change or expand these features. The Lupin logo welcomes you during Android and in-game startup.
 
-Screens use example characters. The Tomb I scenery preview is from **0.27.0**. **Hunt is from 0.28.0**; the monster encyclopedia retains its **0.25.0** label; Opening, Inventory and Quests retain **0.24.0** labels; attack-potion controls and map cards retain **0.23.0** labels, and other previews retain **0.22.0** labels. Select any image to view it at full size. Some panels are isolated previews; forecast values are illustrative.
+Screens use example characters. Profession workshop screenshots are from the synthetic diagnostic account in **0.29.0**. The Tomb I scenery preview is from **0.27.0**. **Hunt is from 0.28.0**; the monster encyclopedia retains its **0.25.0** label; Opening, Inventory and Quests retain **0.24.0** labels; attack-potion controls and map cards retain **0.23.0** labels, and other previews retain **0.22.0** labels. Select any image to view it at full size. Some panels are isolated previews; forecast values are illustrative.
 
 ## Enter Victoria Island
 
@@ -125,8 +125,8 @@ Six boss encounters are available: **Mano, Stumpy, Mushmom, Shade, Zombie Mushmo
 - Unequip a real item into a free Equip slot while keeping its rolls, scroll results, remaining slots, history and lock. If the bag has no room, the item stays equipped and the game explains how to make space.
 - Use compatible scrolls with visible success and destruction odds. View the outcome, stat changes and scrolling history.
 - Browse armor progression from Settings by class, item type and search, including ordinary gear through level 70.
-- Buy supplies, equipment and scrolls with mesos. On content 1.19, shop weapons require **level 30 or below**; all 55 higher-level weapons retain monster-drop routes, existing crafting recipes and their owned copies, stats, upgrades and sale values. Non-weapon equipment stock is unchanged. Review and sell multiple inventory items together. Stack sales offer an **All** shortcut and explicit confirmation.
-- Unlock **54 crafting recipes** through the level-10 milestone, including material refining and equipment crafting.
+- Buy supplies, equipment and scrolls with mesos. On content 1.19, shop weapons require **level 30 or below**; all 55 higher-level weapons retain monster-drop routes, existing crafting recipes and their owned copies, stats, upgrades and sale values. Content 1.25 adds a separate Crafting shop tab with 18 supply entries, including materials and base armor. Review and sell multiple inventory items together. Stack sales offer an **All** shortcut and explicit confirmation.
+- Claim the level-10 milestone to unlock **279 recipes** across six professions on content 1.25; choose two permanent specializations per character. Earlier pinned packs retain their original crafting rules.
 - Claim the level-40 milestone to unlock optional **Auto-sell**, then use an item's tooltip control to select its future-drop rule. It applies only to future monster drops, keeping existing inventory and storage intact. Farming targets, wishlisted items, active quest materials, NX items and equipped, locked or scrolled gear are protected; the control explains locked, paused and protected rules.
 
 On content 1.20 or later, bow and crossbow arrows stack to **5,000**; throwing stars remain at 1,000. Ordinary zero-value items can be batch sold or selected for future Auto-sell for **0 mesos**. Manual sales remove the selected quantities together; equipped and locked gear is protected and scrolled gear requires confirmation. Automatic target, wishlist and quest protections do not prevent intentional manual sales.
@@ -136,10 +136,24 @@ On current content, full bags do not stop EXP and mesos from ordinary hunting, b
 <p>
   <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png" width="240" alt="RCed Idle 0.24.0 Use inventory tab with potions, ammunition, food, search and item filters."></a>
   <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png" width="240" alt="RCed Idle 0.22.0 compact classic tooltip for a Brown Pole-Feather Hat with requirements, stats and Unequip, Compare and Scroll actions."></a>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-crafting.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-crafting.png" width="240" alt="RCed Idle 0.22.0 Workshop crafting panel with a Bronze Ingot recipe, batch sizes, ingredient requirements and Craft button."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-professions.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-professions.png" width="240" alt="RCed Idle 0.29.0 profession workshop showing two specializations, Arcforge mastery, recipe filters and reserved crafting costs."></a>
 </p>
 
-[Inventory](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png) · [Item details](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png) · [Crafting](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-crafting.png)
+[Inventory](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png) · [Item details](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png) · [Professions (0.29.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-professions.png)
+
+## Professions and timed crafting
+
+Choose two permanent specializations per character from **Smithing, Weaponcrafting, Tailoring, Woodcrafting, Leatherworking and Arcforge**. Claim the level-10 milestone first. Each profession advances through ranks 1–8; character-level gates apply. Historical recorded crafts grant matching mastery when you learn the discipline, without duplicating items.
+
+Browse **279 recipes**, search and filter by equipment needs, and review output stats. Run one queue per character in batches of 1, 10 or 100. Crafting continues while resting, hunting and offline. Materials and fees are reserved up front; cancelling refunds only unfinished work. Finished output waits safely if your bag is full. Equipment-input recipes require exact-item confirmation and protect equipped, locked, scrolled, wishlisted and targeted gear.
+
+Use shared storage to exchange supplies and output between characters. Some recipes need another specialization's materials. Ranks 9–10, housing, advanced-arrow and Fame recipes, optional catalysts and kits remain deferred. Parties are not enabled.
+
+<p>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-crafting-output.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-crafting-output.png" width="240" alt="RCed Idle 0.29.0 Tailoring rank 2, equipment output stats and returned unfinished crafting materials."></a>
+</p>
+
+[Tailoring and output stats (0.29.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-crafting-output.png)
 
 ## Quests, milestones and the Special shop
 
@@ -216,6 +230,6 @@ Optional local notifications cover level-ups, target and rare drops, supply stop
 
 ## Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.24** for retuned progression rewards, removal of the field-mesos level penalty and reduced ordinary-monster attack frequency, alongside prior content changes; new characters start on 1.24. Packs through 1.23 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.25** for professions and timed crafting alongside earlier progression changes; new characters start on 1.25. Packs through 1.24 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.

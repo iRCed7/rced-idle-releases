@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.28.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.29.0**, updated on **29 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.28.0**, updated on **28 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.29.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.29.0) | Professions and offline crafting |
 | [0.28.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.28.0) | Progression economy and net income |
 | [0.27.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.27.0) | Field rates, platform routes and boss loot |
 | [0.26.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.26.0) | Damage numbers, NX drops, reports and audio |
@@ -37,6 +38,51 @@ Complete recorded release history through **0.28.0**, updated on **28 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.29.0 — Professions and offline crafting
+
+Released 29 October 2026. App version **0.29.0**, content version **1.25.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+Export a complete account backup from Settings, then install this APK over your existing app. **Do not uninstall or clear app data.** Existing characters retain their pinned rules until you choose **Settings → Review content update → Back up & upgrade** for each character. Claim the **level-10 milestone** to unlock Crafting.
+
+### Six professions, two specializations
+
+Choose from **Smithing, Weaponcrafting, Tailoring, Woodcrafting, Leatherworking and Arcforge**. Each character can learn two professions, with confirmation. **Choices cannot be reset in this update.** Share materials and finished items between characters using shared storage.
+
+Each discipline has ranks **1–8**, gated by character levels 10, 10, 15, 20, 25, 30, 35 and 40. A full mastery bar waits at its level gate; overflow is discarded, and another completed craft advances the rank after the level requirement is met. Earlier recorded crafts credit mastery when the matching profession is learned, without granting duplicate items or selecting a specialization for you.
+
+### Timed batches and safe collection
+
+- **279 usable recipes**, retaining the IDs, ingredients, quantities and fees of all 54 earlier recipes.
+- Start batches of **1, 10 or 100** crafts. One queue runs per character while resting, hunting or offline; each execution takes three, five or seven seconds.
+- Materials and mesos are reserved at the start. Cancellation refunds only unfinished work; completed output and mastery are retained.
+- Output that cannot fit in inventory waits in the workshop for collection. Depositing items into shared storage can free room.
+- Equipment-input recipes run one at a time, with exact-item selection and a consumption confirmation. Equipped, locked, scrolled, wishlisted and targeted gear is protected. Cancelling before completion restores the reserved item's identity and rolls.
+
+### Workshop and supplies
+
+The workshop adds profession selection, mastery, recipe search and filters, output stats and efficient scrolling lists. A Crafting shop tab adds **18 supply entries**, and the catalog includes **118 new item definitions**. No weapon above level 30 returns to NPC stock. Some recipes require another specialization's materials; every two-profession pairing is not self-sufficient.
+
+### Scope and limits
+
+Ranks 9–10, housing, unsupported advanced-arrow and Fame recipes, optional catalysts and profession kits are deferred. Added shop supply routes and estimated prices are RCed adaptations. **Simulated parties are not enabled.** Field EXP, mesos, monster drops, class formulas and boss balance retain content 1.24 rules. All 18 music tracks and 49 combat sounds remain unchanged.
+
+### Verification and saved progress
+
+Verification covered **1,369 distinct Flutter cases** across the full regression run and successful corrected reruns, plus **89 Node checks** and clean analysis. The signed APK passed package, alignment and offline-permission checks.
+
+A synthetic diagnostic Android account passed in-place installation, two cold launches, the normal backed-up content upgrade and workshop restart/cancellation checks. All **54 prior backup records** and nine immutable backup exports were preserved. The original emulator and phone were untouched; physical-phone performance was not measured.
+
+### Game guides and release history
+
+- [Full game features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+Feature and history snapshots are attached as Markdown files. Check GitHub manually for future updates.
 
 ---
 

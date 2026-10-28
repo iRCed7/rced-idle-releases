@@ -10,61 +10,70 @@ An offline idle RPG for **Android 8.0+**. Build your characters, hunt for equipm
 
 ## Latest update
 
-**0.24.0 — Animated opening, compact Hunt and inventory improvements** · 28 October 2026
+**0.25.0 — Platform movement, monster encyclopedia and loot filters** · 28 October 2026
 
 **[Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk)** · [Open the release page](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-- Animated Victoria Island opening with classic login music and an Enter Victoria Island button.
-- Compact Hunt layout with live minimap, map/details shortcuts and potion icons with owned counts.
-- Hide tracked quests without abandoning them or losing progress.
-- Bow and crossbow arrows stack to **5,000** on content 1.20.
-- All six Special shop items share the **200-slot NX pocket**, preserving existing quantities.
-- Sell ordinary zero-value items for **0 mesos**, with protected items and future-only Auto-sell rules retained.
-- Install over your existing app, then opt in to **Back up & upgrade** per character for content 1.20.
+- **Platform travel:** Speed, distance, attack range and platform connections now shape training on content 1.21.
+- **Loot balance:** ordinary equipment and HP/MP restoration drop chances are halved; restoration drops contain one item. Boss rewards and global NX chances are unchanged.
+- **Monster encyclopedia:** browse 45 monsters and their drop sources, with a current-map shortcut on Hunt.
+- **Advanced Auto-sell:** combine equipment level, job and category rules for eligible future drops; existing protections and the level-40 unlock remain.
+- **Cleaner controls:** compact Start/Pause, Home beside Maps, and an All shortcut for stack sales.
+- **Hungry Ronnie:** a new level-32 quest brings the active Classic list to 16.
+- Install over your existing app, then choose **Back up & upgrade** per character for content 1.21.
 
 > **Updating?** Install over your existing app; do not uninstall first. Export a complete account backup from Settings. Existing characters enable new content through **Review content update → Back up & upgrade**.
 
 <details>
-<summary>Full patch notes for 0.24.0</summary>
+<summary>Full patch notes for 0.25.0</summary>
 
-Released 28 October 2026. App version **0.24.0**, content version **1.20.0**. Requires **Android 8.0 or later**.
+Released 28 October 2026. App version **0.25.0**, content version **1.21.0**. Requires **Android 8.0 or later**.
 
-### Welcome to Victoria Island
+### Movement and targeting on content 1.21
 
-- An animated opening uses the game's illustrated artwork and an **Enter Victoria Island** button.
-- Classic login music accompanies the opening, then hands off to the current map's regional track after entry. The login track and ten regional tracks are bundled for offline play.
+- Travel now uses Speed, map distance and connections between platforms. Characters walk into attack range and pay the time needed to traverse a connection.
+- Finish a valid focused target, then favor the nearest eligible monster on the current platform. New attacks cannot hit monsters through a different platform.
+- Multi-target thresholds use each skill's actual range and eligible local targets. If no route can satisfy the configured attack policy, the chosen basic fallback is honored or grinding pauses with an explanation.
+- Mage Teleport can shorten a same-platform walk at its normal MP cost; it cannot bypass cross-platform connections.
+- The minimap follows saved movement and freezes while paused. Controlled comparisons start at each map's own entrance.
+- Once damage already kills in one hit, more damage cannot remove spawn cooldowns or travel time. Tests confirmed identical kills when already-lethal damage was increased tenfold.
 
-### More room for the hunt
+Platforms and connections are RCed approximations based on the bundled spawn coordinates. They do not reproduce every original collision foothold, rope or monster movement.
 
-- A compact Hunt layout brings the character, live minimap, map/details shortcuts and potion quickslots into the map area, with portrait and landscape layouts.
-- Potion controls show their actual icons and owned counts, with quick access to supply setup.
-- Hide individual tracked quests without abandoning them or losing progress or rewards. Tracking visibility is saved per character.
-- Combat presentation distinguishes actual attacks from periodic damage and retaliation. Combat formulas, reward rules and random outcomes are unchanged.
+### Loot and restocking
 
-### Inventory improvements on content 1.20
+- Ordinary **equipment and HP/MP restoration item drop chances are reduced by 50%** on content 1.21. Restoration drops contain **one item**.
+- Boss tables and challenge rewards, global NX, scrolls, materials and arrows retain their previous chances.
+- Restocking matters more. Some costly skill rotations can still lose net mesos on some maps; compare supply costs when choosing a route.
+- Universal cosmetic drops remain **1 in 60,000 kills** across the existing pool; hairstyle coupons remain **1 in 120,000**. There is no global pity timer. First-clear guaranteed NX and six-hour boss victory cooldowns are unchanged.
 
-- Bow and crossbow arrows now stack to **5,000**. Throwing stars remain at 1,000; ammunition consumption, prices and drop quantities are unchanged.
-- All six Special shop items now use the **NX pocket**: Full AP Reset, Full SP Reset, Hairstyle Coupon, Hair Color Coupon, Random NX Box and the two-hour 2× EXP coupon. Buying still does not activate an item.
-- Existing quantities are preserved when upgrading. The NX pocket remains **200 slots**; existing overflow is retained, but cannot grow while over capacity.
-- Ordinary zero-value items can be manually batch sold or selected for future Auto-sell, yielding **0 mesos**. Manual batches remove exactly the selected quantities and validate the whole selection before applying it.
-- Equipped and locked equipment remains protected from manual sale; scrolled gear requires confirmation. Wishlist, farming-target and quest protections apply to automatic sales, while intentional manual sales remain available.
-- Auto-sell still requires the claimed level-40 milestone and explicit item selection. It affects only future drops, never carried inventory, and retains its protections for NX/Special items, targets, wishlist items, quest materials and equipped, locked or scrolled gear.
+### Monster encyclopedia
 
-### Combat bonuses and saved progress
+Browse all **45 registered monsters** and inspect their drop sources, including ordinary drops, global rewards, accepted-quest items, Steal, boss rewards and first-clear rewards. Open the current map's drop book from Hunt or browse Monsters in Settings. Lists load lazily and opening the book does not simulate grinding.
 
-The strongest positive skill bonus and strongest potion bonus still add per stat. Multiple bonuses within either group do not add together; permanent equipment and passive bonuses remain separate, and skill drawbacks still apply.
+### Inventory and interface
 
-Regression checks and startup/music checks passed. Installing over 0.23.0 and restoring through the normal import flow preserved all 27 checked account values, shared storage and existing backups. Older content remains available until you opt in to the upgrade.
+- Advanced Auto-sell combines equipment-level, usable-job and equipment-category filters. Conditions within a rule must all match; any matching rule can select an eligible drop.
+- Auto-sell retains the claimed level-40 unlock and affects **future loot only**. Existing inventory and protected target, wishlist, quest, NX, equipped, locked and scrolled items retain their protections.
+- Stack sales have an **All** quantity shortcut and explicit confirmation.
+- Hunt uses compact Start/Pause controls, places Home beside Maps and removes the duplicate Restock strip. Armor progression moves to Settings; redundant buttons beneath the equipment grid are removed.
+- **Hungry Ronnie**, available at level 32, brings the active Classic quest list to **16**. Existing quest records are preserved.
+
+### Verification and saved progress
+
+**1,230 automated Flutter tests and 38 content/source checks passed**, with clean analysis. In-place installation and save preservation passed. A subsequent emulator graphics correction allowed the unchanged APK to pass two normal cold launches and native opening, Hunt, monster-book, Inventory and Settings checks. All 27 checked gameplay groups, profile, shared storage and nine retained backups were preserved.
+
+The initial launch failure was isolated to the test emulator's software graphics setup; correcting that setup required no game-code or APK change. These checks do not establish physical-phone performance or compatibility with every device.
 
 </details>
 
 ## Screenshots
 
-Opening, Hunt, Inventory and Quests below are **0.24.0** example-character previews. Other module images in [Game features](#game-features) retain their explicit **0.23.0** or **0.22.0** capture labels. Select an image for full size; forecasts are illustrative.
+Hunt is a **0.25.0** example-character preview; Opening, Inventory and Quests retain **0.24.0** labels. Other module images in [Game features](#game-features) retain their explicit **0.23.0** or **0.22.0** capture labels. Select an image for full size; forecasts are illustrative.
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png" width="240" alt="RCed Idle 0.24.0 Victoria Island opening with illustrated artwork and Enter Victoria Island button"></a></p>
 
-<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-hunt.png" width="240" alt="RCed Idle 0.24.0 Hunt with live minimap, map shortcuts, potion counts and quest helper"></a></p>
+<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png" width="240" alt="RCed Idle 0.25.0 Hunt with compact Start control, Home beside Maps and current-map monster book"></a></p>
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png" width="240" alt="RCed Idle 0.24.0 Use inventory with item filters, ammunition, potions and compact navigation"></a></p>
 
@@ -72,7 +81,7 @@ Opening, Hunt, Inventory and Quests below are **0.24.0** example-character previ
 
 ## Game features
 
-**Published game: 0.24.0 · Content: 1.20.0 · Overview dated 28 October 2026**
+**Published game: 0.25.0 · Content: 1.21.0 · Overview dated 28 October 2026**
 
 ### Enter Victoria Island
 
@@ -85,16 +94,16 @@ Opening preview — **0.24.0**.
 ### Play at your own pace
 
 - Prepare your character, choose a map, select attacks and supplies, then start grinding.
-- Hunt combines a live minimap, map/details shortcuts, potion icons and owned counts with compact Start grinding, Home and Restock controls. Supply setup is available from the potion quickslots; portrait and landscape layouts are supported.
+- Hunt combines a live minimap, map/details shortcuts, potion icons and owned counts with compact Start/Pause controls and Home beside Maps. The duplicate Restock strip is removed. Supply setup is available from the potion quickslots; portrait and landscape layouts are supported.
 - Earn EXP, mesos and actual item drops while the game is open or closed. Offline progress runs at the same ordinary pace, with **no away-time cap**.
 - Supplies, defeat, pauses and job advancement still matter. Running out of resources can stop grinding or trigger your chosen fallback; the game does not automatically buy supplies or choose your next job.
 - No online account, internet connection, advertisements or real-money purchases are required to play.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-hunt.png" width="240" alt="RCed Idle 0.24.0 Hunt with live minimap, map shortcuts, potion counts and quest helper."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png" width="240" alt="RCed Idle 0.25.0 Hunt with compact Start control, Home beside Maps and current-map monster book."></a>
 </p>
 
-[Hunt (0.24.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-hunt.png)
+[Hunt (0.25.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png)
 
 ### Four class families and ten second jobs
 
@@ -136,6 +145,24 @@ Combat is adapted for idle play. Forecasts are estimates under stated conditions
 
 [Skills](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-skills.png) · [Attack-potion controls (0.23.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.23.0-attack-potions.png)
 
+### Platform movement and loot on content 1.21
+
+Speed, world distance and platform connections determine travel time. Finish a valid focused target, then choose nearby eligible monsters on the same platform. Each attack must reach its targets; multi-target thresholds count only eligible monsters in that skill's local range. When no route can satisfy a policy, the selected basic fallback applies or grinding pauses with an explanation. Mage Teleport can shorten a same-platform walk at its normal MP cost, but cannot bypass platform connections. The minimap follows movement and freezes when paused.
+
+Spawn cooldowns, attack timing, range and travel limit throughput once damage already kills in one hit. Platforms and connections are RCed approximations based on bundled spawn coordinates, rather than verified original collision geometry.
+
+Ordinary equipment and HP/MP restoration drop chances are **50% lower** than in content 1.20; restoration drops contain **one item**. Boss tables and challenge rewards, global NX, scrolls, materials and arrows retain their previous chances. Plan restocking and compare net mesos: some expensive skill rotations still cost more than they earn on some routes.
+
+### Monster encyclopedia and advanced loot rules
+
+Browse **45 registered monsters**, search and filter the catalog, and inspect ordinary, global, accepted-quest, Steal, boss and first-clear drop sources separately. Open the current-map book from Hunt or Monsters from Settings. Opening the catalog does not simulate grinding.
+
+<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-monster-book.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-monster-book.png" width="240" alt="RCed Idle 0.25.0 monster encyclopedia with search, filters and monster artwork"></a></p>
+
+Monster encyclopedia — **0.25.0**, isolated synthetic preview.
+
+Advanced Auto-sell supports multiple equipment-level, usable-job and equipment-category rules. All conditions within a rule must match; any matching rule can select an eligible future drop. The claimed level-40 unlock and existing target, wishlist, quest, NX, equipped, locked and scrolled-item protections remain. Existing carried inventory is never emptied by these rules.
+
 ### Explore maps and challenge bosses
 
 Explore **38 maps**, compare training routes, view their monsters and drops, follow the live minimap, and unlock progression routes. Choose a desired farm item to help rank maps by expected yield and highlight useful finds.
@@ -158,12 +185,12 @@ Six boss encounters are available: **Mano, Stumpy, Mushmom, Shade, Zombie Mushmo
 - Meet equipment requirements using base stats plus permanent bonuses from gear that stays equipped. The candidate's own bonuses, replaced or displaced gear, temporary buffs and NX appearances do not count. Unmet requirements are explained before a valid equip can occur.
 - Unequip a real item into a free Equip slot while keeping its rolls, scroll results, remaining slots, history and lock. If the bag has no room, the item stays equipped and the game explains how to make space.
 - Use compatible scrolls with visible success and destruction odds. View the outcome, stat changes and scrolling history.
-- Browse armor progression by class, item type and search, including ordinary gear through level 70.
-- Buy supplies, equipment and scrolls with mesos. On content 1.19, shop weapons require **level 30 or below**; all 55 higher-level weapons retain monster-drop routes, existing crafting recipes and their owned copies, stats, upgrades and sale values. Non-weapon equipment stock is unchanged. Review and sell multiple inventory items together.
+- Browse armor progression from Settings by class, item type and search, including ordinary gear through level 70.
+- Buy supplies, equipment and scrolls with mesos. On content 1.19, shop weapons require **level 30 or below**; all 55 higher-level weapons retain monster-drop routes, existing crafting recipes and their owned copies, stats, upgrades and sale values. Non-weapon equipment stock is unchanged. Review and sell multiple inventory items together. Stack sales offer an **All** shortcut and explicit confirmation.
 - Unlock **54 crafting recipes** through the level-10 milestone, including material refining and equipment crafting.
 - Claim the level-40 milestone to unlock optional **Auto-sell**, then use an item's tooltip control to select its future-drop rule. It applies only to future monster drops, keeping existing inventory and storage intact. Farming targets, wishlisted items, active quest materials, NX items and equipped, locked or scrolled gear are protected; the control explains locked, paused and protected rules.
 
-On content 1.20, bow and crossbow arrows stack to **5,000**; throwing stars remain at 1,000. Ordinary zero-value items can be batch sold or selected for future Auto-sell for **0 mesos**. Manual sales remove the selected quantities together; equipped and locked gear is protected and scrolled gear requires confirmation. Automatic target, wishlist and quest protections do not prevent intentional manual sales.
+On content 1.20 or later, bow and crossbow arrows stack to **5,000**; throwing stars remain at 1,000. Ordinary zero-value items can be batch sold or selected for future Auto-sell for **0 mesos**. Manual sales remove the selected quantities together; equipped and locked gear is protected and scrolled gear requires confirmation. Automatic target, wishlist and quest protections do not prevent intentional manual sales.
 
 On current content, full bags do not stop EXP and mesos from ordinary hunting, but new item drops that cannot fit are skipped.
 
@@ -177,11 +204,11 @@ On current content, full bags do not stop EXP and mesos from ordinary hunting, b
 
 ### Quests, milestones and the Special shop
 
-Complete **15 active Classic quests**, plus one daily hunt and one weekly hunt. Offline kills count toward supported objectives. Follow accepted objectives on Hunt and collect rewards from the quest log. Hide individual tracked quests without abandoning them or changing progress; visibility is saved per character.
+Complete **16 active Classic quests**, including Hungry Ronnie at level 32, plus one daily hunt and one weekly hunt. Offline kills count toward supported objectives. Follow accepted objectives on Hunt and collect rewards from the quest log. Hide individual tracked quests without abandoning them or changing progress; visibility is saved per character.
 
 Every ten-level milestone can be claimed for **six more slots in each ordinary inventory pocket**. Certain milestones also grant reset coupons.
 
-The **Special shop** sells full AP/SP resets, hairstyle coupons, hair color coupons, random NX boxes and two-hour 2× EXP coupons for mesos. A Hairstyle Coupon costs **1,000,000 mesos** and unlocks a style while preserving the current color; a Hair Color Coupon costs **500,000 mesos** and changes the color of the currently worn style. These separate coupon rules require content 1.18 or later. Items are purchased first and activated separately. On content 1.20, all six Special shop items share the **200-slot NX pocket**. Existing quantities are preserved on upgrade; overflow is retained, but transactions cannot increase occupied slots while over capacity. Extra EXP coupons extend the duration at the same 2× multiplier; their timers continue while paused or offline.
+The **Special shop** sells full AP/SP resets, hairstyle coupons, hair color coupons, random NX boxes and two-hour 2× EXP coupons for mesos. A Hairstyle Coupon costs **1,000,000 mesos** and unlocks a style while preserving the current color; a Hair Color Coupon costs **500,000 mesos** and changes the color of the currently worn style. These separate coupon rules require content 1.18 or later. Items are purchased first and activated separately. On content 1.20 or later, all six Special shop items share the **200-slot NX pocket**. Existing quantities are preserved on upgrade; overflow is retained, but transactions cannot increase occupied slots while over capacity. Extra EXP coupons extend the duration at the same 2× multiplier; their timers continue while paused or offline.
 
 <p>
   <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-quests.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-quests.png" width="240" alt="RCed Idle 0.24.0 Quest Log with Classic, Daily, Weekly and Milestones tabs and Sam's Suggestion available."></a>
@@ -242,7 +269,7 @@ Optional local notifications cover level-ups, target and rare drops, supply stop
 
 ### Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.20** for larger arrow stacks, Special shop items in the NX pocket and revised zero-value sale rules, alongside the previous attack-potion and shop rules; new characters start on 1.20. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.21** for platform movement, revised ordinary loot chances and the new quest, alongside the previous inventory, attack-potion and shop rules; new characters start on 1.21. Packs through 1.20 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.
 
@@ -260,7 +287,7 @@ The game stays offline. Check the [Releases page](https://github.com/iRCed7/rced
 - [Complete patch history](RCed-Idle-Patch-History.md) — all recorded releases and their changes.
 - [Standalone game features](RCed-Idle-Game-Features.md) — the feature guide as its own readable document.
 - [Grinding reference](RCed-Idle-Grinding-Reference.md) — how stats, skills, supplies and hourly estimates work.
-- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.24.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.24.0/RCed-Idle-Patch-History.md) as a file.
+- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.25.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.25.0/RCed-Idle-Patch-History.md) as a file.
 - [Browse all releases](https://github.com/iRCed7/rced-idle-releases/releases) — earlier archive entries contain patch notes only, without old game binaries. The staged 0.11.0 changes shipped in 0.12.0.
 
 The APK's SHA-256 checksum is attached to each game release.

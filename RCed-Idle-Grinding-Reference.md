@@ -1,6 +1,9 @@
 # RCed Idle Grinding Reference
 
-**App 0.23.0 · Content 1.19.0**
+**App 0.23.0 · Content 1.19.0 — with 0.25.0 compatibility note**
+
+> **Content 1.21 compatibility (app 0.25.0):** The original tables below describe 1.19. Platform travel now uses Speed, actual distance and paid platform connections; attacks and multi-target thresholds use eligible targets within range on the same platform. Teleport only shortens same-platform walking, and cannot bypass connections. Comparisons start at the selected map entrance. Ordinary equipment and HP/MP restoration drop chances are halved, with one restoration item per drop. Boss rewards, global NX, scrolls, materials and arrows are unchanged. Content 1.20 also raised arrow stacks to 5,000, moved Special shop items into NX and allowed zero-value sales. Older movement, supply and loot descriptions below should not be used as 1.21 rules. See the [0.25.0 notes](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.25.0) and in-game monster encyclopedia for current rules. Characters pinned to earlier content retain their original simulation.
+
 
 [Main game page](https://github.com/iRCed7/rced-idle-releases) · [Download the latest release](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 

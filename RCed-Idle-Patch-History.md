@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.24.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.25.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.24.0**, updated on **28 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.25.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.25.0) | Platform movement, monster encyclopedia and loot filters |
 | [0.24.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.24.0) | Animated opening, compact Hunt and inventory improvements |
 | [0.23.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.23.0) | Attack potions, regional music and faster forecasts |
 | [0.22.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.22.0) | Hair colors and Classic item controls |
@@ -33,6 +34,65 @@ Complete recorded release history through **0.24.0**, updated on **28 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.25.0 — Platform movement, monster encyclopedia and loot filters
+
+Released 28 October 2026. App version **0.25.0**, content version **1.21.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+1. Export a complete account backup from **Settings** before updating.
+2. Download the attached APK and open it on your Android phone. Allow installation from your browser or file app if Android asks.
+3. **Install over the existing RCed Idle app. Do not uninstall first or clear its data.** The application ID and signing certificate are unchanged.
+4. Choose **Settings → Review content update → Back up & upgrade** separately for each existing character to activate content 1.21. Pending progress settles under the old rules, a recovery backup is created, and grinding pauses before migration. New characters start on 1.21.0.
+
+Characters on content 1.20 or earlier retain their original simulation until upgraded. App interface improvements arrive with installation.
+
+### Movement and targeting on content 1.21
+
+- Travel now uses Speed, map distance and connections between platforms. Characters walk into attack range and pay the time needed to traverse a connection.
+- Finish a valid focused target, then favor the nearest eligible monster on the current platform. New attacks cannot hit monsters through a different platform.
+- Multi-target thresholds use each skill's actual range and eligible local targets. If no route can satisfy the configured attack policy, the chosen basic fallback is honored or grinding pauses with an explanation.
+- Mage Teleport can shorten a same-platform walk at its normal MP cost; it cannot bypass cross-platform connections.
+- The minimap follows saved movement and freezes while paused. Controlled comparisons start at each map's own entrance.
+- Once damage already kills in one hit, more damage cannot remove spawn cooldowns or travel time. Tests confirmed identical kills when already-lethal damage was increased tenfold.
+
+Platforms and connections are RCed approximations based on the bundled spawn coordinates. They do not reproduce every original collision foothold, rope or monster movement.
+
+### Loot and restocking
+
+- Ordinary **equipment and HP/MP restoration item drop chances are reduced by 50%** on content 1.21. Restoration drops contain **one item**.
+- Boss tables and challenge rewards, global NX, scrolls, materials and arrows retain their previous chances.
+- Restocking matters more. Some costly skill rotations can still lose net mesos on some maps; compare supply costs when choosing a route.
+- Universal cosmetic drops remain **1 in 60,000 kills** across the existing pool; hairstyle coupons remain **1 in 120,000**. There is no global pity timer. First-clear guaranteed NX and six-hour boss victory cooldowns are unchanged.
+
+### Monster encyclopedia
+
+Browse all **45 registered monsters** and inspect their drop sources, including ordinary drops, global rewards, accepted-quest items, Steal, boss rewards and first-clear rewards. Open the current map's drop book from Hunt or browse Monsters in Settings. Lists load lazily and opening the book does not simulate grinding.
+
+### Inventory and interface
+
+- Advanced Auto-sell combines equipment-level, usable-job and equipment-category filters. Conditions within a rule must all match; any matching rule can select an eligible drop.
+- Auto-sell retains the claimed level-40 unlock and affects **future loot only**. Existing inventory and protected target, wishlist, quest, NX, equipped, locked and scrolled items retain their protections.
+- Stack sales have an **All** quantity shortcut and explicit confirmation.
+- Hunt uses compact Start/Pause controls, places Home beside Maps and removes the duplicate Restock strip. Armor progression moves to Settings; redundant buttons beneath the equipment grid are removed.
+- **Hungry Ronnie**, available at level 32, brings the active Classic quest list to **16**. Existing quest records are preserved.
+
+### Verification and saved progress
+
+**1,230 automated Flutter tests and 38 content/source checks passed**, with clean analysis. In-place installation and save preservation passed. A subsequent emulator graphics correction allowed the unchanged APK to pass two normal cold launches and native opening, Hunt, monster-book, Inventory and Settings checks. All 27 checked gameplay groups, profile, shared storage and nine retained backups were preserved.
+
+The initial launch failure was isolated to the test emulator's software graphics setup; correcting that setup required no game-code or APK change. These checks do not establish physical-phone performance or compatibility with every device.
+
+### Game guides and release history
+
+- [Full game features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+- [Grinding reference](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Grinding-Reference.md) — its original tables describe content 1.19; the new compatibility note explains 1.21 movement and loot changes.
+
+Feature and history snapshots are attached as Markdown files. Check GitHub manually for future updates.
 
 ---
 

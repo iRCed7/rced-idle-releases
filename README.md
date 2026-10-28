@@ -10,70 +10,69 @@ An offline idle RPG for **Android 8.0+**. Build your characters, hunt for equipm
 
 ## Latest update
 
-**0.25.0 — Platform movement, monster encyclopedia and loot filters** · 28 October 2026
+**0.26.0 — Damage numbers, NX drops, reports and audio** · 28 October 2026
 
 **[Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk)** · [Open the release page](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-- **Platform travel:** Speed, distance, attack range and platform connections now shape training on content 1.21.
-- **Loot balance:** ordinary equipment and HP/MP restoration drop chances are halved; restoration drops contain one item. Boss rewards and global NX chances are unchanged.
-- **Monster encyclopedia:** browse 45 monsters and their drop sources, with a current-map shortcut on Hunt.
-- **Advanced Auto-sell:** combine equipment level, job and category rules for eligible future drops; existing protections and the level-40 unlock remain.
-- **Cleaner controls:** compact Start/Pause, Home beside Maps, and an All shortcut for stack sales.
-- **Hungry Ronnie:** a new level-32 quest brings the active Classic list to 16.
-- Install over your existing app, then choose **Back up & upgrade** per character for content 1.21.
+- **Individual damage numbers:** see each recorded hit, critical and miss; content 1.22 also shows incoming HP and Magic Guard MP losses.
+- **More NX drops:** content 1.22 raises the universal cosmetic chance to **1 in 4,000 kills**, with the same 2,090-item pool.
+- **Cleaner Hunt:** map, adventure and drop-book shortcuts move into the minimap popup, with new Classic icons and compact Start/Pause.
+- **Accurate reports:** offline finds exclude auto-sold copies, sale mesos count once, and boss-report dismissal persists.
+- **Combat sounds:** independent controls for monster-hit and crossbow sounds, bundled for offline play.
+- **Updated map music:** 18 tracks, including Sleepy Wood at Drake's Meal Table.
+- Install over the existing app, then select **Back up & upgrade** per character for content 1.22.
 
 > **Updating?** Install over your existing app; do not uninstall first. Export a complete account backup from Settings. Existing characters enable new content through **Review content update → Back up & upgrade**.
 
 <details>
-<summary>Full patch notes for 0.25.0</summary>
+<summary>Full patch notes for 0.26.0</summary>
 
-Released 28 October 2026. App version **0.25.0**, content version **1.21.0**. Requires **Android 8.0 or later**.
+Released 28 October 2026. App version **0.26.0**, content version **1.22.0**. Requires **Android 8.0 or later**.
 
-### Movement and targeting on content 1.21
+### Damage you can follow
 
-- Travel now uses Speed, map distance and connections between platforms. Characters walk into attack range and pay the time needed to traverse a connection.
-- Finish a valid focused target, then favor the nearest eligible monster on the current platform. New attacks cannot hit monsters through a different platform.
-- Multi-target thresholds use each skill's actual range and eligible local targets. If no route can satisfy the configured attack policy, the chosen basic fallback is honored or grinding pauses with an explanation.
-- Mage Teleport can shorten a same-platform walk at its normal MP cost; it cannot bypass cross-platform connections.
-- The minimap follows saved movement and freezes while paused. Controlled comparisons start at each map's own entrance.
-- Once damage already kills in one hit, more damage cannot remove spawn cooldowns or travel time. Tests confirmed identical kills when already-lethal damage was increased tenfold.
+- Multi-hit attacks show each recorded damage roll separately, in order, with its own critical or miss appearance.
+- If an early hit kills the monster, no extra unrolled damage number is invented. Older aggregate-only records retain one number.
+- On content 1.22, incoming attacks show actual HP lost after mitigation. Magic Guard displays redirected loss separately as **MP −N**; misses and guarded attacks are distinguished.
+- Reduced motion and offline/resume handling suppress transient effects. These displays do not change combat formulas, timing, rewards or random rolls.
 
-Platforms and connections are RCed approximations based on the bundled spawn coordinates. They do not reproduce every original collision foothold, rope or monster movement.
+### More frequent NX finds
 
-### Loot and restocking
+Content 1.22 raises the total chance of any eligible universal NX cosmetic from **1 in 60,000** to **1 in 4,000 kills**. The same **2,090 cosmetics** remain equally likely; a particular cosmetic has a 1-in-8,360,000 chance per kill.
 
-- Ordinary **equipment and HP/MP restoration item drop chances are reduced by 50%** on content 1.21. Restoration drops contain **one item**.
-- Boss tables and challenge rewards, global NX, scrolls, materials and arrows retain their previous chances.
-- Restocking matters more. Some costly skill rotations can still lose net mesos on some maps; compare supply costs when choosing a route.
-- Universal cosmetic drops remain **1 in 60,000 kills** across the existing pool; hairstyle coupons remain **1 in 120,000**. There is no global pity timer. First-clear guaranteed NX and six-hour boss victory cooldowns are unchanged.
+Hair coupons remain **1 in 120,000**. Boss rewards, first-clear guarantees, cooldowns, NX boxes and ordinary item drops are unchanged. Drops remain random with no pity timer, and new cosmetics need available NX space. Older pinned content retains its former rate.
 
-### Monster encyclopedia
+### Cleaner Hunt and clearer reports
 
-Browse all **45 registered monsters** and inspect their drop sources, including ordinary drops, global rewards, accepted-quest items, Steal, boss rewards and first-clear rewards. Open the current map's drop book from Hunt or browse Monsters in Settings. Lists load lazily and opening the book does not simulate grinding.
+- World Map, Adventure details and Monster drops are grouped in the **minimap popup**. Hunt keeps Home and potion quickslots, with a compact blue Start/Pause control and no duplicate estimated-level line.
+- New Classic artwork identifies Home, Monster drops, Shop and Quests.
+- A small full-inventory warning opens a list of full pockets. EXP and mesos continue; only new drops that cannot fit are skipped.
+- Offline reports show **retained quantities**. Auto-sold copies are excluded from carried finds, and their sale value appears exactly once in **Mesos gained**. Viewing a report grants nothing again.
+- Dismissing a boss report is saved per character. Boss details, permanent clears, first-clear rewards and pending loot remain available on the Bosses page; a later encounter creates a new report.
 
-### Inventory and interface
+### Combat sounds and map music
 
-- Advanced Auto-sell combines equipment-level, usable-job and equipment-category filters. Conditions within a rule must all match; any matching rule can select an eligible drop.
-- Auto-sell retains the claimed level-40 unlock and affects **future loot only**. Existing inventory and protected target, wishlist, quest, NX, equipped, locked and scrolled items retain their protections.
-- Stack sales have an **All** quantity shortcut and explicit confirmation.
-- Hunt uses compact Start/Pause controls, places Home beside Maps and removes the duplicate Restock strip. Armor progression moves to Settings; redundant buttons beneath the equipment grid are removed.
-- **Hungry Ronnie**, available at level 32, brings the active Classic quest list to **16**. Existing quest records are preserved.
+- A **Combat sounds** toggle and volume slider in Settings operate independently of background music.
+- The offline sound trial includes hit reactions for all **45 monsters** and four crossbow recordings: Basic Attack, Arrow Blow, Power Knockback and Iron Arrow. Double Shot and Final Attack: Crossbow use the basic crossbow clip; other weapon-family attack sounds are outside this trial.
+- Sound follows live combat without replaying an offline or resume backlog. Older packs support recognized basic/crossbow attack events; other historical rotations can remain silent.
+- Seven music recordings bring the catalog to **18 tracks**, including the login theme. All prior recordings are preserved.
+- Music assignments now cover all 32 ordinary maps and six custom boss arenas. **Drake's Meal Table uses Sleepy Wood**; returning Home selects the destination map's music.
 
 ### Verification and saved progress
 
-**1,230 automated Flutter tests and 38 content/source checks passed**, with clean analysis. In-place installation and save preservation passed. A subsequent emulator graphics correction allowed the unchanged APK to pass two normal cold launches and native opening, Hunt, monster-book, Inventory and Settings checks. All 27 checked gameplay groups, profile, shared storage and nine retained backups were preserved.
+The final full suite passed **1,260 tests**, with **47 source/content checks**, clean analysis and one separately recorded upgrade regression. APK signing, offline permissions and in-place installation passed.
 
-The initial launch failure was isolated to the test emulator's software graphics setup; correcting that setup required no game-code or APK change. These checks do not establish physical-phone performance or compatibility with every device.
+Two original-account cold launches and exact preservation checks passed: all **27 gameplay groups**, profile, shared storage and all **51 prior backup rows** were retained. A separate synthetic character exercised Double Shot damage numbers, incoming HP display and music/sound controls. Native checks verified audio decoding and playback state, not subjective speaker quality or physical-phone performance.
 
 </details>
 
 ## Screenshots
 
-Hunt is a **0.25.0** example-character preview; Opening, Inventory and Quests retain **0.24.0** labels. Other module images in [Game features](#game-features) retain their explicit **0.23.0** or **0.22.0** capture labels. Select an image for full size; forecasts are illustrative.
+Hunt is a **0.26.0** example-character preview; Opening, Inventory and Quests retain **0.24.0** labels. Other module images in [Game features](#game-features) retain their explicit **0.23.0** or **0.22.0** capture labels. Select an image for full size; forecasts are illustrative.
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png" width="240" alt="RCed Idle 0.24.0 Victoria Island opening with illustrated artwork and Enter Victoria Island button"></a></p>
 
-<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png" width="240" alt="RCed Idle 0.25.0 Hunt with compact Start control, Home beside Maps and current-map monster book"></a></p>
+<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png" width="240" alt="RCed Idle 0.26.0 Hunt with compact blue Start control, Home scroll, potion quickslots and Classic navigation icons"></a></p>
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png" width="240" alt="RCed Idle 0.24.0 Use inventory with item filters, ammunition, potions and compact navigation"></a></p>
 
@@ -81,11 +80,11 @@ Hunt is a **0.25.0** example-character preview; Opening, Inventory and Quests re
 
 ## Game features
 
-**Published game: 0.25.0 · Content: 1.21.0 · Overview dated 28 October 2026**
+**Published game: 0.26.0 · Content: 1.22.0 · Overview dated 28 October 2026**
 
 ### Enter Victoria Island
 
-An animated illustrated opening welcomes you with classic login music. Select **Enter Victoria Island** to continue; music switches to the current map's regional track. All eleven tracks are bundled for offline play.
+An animated illustrated opening welcomes you with classic login music. Select **Enter Victoria Island** to continue; music switches to the current map's regional track. All eighteen music tracks are bundled for offline play.
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png" width="240" alt="RCed Idle 0.24.0 Victoria Island opening with illustrated artwork and Enter Victoria Island button"></a></p>
 
@@ -94,16 +93,16 @@ Opening preview — **0.24.0**.
 ### Play at your own pace
 
 - Prepare your character, choose a map, select attacks and supplies, then start grinding.
-- Hunt combines a live minimap, map/details shortcuts, potion icons and owned counts with compact Start/Pause controls and Home beside Maps. The duplicate Restock strip is removed. Supply setup is available from the potion quickslots; portrait and landscape layouts are supported.
+- Hunt combines a compact live minimap, Home shortcut and potion icons with owned counts. Open World Map, Adventure details and Monster drops from the minimap popup. Start/Pause uses a compact blue control; supply setup remains available through potion quickslots. A warning icon lists full inventory pockets.
 - Earn EXP, mesos and actual item drops while the game is open or closed. Offline progress runs at the same ordinary pace, with **no away-time cap**.
 - Supplies, defeat, pauses and job advancement still matter. Running out of resources can stop grinding or trigger your chosen fallback; the game does not automatically buy supplies or choose your next job.
 - No online account, internet connection, advertisements or real-money purchases are required to play.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png" width="240" alt="RCed Idle 0.25.0 Hunt with compact Start control, Home beside Maps and current-map monster book."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png" width="240" alt="RCed Idle 0.26.0 Hunt with compact blue Start control, Home scroll, potion quickslots and Classic navigation icons."></a>
 </p>
 
-[Hunt (0.25.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png)
+[Hunt (0.26.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png)
 
 ### Four class families and ten second jobs
 
@@ -155,7 +154,7 @@ Ordinary equipment and HP/MP restoration drop chances are **50% lower** than in 
 
 ### Monster encyclopedia and advanced loot rules
 
-Browse **45 registered monsters**, search and filter the catalog, and inspect ordinary, global, accepted-quest, Steal, boss and first-clear drop sources separately. Open the current-map book from Hunt or Monsters from Settings. Opening the catalog does not simulate grinding.
+Browse **45 registered monsters**, search and filter the catalog, and inspect ordinary, global, accepted-quest, Steal, boss and first-clear drop sources separately. Open the current-map book from the Hunt minimap popup or Monsters from Settings. Opening the catalog does not simulate grinding.
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-monster-book.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-monster-book.png" width="240" alt="RCed Idle 0.25.0 monster encyclopedia with search, filters and monster artwork"></a></p>
 
@@ -246,7 +245,7 @@ A Hair Color Coupon changes the currently worn style after confirmation and save
 
 Use Back/Next arrows to browse named hairstyles and **Hide worn equipment** to see hair on the bare-character preview. The toggle does not unequip real items. Previews do not change saves or consume coupons; closing without saving preserves the original appearance.
 
-The same eligible cosmetic catalog appears in rare universal drops, Random NX Boxes and boss rewards. Boxes select equally among the 2,090 appearances, and duplicates are possible. Each defeated monster has a **1-in-60,000 cosmetic chance** and a **1-in-120,000 hairstyle-coupon chance** as alternative global outcomes. Those are probabilities, not guaranteed rewards after that many kills. The Hair Color Coupon is sold in the shop; it has no added global drop chance. Boss-specific cosmetic rewards are separate. Ordinary drops that cannot fit are skipped; pending boss rewards retain their existing protection.
+The same eligible cosmetic catalog appears in rare universal drops, Random NX Boxes and boss rewards. Boxes select equally among the 2,090 appearances, and duplicates are possible. On content 1.22, each defeated monster has a **1-in-4,000 cosmetic chance** and a **1-in-120,000 hairstyle-coupon chance** as alternative global outcomes. The same 2,090 appearances are equally likely, so a particular cosmetic has a 1-in-8,360,000 chance per kill. Earlier pinned packs retain their old rate. These are probabilities, not guaranteed rewards after that many kills; there is no pity timer. The Hair Color Coupon is sold in the shop; it has no added global drop chance. Boss-specific cosmetic rewards are separate. Ordinary drops that cannot fit are skipped; pending boss rewards retain their existing protection.
 
 The catalog covers the supported physical cash equipment and hairstyles from the **GMS95 artwork source**, rather than every cosmetic from every region or era. **Rings, chat bubbles and partner effects are excluded**, and seven Pirate-only covers remain reserved. Weapon covers follow their supported weapon types and original pose availability; incompatible or deliberately hidden poses can leave a cover invisible. Artwork loads for requested outfits instead of loading the entire wardrobe on each screen change.
 
@@ -257,6 +256,12 @@ The catalog covers the supported physical cash equipment and hairstyles from the
 
 [Hair styles](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-hair-style.png) · [Hair colors](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-hair-color.png)
 
+### Follow combat and review rewards
+
+Each recorded hit displays its own damage, critical or miss appearance in order. If an early hit kills a target, no unrolled number is invented. On content 1.22, incoming strikes show actual HP loss after mitigation and separate **MP −N** losses for Magic Guard. Misses and guarded attacks are distinguished. Reduced motion and offline/resume handling suppress transient effects; combat formulas and rewards are unchanged.
+
+Offline reports show only retained item quantities and count auto-sale mesos once. Opening a report grants nothing again. Boss-report dismissal persists per character without deleting the encounter details, clear records, first-clear rewards or pending loot from the Bosses page. A later encounter creates a fresh report.
+
 ### Plan, track and stay informed
 
 Plan supplies for **1, 4, 8 or 24 hours**, review shortages and costs, and buy a selected supply basket manually. View estimated EXP, mesos, supply costs and time to the next level. Journal tracks discoveries, while Journey records progression milestones and advancements.
@@ -265,11 +270,11 @@ The [grinding reference](https://github.com/iRCed7/rced-idle-releases/blob/main/
 
 Optional local notifications cover level-ups, target and rare drops, supply stops, defeat and advancement. They are off by default; delivery depends on Android's background settings. Enlarged text, reduced motion and optional workshop sound support different play preferences.
 
-**Ten locally bundled background-music tracks cover all 38 maps**, using regional and biome assignments chosen for RCed. Settings provides a toggle and volume slider, initially at 30% volume. Same-region travel does not restart the track. Playback stops when the app leaves the foreground, loses audio focus or headphones disconnect; foreground return starts the assigned track again. Music is offline, and changing its settings does not change character progress. Attack and monster sound effects are not included.
+**Eighteen locally bundled music tracks include the login theme and explicit assignments for all 38 maps.** Thirty-one ordinary maps use audited source assignments; Drake's Meal Table uses the requested Sleepy Wood override. Five custom boss arenas inherit their background-map music, while Jr. Balrog retains its dedicated theme. Settings provides a toggle and volume slider, initially at 30% volume. Same-region travel does not restart the track. Playback stops when the app leaves the foreground, loses audio focus or headphones disconnect; foreground return starts the assigned track again. Music is offline, and changing its settings does not change character progress. Combat sounds have an independent Settings toggle and volume slider. The offline trial includes 45 monster hit reactions and four crossbow recordings; Double Shot and Final Attack: Crossbow reuse the basic crossbow clip. Other weapon-family attack sounds are outside the trial. Sounds follow live events without replaying an offline/resume backlog; some historical rotations remain silent.
 
 ### Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.21** for platform movement, revised ordinary loot chances and the new quest, alongside the previous inventory, attack-potion and shop rules; new characters start on 1.21. Packs through 1.20 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.22** for the increased universal NX rate and incoming-damage presentation, alongside the previous movement, loot, inventory and shop rules; new characters start on 1.22. Packs through 1.21 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.
 
@@ -287,7 +292,7 @@ The game stays offline. Check the [Releases page](https://github.com/iRCed7/rced
 - [Complete patch history](RCed-Idle-Patch-History.md) — all recorded releases and their changes.
 - [Standalone game features](RCed-Idle-Game-Features.md) — the feature guide as its own readable document.
 - [Grinding reference](RCed-Idle-Grinding-Reference.md) — how stats, skills, supplies and hourly estimates work.
-- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.25.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.25.0/RCed-Idle-Patch-History.md) as a file.
+- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.26.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.26.0/RCed-Idle-Patch-History.md) as a file.
 - [Browse all releases](https://github.com/iRCed7/rced-idle-releases/releases) — earlier archive entries contain patch notes only, without old game binaries. The staged 0.11.0 changes shipped in 0.12.0.
 
 The APK's SHA-256 checksum is attached to each game release.

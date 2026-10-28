@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.25.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.26.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.25.0**, updated on **28 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.26.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.26.0) | Damage numbers, NX drops, reports and audio |
 | [0.25.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.25.0) | Platform movement, monster encyclopedia and loot filters |
 | [0.24.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.24.0) | Animated opening, compact Hunt and inventory improvements |
 | [0.23.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.23.0) | Attack potions, regional music and faster forecasts |
@@ -34,6 +35,64 @@ Complete recorded release history through **0.25.0**, updated on **28 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.26.0 — Damage numbers, NX drops, reports and audio
+
+Released 28 October 2026. App version **0.26.0**, content version **1.22.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+1. Export a complete account backup from **Settings** before updating.
+2. Download the attached APK and open it on your Android phone. Allow installation from your browser or file app if Android asks.
+3. **Install over the existing RCed Idle app. Do not uninstall first or clear its data.** Package and signing identity are unchanged.
+4. Choose **Review content update → Back up & upgrade** separately for each existing character to enable content 1.22, including the increased NX rate and incoming-damage display. Pending progress settles under the old rules, a safety backup is created and grinding pauses for review. New characters start on 1.22.
+
+Navigation, outgoing-hit display, reports and sound controls arrive with the app update. Earlier characters retain their pinned rules until upgraded.
+
+### Damage you can follow
+
+- Multi-hit attacks show each recorded damage roll separately, in order, with its own critical or miss appearance.
+- If an early hit kills the monster, no extra unrolled damage number is invented. Older aggregate-only records retain one number.
+- On content 1.22, incoming attacks show actual HP lost after mitigation. Magic Guard displays redirected loss separately as **MP −N**; misses and guarded attacks are distinguished.
+- Reduced motion and offline/resume handling suppress transient effects. These displays do not change combat formulas, timing, rewards or random rolls.
+
+### More frequent NX finds
+
+Content 1.22 raises the total chance of any eligible universal NX cosmetic from **1 in 60,000** to **1 in 4,000 kills**. The same **2,090 cosmetics** remain equally likely; a particular cosmetic has a 1-in-8,360,000 chance per kill.
+
+Hair coupons remain **1 in 120,000**. Boss rewards, first-clear guarantees, cooldowns, NX boxes and ordinary item drops are unchanged. Drops remain random with no pity timer, and new cosmetics need available NX space. Older pinned content retains its former rate.
+
+### Cleaner Hunt and clearer reports
+
+- World Map, Adventure details and Monster drops are grouped in the **minimap popup**. Hunt keeps Home and potion quickslots, with a compact blue Start/Pause control and no duplicate estimated-level line.
+- New Classic artwork identifies Home, Monster drops, Shop and Quests.
+- A small full-inventory warning opens a list of full pockets. EXP and mesos continue; only new drops that cannot fit are skipped.
+- Offline reports show **retained quantities**. Auto-sold copies are excluded from carried finds, and their sale value appears exactly once in **Mesos gained**. Viewing a report grants nothing again.
+- Dismissing a boss report is saved per character. Boss details, permanent clears, first-clear rewards and pending loot remain available on the Bosses page; a later encounter creates a new report.
+
+### Combat sounds and map music
+
+- A **Combat sounds** toggle and volume slider in Settings operate independently of background music.
+- The offline sound trial includes hit reactions for all **45 monsters** and four crossbow recordings: Basic Attack, Arrow Blow, Power Knockback and Iron Arrow. Double Shot and Final Attack: Crossbow use the basic crossbow clip; other weapon-family attack sounds are outside this trial.
+- Sound follows live combat without replaying an offline or resume backlog. Older packs support recognized basic/crossbow attack events; other historical rotations can remain silent.
+- Seven music recordings bring the catalog to **18 tracks**, including the login theme. All prior recordings are preserved.
+- Music assignments now cover all 32 ordinary maps and six custom boss arenas. **Drake's Meal Table uses Sleepy Wood**; returning Home selects the destination map's music.
+
+### Verification and saved progress
+
+The final full suite passed **1,260 tests**, with **47 source/content checks**, clean analysis and one separately recorded upgrade regression. APK signing, offline permissions and in-place installation passed.
+
+Two original-account cold launches and exact preservation checks passed: all **27 gameplay groups**, profile, shared storage and all **51 prior backup rows** were retained. A separate synthetic character exercised Double Shot damage numbers, incoming HP display and music/sound controls. Native checks verified audio decoding and playback state, not subjective speaker quality or physical-phone performance.
+
+### Game guides and release history
+
+- [Full game features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+- [Grinding reference with newer-content notes](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Grinding-Reference.md)
+
+Feature and history snapshots are also attached as Markdown files. Check GitHub manually for future updates.
 
 ---
 

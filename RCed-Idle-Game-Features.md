@@ -1,16 +1,16 @@
 # RCed Idle — Main Game Features
 
-**Published game: 0.25.0 · Content: 1.21.0 · Overview dated 28 October 2026**
+**Published game: 0.26.0 · Content: 1.22.0 · Overview dated 28 October 2026**
 
 [Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk) · [Latest release and patch notes](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.25.0; later releases may change or expand these features. The Lupin logo welcomes you during Android and in-game startup.
+RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.26.0; later releases may change or expand these features. The Lupin logo welcomes you during Android and in-game startup.
 
-Screens use example characters. **Hunt and the monster encyclopedia are from 0.25.0**; Opening, Inventory and Quests retain **0.24.0** labels; attack-potion controls and map cards retain **0.23.0** labels, and other previews retain **0.22.0** labels. Select any image to view it at full size. Some panels are isolated previews; forecast values are illustrative.
+Screens use example characters. **Hunt is from 0.26.0**; the monster encyclopedia retains its **0.25.0** label; Opening, Inventory and Quests retain **0.24.0** labels; attack-potion controls and map cards retain **0.23.0** labels, and other previews retain **0.22.0** labels. Select any image to view it at full size. Some panels are isolated previews; forecast values are illustrative.
 
 ## Enter Victoria Island
 
-An animated illustrated opening welcomes you with classic login music. Select **Enter Victoria Island** to continue; music switches to the current map's regional track. All eleven tracks are bundled for offline play.
+An animated illustrated opening welcomes you with classic login music. Select **Enter Victoria Island** to continue; music switches to the current map's regional track. All eighteen music tracks are bundled for offline play.
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png" width="240" alt="RCed Idle 0.24.0 Victoria Island opening with illustrated artwork and Enter Victoria Island button"></a></p>
 
@@ -19,16 +19,16 @@ Opening preview — **0.24.0**.
 ## Play at your own pace
 
 - Prepare your character, choose a map, select attacks and supplies, then start grinding.
-- Hunt combines a live minimap, map/details shortcuts, potion icons and owned counts with compact Start/Pause controls and Home beside Maps. The duplicate Restock strip is removed. Supply setup is available from the potion quickslots; portrait and landscape layouts are supported.
+- Hunt combines a compact live minimap, Home shortcut and potion icons with owned counts. Open World Map, Adventure details and Monster drops from the minimap popup. Start/Pause uses a compact blue control; supply setup remains available through potion quickslots. A warning icon lists full inventory pockets.
 - Earn EXP, mesos and actual item drops while the game is open or closed. Offline progress runs at the same ordinary pace, with **no away-time cap**.
 - Supplies, defeat, pauses and job advancement still matter. Running out of resources can stop grinding or trigger your chosen fallback; the game does not automatically buy supplies or choose your next job.
 - No online account, internet connection, advertisements or real-money purchases are required to play.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png" width="240" alt="RCed Idle 0.25.0 Hunt with compact Start control, Home beside Maps and current-map monster book."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png" width="240" alt="RCed Idle 0.26.0 Hunt with compact blue Start control, Home scroll, potion quickslots and Classic navigation icons."></a>
 </p>
 
-[Hunt (0.25.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-hunt.png)
+[Hunt (0.26.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png)
 
 ## Four class families and ten second jobs
 
@@ -80,7 +80,7 @@ Ordinary equipment and HP/MP restoration drop chances are **50% lower** than in 
 
 ## Monster encyclopedia and advanced loot rules
 
-Browse **45 registered monsters**, search and filter the catalog, and inspect ordinary, global, accepted-quest, Steal, boss and first-clear drop sources separately. Open the current-map book from Hunt or Monsters from Settings. Opening the catalog does not simulate grinding.
+Browse **45 registered monsters**, search and filter the catalog, and inspect ordinary, global, accepted-quest, Steal, boss and first-clear drop sources separately. Open the current-map book from the Hunt minimap popup or Monsters from Settings. Opening the catalog does not simulate grinding.
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-monster-book.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.25.0-monster-book.png" width="240" alt="RCed Idle 0.25.0 monster encyclopedia with search, filters and monster artwork"></a></p>
 
@@ -171,7 +171,7 @@ A Hair Color Coupon changes the currently worn style after confirmation and save
 
 Use Back/Next arrows to browse named hairstyles and **Hide worn equipment** to see hair on the bare-character preview. The toggle does not unequip real items. Previews do not change saves or consume coupons; closing without saving preserves the original appearance.
 
-The same eligible cosmetic catalog appears in rare universal drops, Random NX Boxes and boss rewards. Boxes select equally among the 2,090 appearances, and duplicates are possible. Each defeated monster has a **1-in-60,000 cosmetic chance** and a **1-in-120,000 hairstyle-coupon chance** as alternative global outcomes. Those are probabilities, not guaranteed rewards after that many kills. The Hair Color Coupon is sold in the shop; it has no added global drop chance. Boss-specific cosmetic rewards are separate. Ordinary drops that cannot fit are skipped; pending boss rewards retain their existing protection.
+The same eligible cosmetic catalog appears in rare universal drops, Random NX Boxes and boss rewards. Boxes select equally among the 2,090 appearances, and duplicates are possible. On content 1.22, each defeated monster has a **1-in-4,000 cosmetic chance** and a **1-in-120,000 hairstyle-coupon chance** as alternative global outcomes. The same 2,090 appearances are equally likely, so a particular cosmetic has a 1-in-8,360,000 chance per kill. Earlier pinned packs retain their old rate. These are probabilities, not guaranteed rewards after that many kills; there is no pity timer. The Hair Color Coupon is sold in the shop; it has no added global drop chance. Boss-specific cosmetic rewards are separate. Ordinary drops that cannot fit are skipped; pending boss rewards retain their existing protection.
 
 The catalog covers the supported physical cash equipment and hairstyles from the **GMS95 artwork source**, rather than every cosmetic from every region or era. **Rings, chat bubbles and partner effects are excluded**, and seven Pirate-only covers remain reserved. Weapon covers follow their supported weapon types and original pose availability; incompatible or deliberately hidden poses can leave a cover invisible. Artwork loads for requested outfits instead of loading the entire wardrobe on each screen change.
 
@@ -182,6 +182,12 @@ The catalog covers the supported physical cash equipment and hairstyles from the
 
 [Hair styles](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-hair-style.png) · [Hair colors](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-hair-color.png)
 
+## Follow combat and review rewards
+
+Each recorded hit displays its own damage, critical or miss appearance in order. If an early hit kills a target, no unrolled number is invented. On content 1.22, incoming strikes show actual HP loss after mitigation and separate **MP −N** losses for Magic Guard. Misses and guarded attacks are distinguished. Reduced motion and offline/resume handling suppress transient effects; combat formulas and rewards are unchanged.
+
+Offline reports show only retained item quantities and count auto-sale mesos once. Opening a report grants nothing again. Boss-report dismissal persists per character without deleting the encounter details, clear records, first-clear rewards or pending loot from the Bosses page. A later encounter creates a fresh report.
+
 ## Plan, track and stay informed
 
 Plan supplies for **1, 4, 8 or 24 hours**, review shortages and costs, and buy a selected supply basket manually. View estimated EXP, mesos, supply costs and time to the next level. Journal tracks discoveries, while Journey records progression milestones and advancements.
@@ -190,10 +196,10 @@ The [grinding reference](https://github.com/iRCed7/rced-idle-releases/blob/main/
 
 Optional local notifications cover level-ups, target and rare drops, supply stops, defeat and advancement. They are off by default; delivery depends on Android's background settings. Enlarged text, reduced motion and optional workshop sound support different play preferences.
 
-**Ten locally bundled background-music tracks cover all 38 maps**, using regional and biome assignments chosen for RCed. Settings provides a toggle and volume slider, initially at 30% volume. Same-region travel does not restart the track. Playback stops when the app leaves the foreground, loses audio focus or headphones disconnect; foreground return starts the assigned track again. Music is offline, and changing its settings does not change character progress. Attack and monster sound effects are not included.
+**Eighteen locally bundled music tracks include the login theme and explicit assignments for all 38 maps.** Thirty-one ordinary maps use audited source assignments; Drake's Meal Table uses the requested Sleepy Wood override. Five custom boss arenas inherit their background-map music, while Jr. Balrog retains its dedicated theme. Settings provides a toggle and volume slider, initially at 30% volume. Same-region travel does not restart the track. Playback stops when the app leaves the foreground, loses audio focus or headphones disconnect; foreground return starts the assigned track again. Music is offline, and changing its settings does not change character progress. Combat sounds have an independent Settings toggle and volume slider. The offline trial includes 45 monster hit reactions and four crossbow recordings; Double Shot and Final Attack: Crossbow reuse the basic crossbow clip. Other weapon-family attack sounds are outside the trial. Sounds follow live events without replaying an offline/resume backlog; some historical rotations remain silent.
 
 ## Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.21** for platform movement, revised ordinary loot chances and the new quest, alongside the previous inventory, attack-potion and shop rules; new characters start on 1.21. Packs through 1.20 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.22** for the increased universal NX rate and incoming-damage presentation, alongside the previous movement, loot, inventory and shop rules; new characters start on 1.22. Packs through 1.21 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.

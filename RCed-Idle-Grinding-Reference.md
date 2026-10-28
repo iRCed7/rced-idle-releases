@@ -2,6 +2,8 @@
 
 **App 0.23.0 · Content 1.19.0 — with newer-content compatibility notes**
 
+> **Content 1.24 (app 0.28.0):** Retuned fixed map profiles supersede the 1.23 field-rate policy below. Field mesos no longer have a level-gap penalty; EXP decay remains. Ordinary-monster attack attempts occur every 2.4 seconds instead of 1.5, retaining per-hit mitigation and skill/potion costs. Hunt now shows supply-adjusted NET MESO, not gross coins. Boss rules and ordinary drop chances are unchanged. Some routes remain loss-making; see the [0.28.0 notes](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.28.0).
+
 > **Content 1.23 (app 0.27.0):** Field EXP profiles on ordinary level-10+ maps retain 5/11 of their previous multiplier, except Tomb I at 65%; earlier starter profiles are unchanged. Field mesos multipliers above 1 keep half the bonus above 1. Routing weighs nearby density against real travel time. Future boss victories use guaranteed weapons in boss-specific level bands and a separate 25% attack-scroll roll, retaining NX/coupon bonuses. Earlier rates and boss pools below are historical. Balance is provisional and some rotations remain loss-making; see the [0.27.0 notes](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.27.0).
 
 > **Content 1.22 (app 0.26.0):** Universal NX cosmetic probability is now 1 in 4,000 kills across the same 2,090 appearances; hair coupons remain 1 in 120,000. Earlier pinned content retains its former rate. Boss and ordinary drops are unchanged from 1.21. Incoming HP/MP events and individual outgoing numbers present resolved combat values without changing damage formulas. Older NX probabilities below describe their labeled historical pack.

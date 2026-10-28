@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.27.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.28.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.27.0**, updated on **28 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.28.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.28.0) | Progression economy and net income |
 | [0.27.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.27.0) | Field rates, platform routes and boss loot |
 | [0.26.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.26.0) | Damage numbers, NX drops, reports and audio |
 | [0.25.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.25.0) | Platform movement, monster encyclopedia and loot filters |
@@ -36,6 +37,61 @@ Complete recorded release history through **0.27.0**, updated on **28 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.28.0 — Progression economy and net income
+
+Released 28 October 2026. App version **0.28.0**, content version **1.24.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+1. Export a complete account backup from Settings.
+2. Download the attached APK and open it on your Android phone.
+3. **Install over the existing app. Do not uninstall first or clear its data.** Package and signing identity are unchanged.
+4. Select **Settings → Review content update → Back up & upgrade** for each existing character to activate content 1.24. Pending time settles under the old rules, a safety backup is created and the character pauses for review.
+
+Existing characters remain on their pinned content until upgraded. New characters use 1.24. The Hunt label improvement arrives with the app update.
+
+### Progression and farming choices
+
+- Field mesos no longer receive a penalty for outleveling monsters. Familiar maps can remain useful money-farming routes; existing EXP decay for substantially outleveled monsters remains.
+- Fixed map reward profiles are retuned to offer distinct EXP, income and item-farming choices. They do not dynamically adjust to your character's forecast.
+- Ordinary field monsters attempt incoming attacks every **2.4 seconds**, previously 1.5 seconds, reducing sustained potion pressure.
+- Per-hit defense, Magic Guard, monster stats, skill MP costs and potion prices remain intact. Total potion spending does not fall by one fixed percentage: movement, kills, buffs, recovery and attack costs still matter.
+- Boss attack behavior, cooldowns and rewards are unchanged. Ordinary item-drop probabilities are not globally increased.
+
+The balance goal is satisfying solo progression rather than matching exact Classic hourly rates. Movement, attack speed, spawn capacity and respawn delays still limit throughput.
+
+### Net mesos on Hunt
+
+Hunt now shows **NET MESO /h**, matching World Map's supply-adjusted estimate. Negative values use the warning color. Adventure details retain the gross coins, auto-sale proceeds and supply-cost breakdown.
+
+Net means monster coins plus configured auto-sales, minus the purchase value of consumed supplies still missing after matching retained drops. It does not assume that every equipment, ETC, scroll or cosmetic drop is sold. Wallet changes also include purchases, manual sales and rewards, so they are a different measure.
+
+Estimates reuse the existing controlled-build forecast cache. They describe stocked potential, not a guarantee that your currently carried supplies last an hour.
+
+### Balance evidence and limits
+
+The paired audit covered **70 builds across ten branches**, at levels 10, 20, 30, 40, 52, 60 and 70. Every tested build had a profitable route even before supply-drop credit, and each had different EXP and net-income winners. All new twenty-minute samples completed.
+
+This does not mean every route or rotation is profitable. Some costly setups remain negative, and a documented Burnt Land routing case earns less after a damage upgrade because it spends more time traveling. The checks support generally improving progression and useful alternatives, not guaranteed profit increases from every individual upgrade or universal class parity.
+
+### Verification and saved progress
+
+**1,346 Flutter tests and 83 source/data checks passed**, with clean analysis and signed APK validation. A disposable synthetic Android account passed in-place installation, two complete cold launches and the normal backed-up 1.23 → 1.24 upgrade.
+
+All **38 checked gameplay groups** matched expected behavior: 35 were unchanged and three matched normal paused-time buff expiry under frozen rules. Owned player fields, equipment, inventory, shared storage, profile and all **53 prior backup rows** were preserved. The original emulator account and phone were untouched. These checks do not certify physical-phone performance.
+
+Existing artwork, excavation scenery, all 18 music tracks and 49 combat clips are unchanged.
+
+### Game guides and release history
+
+- [Full game features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+- [Grinding reference with newer-content notes](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Grinding-Reference.md)
+
+Feature and history snapshots are attached as Markdown files. Check GitHub manually for future updates.
 
 ---
 

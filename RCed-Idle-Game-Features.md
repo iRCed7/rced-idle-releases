@@ -1,12 +1,12 @@
 # RCed Idle — Main Game Features
 
-**Published game: 0.27.0 · Content: 1.23.0 · Overview dated 28 October 2026**
+**Published game: 0.28.0 · Content: 1.24.0 · Overview dated 28 October 2026**
 
 [Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk) · [Latest release and patch notes](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.27.0; later releases may change or expand these features. The Lupin logo welcomes you during Android and in-game startup.
+RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.28.0; later releases may change or expand these features. The Lupin logo welcomes you during Android and in-game startup.
 
-Screens use example characters. The Tomb I scenery preview is from **0.27.0**. **Hunt is from 0.26.0**; the monster encyclopedia retains its **0.25.0** label; Opening, Inventory and Quests retain **0.24.0** labels; attack-potion controls and map cards retain **0.23.0** labels, and other previews retain **0.22.0** labels. Select any image to view it at full size. Some panels are isolated previews; forecast values are illustrative.
+Screens use example characters. The Tomb I scenery preview is from **0.27.0**. **Hunt is from 0.28.0**; the monster encyclopedia retains its **0.25.0** label; Opening, Inventory and Quests retain **0.24.0** labels; attack-potion controls and map cards retain **0.23.0** labels, and other previews retain **0.22.0** labels. Select any image to view it at full size. Some panels are isolated previews; forecast values are illustrative.
 
 ## Enter Victoria Island
 
@@ -25,10 +25,10 @@ Opening preview — **0.24.0**.
 - No online account, internet connection, advertisements or real-money purchases are required to play.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png" width="240" alt="RCed Idle 0.26.0 Hunt with compact blue Start control, Home scroll, potion quickslots and Classic navigation icons."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.28.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.28.0-hunt.png" width="240" alt="RCed Idle 0.28.0 Hunt with NET MESO per hour, compact Start control, Home scroll and potion quickslots."></a>
 </p>
 
-[Hunt (0.26.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png)
+[Hunt (0.28.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.28.0-hunt.png)
 
 ## Four class families and ten second jobs
 
@@ -88,13 +88,13 @@ Monster encyclopedia — **0.25.0**, isolated synthetic preview.
 
 Advanced Auto-sell supports multiple equipment-level, usable-job and equipment-category rules. All conditions within a rule must match; any matching rule can select an eligible future drop. The claimed level-40 unlock and existing target, wishlist, quest, NX, equipped, locked and scrolled-item protections remain. Existing carried inventory is never emptied by these rules.
 
-## Field rates and excavation routes on content 1.23
+## Progression economy and excavation routes
 
-Ordinary maps recommended for level 10 or above retain **5/11** of their previous EXP multiplier, except **Remains &lt;Tomb&gt; I**, which retains **65%** because routing also reduces its throughput. Earlier starter maps retain their EXP profiles. Field mesos multipliers above 1 retain half the bonus above 1; for example, 1.6 becomes 1.3. Monster base rewards, potion prices, skill damage and ordinary drop chances are unchanged.
+Content 1.24 retunes fixed map reward profiles for solo progression and distinct EXP, income and item-farming choices. Field mesos no longer receive a level-gap penalty; EXP decay for substantially outleveled monsters remains. Ordinary monsters attempt attacks every **2.4 seconds**, previously 1.5, reducing sustained potion pressure without changing per-hit defense, Magic Guard, source stats, skill MP costs or potion prices. Boss behavior and ordinary drop probabilities are unchanged.
 
 Between targets, routing weighs nearby living monsters against reachable denser platforms and their real travel cost. Characters finish the current target and pending Final Attack first. Route commitment and a short clearing window reduce immediate backtracking; spawn timers and capacities are unchanged. This is a hunting heuristic, not guaranteed optimal routing.
 
-**Balance remains provisional:** some tested skill rotations still lose net mesos, and coin income and potion consumption need joint tuning. Gross mesos are not net profit, and the calibration does not reproduce every player's build or establish exact Classic economy parity.
+All 70 controlled builds had a profitable tested route and distinct EXP/income winners. Some routes remain negative, and one documented Burnt Land routing case loses throughput after a damage upgrade. The policy supports generally improving progression, not guaranteed profit from every upgrade or exact Classic parity.
 
 Excavation Sites I–III and Remains &lt;Tomb&gt; I–IV use original terrain and sky, with a matching ruins foreground platform, bundled for offline Hunt and World Map use.
 
@@ -204,6 +204,8 @@ Offline reports show only retained item quantities and count auto-sale mesos onc
 
 ## Plan, track and stay informed
 
+Hunt displays **NET MESO /h**, matching World Map's supply-adjusted estimate: coins plus configured auto-sales, minus the cost of consumed supplies still missing after matching retained drops. Negative values use a warning color. It does not assume all equipment or other loot is sold; Adventure details retain gross income and supply breakdowns. Stocked estimates are not wallet-change measurements or a guarantee that carried supplies last an hour.
+
 Plan supplies for **1, 4, 8 or 24 hours**, review shortages and costs, and buy a selected supply basket manually. View estimated EXP, mesos, supply costs and time to the next level. Journal tracks discoveries, while Journey records progression milestones and advancements.
 
 The [grinding reference](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Grinding-Reference.md) explains combat formulas, **35 variable groups and all 94 skills**, including their conditions and how they affect training. Damage thresholds, accuracy, overkill, travel and supply costs mean an item or skill point does not have one universal EXP percentage.
@@ -214,6 +216,6 @@ Optional local notifications cover level-ups, target and rare drops, supply stop
 
 ## Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.23** for revised field reward profiles, density-aware routing and future boss loot pools, alongside prior content changes; new characters start on 1.23. Packs through 1.22 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.24** for retuned progression rewards, removal of the field-mesos level penalty and reduced ordinary-monster attack frequency, alongside prior content changes; new characters start on 1.24. Packs through 1.23 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.

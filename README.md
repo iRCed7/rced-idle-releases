@@ -10,76 +10,65 @@ An offline idle RPG for **Android 8.0+**. Build your characters, hunt for equipm
 
 ## Latest update
 
-**0.27.0 — Field rates, platform routes and boss loot** · 28 October 2026
+**0.28.0 — Progression economy and net income** · 28 October 2026
 
 **[Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk)** · [Open the release page](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-- **Revised field rates:** lower EXP multipliers on level-10+ maps and reduced field mesos bonuses; balance remains provisional.
-- **Platform routing:** nearby monster groups are weighed against actual travel time, with less immediate backtracking.
-- **Boss loot:** guaranteed weapons in boss-specific level bands and attack-focused scroll pools; NX/coupon bonuses remain.
-- **Purple incoming-hit numbers:** original damage, MISS and GUARD artwork, with separate Magic Guard MP loss.
-- **Excavation scenery:** original terrain and sky for Excavation Sites I–III and Remains Tomb I–IV.
-- Install over the existing app, then choose **Back up & upgrade** per character for content 1.23.
+- **Keep farming familiar maps:** content 1.24 removes the field-mesos penalty for outleveling monsters; EXP decay remains.
+- **Reduced potion pressure:** ordinary-monster attack attempts move from 1.5 to 2.4 seconds, retaining defense and skill mechanics.
+- **Different map goals:** retuned reward profiles offer distinct EXP and income choices.
+- **NET MESO on Hunt:** see supply-adjusted income, with warning colors for negative estimates.
+- All 70 controlled builds had a profitable tested route; some routes and rotations still lose mesos.
+- Install over the existing app, then select **Back up & upgrade** per character for content 1.24.
 
 > **Updating?** Install over your existing app; do not uninstall first. Export a complete account backup from Settings. Existing characters enable new content through **Review content update → Back up & upgrade**.
 
 <details>
-<summary>Full patch notes for 0.27.0</summary>
+<summary>Full patch notes for 0.28.0</summary>
 
-Released 28 October 2026. App version **0.27.0**, content version **1.23.0**. Requires **Android 8.0 or later**.
+Released 28 October 2026. App version **0.28.0**, content version **1.24.0**. Requires **Android 8.0 or later**.
 
-### Revised field EXP and mesos
+### Progression and farming choices
 
-- Ordinary maps recommended for level 10 or above retain **5/11 of their previous EXP multiplier**, except **Remains &lt;Tomb&gt; I**, which retains **65%** because its revised routing already reduces throughput. Earlier starter routes retain their EXP profiles.
-- For field mesos multipliers above 1, half the bonus above 1 remains: for example, **1.6 becomes 1.3**. Multipliers at or below 1 are unchanged.
-- These are fixed map reward settings. Monster base rewards, potion prices, consumption rules, ordinary drop chances, equipment stats and skill damage formulas are unchanged. Boss purses are separate from field profiles.
+- Field mesos no longer receive a penalty for outleveling monsters. Familiar maps can remain useful money-farming routes; existing EXP decay for substantially outleveled monsters remains.
+- Fixed map reward profiles are retuned to offer distinct EXP, income and item-farming choices. They do not dynamically adjust to your character's forecast.
+- Ordinary field monsters attempt incoming attacks every **2.4 seconds**, previously 1.5 seconds, reducing sustained potion pressure.
+- Per-hit defense, Magic Guard, monster stats, skill MP costs and potion prices remain intact. Total potion spending does not fall by one fixed percentage: movement, kills, buffs, recovery and attack costs still matter.
+- Boss attack behavior, cooldowns and rewards are unchanged. Ordinary item-drop probabilities are not globally increased.
 
-**Balance remains provisional.** The Tomb I calibration brings tested EXP rates closer to the reported Classic reference, but it is not an exact recreation of every build. Coin income and potion consumption still need joint tuning; some tested rotations remain loss-making. Do not treat gross mesos as net profit or expect a guaranteed hourly rate.
+The balance goal is satisfying solo progression rather than matching exact Classic hourly rates. Movement, attack speed, spawn capacity and respawn delays still limit throughput.
 
-### Routes that consider nearby monster groups
+### Net mesos on Hunt
 
-Between targets, characters weigh nearby living monsters against reachable, denser platforms, including real walking and connection time. They finish their current target and pending Final Attack first.
+Hunt now shows **NET MESO /h**, matching World Map's supply-adjusted estimate. Negative values use the warning color. Adventure details retain the gross coins, auto-sale proceeds and supply-cost breakdown.
 
-Routes remain committed across intermediate platforms, with a short clearing window on arrival to reduce immediate backtracking. Attack range, same-platform restrictions, Speed and paid Teleport still apply. Spawn capacities and respawn timers are unchanged. This is a hunting heuristic, not a guaranteed maximum-EXP route.
+Net means monster coins plus configured auto-sales, minus the purchase value of consumed supplies still missing after matching retained drops. It does not assume that every equipment, ETC, scroll or cosmetic drop is sold. Wallet changes also include purchases, manual sales and rewards, so they are a different measure.
 
-### Boss weapons and attack scrolls
+Estimates reuse the existing controlled-build forecast cache. They describe stocked potential, not a guarantee that your currently carried supplies last an hour.
 
-Future boss victories guarantee one uniformly selected real weapon from the following required-level bands; armor is removed from that equipment roll:
+### Balance evidence and limits
 
-| Boss | Weapon requirement levels |
-| --- | --- |
-| Mano | 25–30 |
-| Stumpy | 30–40 |
-| Mushmom | 40–50 |
-| Shade | 50–60 |
-| Zombie Mushmom | 60–70 |
-| Jr. Balrog | 70 |
+The paired audit covered **70 builds across ten branches**, at levels 10, 20, 30, 40, 52, 60 and 70. Every tested build had a profitable route even before supply-drop credit, and each had different EXP and net-income winners. All new twenty-minute samples completed.
 
-The separate **25% scroll roll** now uses weapon-attack, glove-attack and glove-magic-attack scrolls. Defensive and stat-only scrolls are removed. Existing 60% attack scrolls are included; the catalog's glove-magic option is the 100% Lesser scroll. Weapon selection is not tailored to your job, and not every family has an item in each band.
-
-The six-hour cooldown, fixed boss EXP/mesos, guaranteed first-clear NX and established rare NX/EXP-coupon bonuses remain. Previously earned armor, scrolls and pending rewards stay owned and claimable; the new pools apply only to future victories.
-
-### Purple hit numbers and excavation scenery
-
-- Incoming character damage uses the original **purple hit-number artwork**, including MISS and GUARD. Actual zero HP loss remains 0, and Magic Guard MP loss stays separately labeled.
-- Outgoing hits retain their existing artwork and individual recorded rolls.
-- **Excavation Sites I–III and Remains &lt;Tomb&gt; I–IV** use original terrain and sky artwork, with a matching ruins foreground platform. The scenery is bundled for offline Hunt and World Map use.
+This does not mean every route or rotation is profitable. Some costly setups remain negative, and a documented Burnt Land routing case earns less after a damage upgrade because it spends more time traveling. The checks support generally improving progression and useful alternatives, not guaranteed profit increases from every individual upgrade or universal class parity.
 
 ### Verification and saved progress
 
-**1,308 Flutter tests and 69 source/data tests passed**, with clean analysis and signed APK validation. A disposable Android clone completed two normal cold launches, an in-place update and the normal backed-up 1.22 → 1.23 upgrade. Its synthetic account preserved **36/36 gameplay groups and 52/52 prior backup rows**; live Tomb I movement and incoming-damage checks passed.
+**1,346 Flutter tests and 83 source/data checks passed**, with clean analysis and signed APK validation. A disposable synthetic Android account passed in-place installation, two complete cold launches and the normal backed-up 1.23 → 1.24 upgrade.
 
-The original emulator account and phone were untouched. These checks do not certify an uninspected phone's state, physical-phone performance or complete class/economy parity.
+All **38 checked gameplay groups** matched expected behavior: 35 were unchanged and three matched normal paused-time buff expiry under frozen rules. Owned player fields, equipment, inventory, shared storage, profile and all **53 prior backup rows** were preserved. The original emulator account and phone were untouched. These checks do not certify physical-phone performance.
+
+Existing artwork, excavation scenery, all 18 music tracks and 49 combat clips are unchanged.
 
 </details>
 
 ## Screenshots
 
-Hunt is a **0.26.0** example-character preview; Opening, Inventory and Quests retain **0.24.0** labels. Other module images in [Game features](#game-features) retain their explicit **0.23.0** or **0.22.0** capture labels. Select an image for full size; forecasts are illustrative.
+Hunt is a **0.28.0** example-character preview; Opening, Inventory and Quests retain **0.24.0** labels. Other module images in [Game features](#game-features) retain their explicit **0.23.0** or **0.22.0** capture labels. Select an image for full size; forecasts are illustrative.
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png" width="240" alt="RCed Idle 0.24.0 Victoria Island opening with illustrated artwork and Enter Victoria Island button"></a></p>
 
-<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png" width="240" alt="RCed Idle 0.26.0 Hunt with compact blue Start control, Home scroll, potion quickslots and Classic navigation icons"></a></p>
+<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.28.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.28.0-hunt.png" width="240" alt="RCed Idle 0.28.0 Hunt with NET MESO per hour, compact Start control, Home scroll and potion quickslots"></a></p>
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png" width="240" alt="RCed Idle 0.24.0 Use inventory with item filters, ammunition, potions and compact navigation"></a></p>
 
@@ -87,7 +76,7 @@ Hunt is a **0.26.0** example-character preview; Opening, Inventory and Quests re
 
 ## Game features
 
-**Published game: 0.27.0 · Content: 1.23.0 · Overview dated 28 October 2026**
+**Published game: 0.28.0 · Content: 1.24.0 · Overview dated 28 October 2026**
 
 ### Enter Victoria Island
 
@@ -106,10 +95,10 @@ Opening preview — **0.24.0**.
 - No online account, internet connection, advertisements or real-money purchases are required to play.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png" width="240" alt="RCed Idle 0.26.0 Hunt with compact blue Start control, Home scroll, potion quickslots and Classic navigation icons."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.28.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.28.0-hunt.png" width="240" alt="RCed Idle 0.28.0 Hunt with NET MESO per hour, compact Start control, Home scroll and potion quickslots."></a>
 </p>
 
-[Hunt (0.26.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.26.0-hunt.png)
+[Hunt (0.28.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.28.0-hunt.png)
 
 ### Four class families and ten second jobs
 
@@ -169,13 +158,13 @@ Monster encyclopedia — **0.25.0**, isolated synthetic preview.
 
 Advanced Auto-sell supports multiple equipment-level, usable-job and equipment-category rules. All conditions within a rule must match; any matching rule can select an eligible future drop. The claimed level-40 unlock and existing target, wishlist, quest, NX, equipped, locked and scrolled-item protections remain. Existing carried inventory is never emptied by these rules.
 
-### Field rates and excavation routes on content 1.23
+### Progression economy and excavation routes
 
-Ordinary maps recommended for level 10 or above retain **5/11** of their previous EXP multiplier, except **Remains &lt;Tomb&gt; I**, which retains **65%** because routing also reduces its throughput. Earlier starter maps retain their EXP profiles. Field mesos multipliers above 1 retain half the bonus above 1; for example, 1.6 becomes 1.3. Monster base rewards, potion prices, skill damage and ordinary drop chances are unchanged.
+Content 1.24 retunes fixed map reward profiles for solo progression and distinct EXP, income and item-farming choices. Field mesos no longer receive a level-gap penalty; EXP decay for substantially outleveled monsters remains. Ordinary monsters attempt attacks every **2.4 seconds**, previously 1.5, reducing sustained potion pressure without changing per-hit defense, Magic Guard, source stats, skill MP costs or potion prices. Boss behavior and ordinary drop probabilities are unchanged.
 
 Between targets, routing weighs nearby living monsters against reachable denser platforms and their real travel cost. Characters finish the current target and pending Final Attack first. Route commitment and a short clearing window reduce immediate backtracking; spawn timers and capacities are unchanged. This is a hunting heuristic, not guaranteed optimal routing.
 
-**Balance remains provisional:** some tested skill rotations still lose net mesos, and coin income and potion consumption need joint tuning. Gross mesos are not net profit, and the calibration does not reproduce every player's build or establish exact Classic economy parity.
+All 70 controlled builds had a profitable tested route and distinct EXP/income winners. Some routes remain negative, and one documented Burnt Land routing case loses throughput after a damage upgrade. The policy supports generally improving progression, not guaranteed profit from every upgrade or exact Classic parity.
 
 Excavation Sites I–III and Remains &lt;Tomb&gt; I–IV use original terrain and sky, with a matching ruins foreground platform, bundled for offline Hunt and World Map use.
 
@@ -285,6 +274,8 @@ Offline reports show only retained item quantities and count auto-sale mesos onc
 
 ### Plan, track and stay informed
 
+Hunt displays **NET MESO /h**, matching World Map's supply-adjusted estimate: coins plus configured auto-sales, minus the cost of consumed supplies still missing after matching retained drops. Negative values use a warning color. It does not assume all equipment or other loot is sold; Adventure details retain gross income and supply breakdowns. Stocked estimates are not wallet-change measurements or a guarantee that carried supplies last an hour.
+
 Plan supplies for **1, 4, 8 or 24 hours**, review shortages and costs, and buy a selected supply basket manually. View estimated EXP, mesos, supply costs and time to the next level. Journal tracks discoveries, while Journey records progression milestones and advancements.
 
 The [grinding reference](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Grinding-Reference.md) explains combat formulas, **35 variable groups and all 94 skills**, including their conditions and how they affect training. Damage thresholds, accuracy, overkill, travel and supply costs mean an item or skill point does not have one universal EXP percentage.
@@ -295,7 +286,7 @@ Optional local notifications cover level-ups, target and rare drops, supply stop
 
 ### Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.23** for revised field reward profiles, density-aware routing and future boss loot pools, alongside prior content changes; new characters start on 1.23. Packs through 1.22 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.24** for retuned progression rewards, removal of the field-mesos level penalty and reduced ordinary-monster attack frequency, alongside prior content changes; new characters start on 1.24. Packs through 1.23 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.
 
@@ -313,7 +304,7 @@ The game stays offline. Check the [Releases page](https://github.com/iRCed7/rced
 - [Complete patch history](RCed-Idle-Patch-History.md) — all recorded releases and their changes.
 - [Standalone game features](RCed-Idle-Game-Features.md) — the feature guide as its own readable document.
 - [Grinding reference](RCed-Idle-Grinding-Reference.md) — how stats, skills, supplies and hourly estimates work.
-- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.27.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.27.0/RCed-Idle-Patch-History.md) as a file.
+- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.28.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.28.0/RCed-Idle-Patch-History.md) as a file.
 - [Browse all releases](https://github.com/iRCed7/rced-idle-releases/releases) — earlier archive entries contain patch notes only, without old game binaries. The staged 0.11.0 changes shipped in 0.12.0.
 
 The APK's SHA-256 checksum is attached to each game release.

@@ -1,12 +1,12 @@
 # RCed Idle — Main Game Features
 
-**Published game: 0.26.0 · Content: 1.22.0 · Overview dated 28 October 2026**
+**Published game: 0.27.0 · Content: 1.23.0 · Overview dated 28 October 2026**
 
 [Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk) · [Latest release and patch notes](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.26.0; later releases may change or expand these features. The Lupin logo welcomes you during Android and in-game startup.
+RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.27.0; later releases may change or expand these features. The Lupin logo welcomes you during Android and in-game startup.
 
-Screens use example characters. **Hunt is from 0.26.0**; the monster encyclopedia retains its **0.25.0** label; Opening, Inventory and Quests retain **0.24.0** labels; attack-potion controls and map cards retain **0.23.0** labels, and other previews retain **0.22.0** labels. Select any image to view it at full size. Some panels are isolated previews; forecast values are illustrative.
+Screens use example characters. The Tomb I scenery preview is from **0.27.0**. **Hunt is from 0.26.0**; the monster encyclopedia retains its **0.25.0** label; Opening, Inventory and Quests retain **0.24.0** labels; attack-potion controls and map cards retain **0.23.0** labels, and other previews retain **0.22.0** labels. Select any image to view it at full size. Some panels are isolated previews; forecast values are illustrative.
 
 ## Enter Victoria Island
 
@@ -88,13 +88,27 @@ Monster encyclopedia — **0.25.0**, isolated synthetic preview.
 
 Advanced Auto-sell supports multiple equipment-level, usable-job and equipment-category rules. All conditions within a rule must match; any matching rule can select an eligible future drop. The claimed level-40 unlock and existing target, wishlist, quest, NX, equipped, locked and scrolled-item protections remain. Existing carried inventory is never emptied by these rules.
 
+## Field rates and excavation routes on content 1.23
+
+Ordinary maps recommended for level 10 or above retain **5/11** of their previous EXP multiplier, except **Remains &lt;Tomb&gt; I**, which retains **65%** because routing also reduces its throughput. Earlier starter maps retain their EXP profiles. Field mesos multipliers above 1 retain half the bonus above 1; for example, 1.6 becomes 1.3. Monster base rewards, potion prices, skill damage and ordinary drop chances are unchanged.
+
+Between targets, routing weighs nearby living monsters against reachable denser platforms and their real travel cost. Characters finish the current target and pending Final Attack first. Route commitment and a short clearing window reduce immediate backtracking; spawn timers and capacities are unchanged. This is a hunting heuristic, not guaranteed optimal routing.
+
+**Balance remains provisional:** some tested skill rotations still lose net mesos, and coin income and potion consumption need joint tuning. Gross mesos are not net profit, and the calibration does not reproduce every player's build or establish exact Classic economy parity.
+
+Excavation Sites I–III and Remains &lt;Tomb&gt; I–IV use original terrain and sky, with a matching ruins foreground platform, bundled for offline Hunt and World Map use.
+
+<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.27.0-tomb-i.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.27.0-tomb-i.png" width="480" alt="RCed Idle 0.27.0 Remains Tomb I scenery with original terrain, sky and ruins platform"></a></p>
+
+Remains Tomb I — **0.27.0**, isolated synthetic scenery preview.
+
 ## Explore maps and challenge bosses
 
 Explore **38 maps**, compare training routes, view their monsters and drops, follow the live minimap, and unlock progression routes. Choose a desired farm item to help rank maps by expected yield and highlight useful finds.
 
 Accessible primary routes prepare estimates in the background after build changes, starting with the current Hunt map. Opening and closing World Map keeps ongoing work and completed results; new boss access adds routes without discarding existing rates for that build. Earlier Routes calculates retired alternatives when requested. Failed estimates can be retried, and ordinary stock changes do not restart controlled route comparisons.
 
-Six boss encounters are available: **Mano, Stumpy, Mushmom, Shade, Zombie Mushmom and Jr. Balrog**. Victory grants EXP, mesos and equipment, with additional chances for scrolls, NX cosmetics and EXP coupons. Each boss's first clear guarantees one random NX cosmetic. Victories start a **six-hour cooldown for that boss and character**; failed attempts remain retryable. Rewards that cannot fit stay saved for later claiming.
+Six boss encounters are available: **Mano, Stumpy, Mushmom, Shade, Zombie Mushmom and Jr. Balrog**. Victory grants fixed EXP/mesos and, on content 1.23, one uniformly selected weapon: Mano level 25–30, Stumpy 30–40, Mushmom 40–50, Shade 50–60, Zombie Mushmom 60–70 and Jr. Balrog level 70. The separate 25% scroll roll uses weapon attack, glove attack and glove magic attack scrolls; rare NX and EXP-coupon bonuses remain. Selection is not job-weighted. Previously earned armor and other pending rewards remain claimable. Each boss's first clear guarantees one random NX cosmetic. Victories start a **six-hour cooldown for that boss and character**; failed attempts remain retryable. Rewards that cannot fit stay saved for later claiming.
 
 <p>
   <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.23.0-world-map.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.23.0-world-map.png" width="240" alt="RCed Idle 0.23.0 route cards for Mushroom Garden, Southern Forest and West Rocky Mountain with monster art and illustrative forecast values."></a>
@@ -184,7 +198,7 @@ The catalog covers the supported physical cash equipment and hairstyles from the
 
 ## Follow combat and review rewards
 
-Each recorded hit displays its own damage, critical or miss appearance in order. If an early hit kills a target, no unrolled number is invented. On content 1.22, incoming strikes show actual HP loss after mitigation and separate **MP −N** losses for Magic Guard. Misses and guarded attacks are distinguished. Reduced motion and offline/resume handling suppress transient effects; combat formulas and rewards are unchanged.
+Each recorded hit displays its own damage, critical or miss appearance in order. If an early hit kills a target, no unrolled number is invented. On content 1.22 or later, incoming strikes show actual HP loss after mitigation using original purple hit artwork and separate **MP −N** losses for Magic Guard. Misses and guarded attacks are distinguished. Reduced motion and offline/resume handling suppress transient effects; combat formulas and rewards are unchanged.
 
 Offline reports show only retained item quantities and count auto-sale mesos once. Opening a report grants nothing again. Boss-report dismissal persists per character without deleting the encounter details, clear records, first-clear rewards or pending loot from the Bosses page. A later encounter creates a fresh report.
 
@@ -200,6 +214,6 @@ Optional local notifications cover level-ups, target and rare drops, supply stop
 
 ## Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.22** for the increased universal NX rate and incoming-damage presentation, alongside the previous movement, loot, inventory and shop rules; new characters start on 1.22. Packs through 1.21 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.23** for revised field reward profiles, density-aware routing and future boss loot pools, alongside prior content changes; new characters start on 1.23. Packs through 1.22 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.

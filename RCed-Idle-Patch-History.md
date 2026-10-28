@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.26.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.27.0**, updated on **28 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.26.0**, updated on **28 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.27.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.27.0) | Field rates, platform routes and boss loot |
 | [0.26.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.26.0) | Damage numbers, NX drops, reports and audio |
 | [0.25.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.25.0) | Platform movement, monster encyclopedia and loot filters |
 | [0.24.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.24.0) | Animated opening, compact Hunt and inventory improvements |
@@ -35,6 +36,72 @@ Complete recorded release history through **0.26.0**, updated on **28 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.27.0 — Field rates, platform routes and boss loot
+
+Released 28 October 2026. App version **0.27.0**, content version **1.23.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+1. Export a complete account backup from Settings before updating.
+2. Download the attached APK and open it on your Android phone. Allow installation from your browser or file app if Android asks.
+3. **Install over the existing app. Do not uninstall first or clear its data.** Package and signing identity are unchanged.
+4. Select **Settings → Review content update → Back up & upgrade** separately for each existing character to activate content 1.23. Pending time settles under the old rules, a safety backup is created and the character pauses for review.
+
+Existing characters retain their pinned rules until upgraded. New characters start on 1.23. Art changes arrive with the app; incoming damage events require content 1.22 or later.
+
+### Revised field EXP and mesos
+
+- Ordinary maps recommended for level 10 or above retain **5/11 of their previous EXP multiplier**, except **Remains &lt;Tomb&gt; I**, which retains **65%** because its revised routing already reduces throughput. Earlier starter routes retain their EXP profiles.
+- For field mesos multipliers above 1, half the bonus above 1 remains: for example, **1.6 becomes 1.3**. Multipliers at or below 1 are unchanged.
+- These are fixed map reward settings. Monster base rewards, potion prices, consumption rules, ordinary drop chances, equipment stats and skill damage formulas are unchanged. Boss purses are separate from field profiles.
+
+**Balance remains provisional.** The Tomb I calibration brings tested EXP rates closer to the reported Classic reference, but it is not an exact recreation of every build. Coin income and potion consumption still need joint tuning; some tested rotations remain loss-making. Do not treat gross mesos as net profit or expect a guaranteed hourly rate.
+
+### Routes that consider nearby monster groups
+
+Between targets, characters weigh nearby living monsters against reachable, denser platforms, including real walking and connection time. They finish their current target and pending Final Attack first.
+
+Routes remain committed across intermediate platforms, with a short clearing window on arrival to reduce immediate backtracking. Attack range, same-platform restrictions, Speed and paid Teleport still apply. Spawn capacities and respawn timers are unchanged. This is a hunting heuristic, not a guaranteed maximum-EXP route.
+
+### Boss weapons and attack scrolls
+
+Future boss victories guarantee one uniformly selected real weapon from the following required-level bands; armor is removed from that equipment roll:
+
+| Boss | Weapon requirement levels |
+| --- | --- |
+| Mano | 25–30 |
+| Stumpy | 30–40 |
+| Mushmom | 40–50 |
+| Shade | 50–60 |
+| Zombie Mushmom | 60–70 |
+| Jr. Balrog | 70 |
+
+The separate **25% scroll roll** now uses weapon-attack, glove-attack and glove-magic-attack scrolls. Defensive and stat-only scrolls are removed. Existing 60% attack scrolls are included; the catalog's glove-magic option is the 100% Lesser scroll. Weapon selection is not tailored to your job, and not every family has an item in each band.
+
+The six-hour cooldown, fixed boss EXP/mesos, guaranteed first-clear NX and established rare NX/EXP-coupon bonuses remain. Previously earned armor, scrolls and pending rewards stay owned and claimable; the new pools apply only to future victories.
+
+### Purple hit numbers and excavation scenery
+
+- Incoming character damage uses the original **purple hit-number artwork**, including MISS and GUARD. Actual zero HP loss remains 0, and Magic Guard MP loss stays separately labeled.
+- Outgoing hits retain their existing artwork and individual recorded rolls.
+- **Excavation Sites I–III and Remains &lt;Tomb&gt; I–IV** use original terrain and sky artwork, with a matching ruins foreground platform. The scenery is bundled for offline Hunt and World Map use.
+
+### Verification and saved progress
+
+**1,308 Flutter tests and 69 source/data tests passed**, with clean analysis and signed APK validation. A disposable Android clone completed two normal cold launches, an in-place update and the normal backed-up 1.22 → 1.23 upgrade. Its synthetic account preserved **36/36 gameplay groups and 52/52 prior backup rows**; live Tomb I movement and incoming-damage checks passed.
+
+The original emulator account and phone were untouched. These checks do not certify an uninspected phone's state, physical-phone performance or complete class/economy parity.
+
+### Game guides and release history
+
+- [Full game features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+- [Grinding reference with newer-content notes](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Grinding-Reference.md)
+
+Feature and history snapshots are attached as Markdown files. Check GitHub manually for future updates.
 
 ---
 

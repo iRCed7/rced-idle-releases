@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.33.0**, updated on **30 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.34.0**, updated on **30 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.33.0**, updated on **30 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.34.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.34.0) | Mage balance |
 | [0.33.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.33.0) | Warrior balance and startup memory fix |
 | [0.32.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.32.0) | Thief, Assassin and Bandit |
 | [0.31.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.31.0) | Shared skill logic and archer balance |
@@ -42,6 +43,55 @@ Complete recorded release history through **0.33.0**, updated on **30 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.34.0 - Mage balance
+
+Released 30 October 2026. App version **0.34.0**, content version **1.30.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+Export a complete account backup, then **install over the existing app without uninstalling or clearing data**. Enable the new rules per character through **Settings > Review content update > Back up & upgrade**. Existing characters retain their saved rules until that action. Content 1.29 remains bundled unchanged; pending time settles under the old rules and a safety backup is created. AP/SP, progress, equipment, inventories, other characters, shared storage, appearances, professions and crafting are retained.
+
+### Recovery, damage and travel
+
+- **Improved MP Recovery** scales from **1% to 2% of maximum MP every ten seconds** by rank.
+- **Magic Claw** gains a rank-scaled direct bonus up to **18%**. Energy Bolt retains its cheaper cost and longer range.
+- **Teleport** uses half its source per-use MP before solo tuning, and only activates when a same-platform walk saves at least **150 ms**.
+
+### Slow, burn and poison
+
+Slow has a **six-second recast cooldown** and half its source MP and animation time. Effects apply to monster lives, so a replacement pack can be slowed without waiting for a dead pack's old duration. Automatic use skips short fights and immune targets.
+
+Fire Arrow burn and Poison Breath poison keep separate bounded schedules. Previously paid effects survive the content upgrade.
+
+### Cleric choices
+
+**Heal below HP %** is an optional Attack rules tactic, **off by default**. It preserves the damage rotation, requires meaningful missing HP and pays normal cast time and MP. Active **Bless** discounts Heal MP by its source healing bonus, including when max-rank Heal already fills HP.
+
+**Holy Arrow deals 70% of its previous direct damage on ordinary fields**, reducing its earlier advantage against living monsters. **Boss damage and Heal's undead damage remain unchanged.** A 30% direct-damage adjustment does not imply a flat 30% EXP loss: overkill, travel and spawn saturation affect actual rates. Boss status immunity and undead flags remain.
+
+### Scope and balance limits
+
+This pass covers Magician, Fire/Poison Wizard, Ice/Lightning Wizard and Cleric. Maps, rewards, drops and earlier class policies are unchanged. It does not claim every skill improves every rate or universal class parity. **Simulated parties remain deferred.**
+
+Combat decisions use bounded current-state calculations. Existing background forecasting, caching and on-demand content loading remain; no new synchronous forecast or route search is added.
+
+### Verification and saved progress
+
+The release passed **1,601 Flutter tests**, **89 Node checks**, clean analysis, **858 controlled Mage trials** and ten exact historical replays. Package identity, release signature, 16 KB alignment, prior assets and frozen content were verified.
+
+A synthetic Android **0.33 to 0.34 in-place update** preserved the database before launch. Cold launch, restart, Hunt rendering and save-oracle checks passed, retaining all **56 prior backup records**. These checks used the test emulator; the player's phone was untouched.
+
+Controlled builds use fixed legal levels and labelled equipment, not a natural gear-acquisition campaign. Desktop engine timings do not establish Android frame rate, latency or battery use.
+
+### Game guides and release history
+
+- [Full features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+Feature and history snapshots are attached. Check GitHub manually for updates.
 
 ---
 

@@ -10,72 +10,55 @@ An offline idle RPG for **Android 8.0+**. Build your characters, hunt for equipm
 
 ## Latest update
 
-**0.33.0 - Warrior balance and startup memory fix** · 30 October 2026
+**0.34.0 - Mage balance** · 30 October 2026
 
 **[Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk)** · [Open the release page](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-- Warrior Final Attack adds free follow-ups after Power Strike or Slash Blast.
-- Threaten can weaken new packs on a six-second recast cooldown and skips unsuitable automatic casts.
-- Rush physically dashes and pushes eligible survivors while retaining its costs and cooldown.
-- Startup now loads content packs on demand, fixing the memory exhaustion found in the withheld candidate.
-- Final validation passed 1,565 Flutter tests, 89 Node checks and synthetic save-preservation checks.
-- Install over your app, then back up and upgrade each character to content 1.29. Magician balancing and parties remain deferred.
+- Improved MP Recovery scales by rank; Magic Claw gains up to 18% direct damage.
+- Teleport costs less MP and activates only for worthwhile same-platform travel.
+- Slow can cover replacement packs sooner; burn and poison keep independent schedules.
+- Cleric gains optional HP-based automatic Heal, with a Heal MP discount while Bless is active.
+- Holy Arrow field damage is reduced to 70%; boss damage and Heal's undead damage are retained.
+- Install over your app, then back up and upgrade each character to content 1.30. Parties remain deferred.
 
 > **Updating?** Install over your existing app; do not uninstall first. Export a complete account backup from Settings. Existing characters enable new content through **Review content update → Back up & upgrade**.
 
 <details>
-<summary>Full patch notes for 0.33.0</summary>
+<summary>Full patch notes for 0.34.0</summary>
 
-Released 30 October 2026. App version **0.33.0**, content version **1.29.0**. Requires **Android 8.0 or later**.
+Released 30 October 2026. App version **0.34.0**, content version **1.30.0**. Requires **Android 8.0 or later**.
 
-### Free Warrior Final Attack
+### Recovery, damage and travel
 
-All six Warrior Final Attacks become bonus follow-ups after a landed **Power Strike or Slash Blast**, without an extra action, HP, MP or ammunition. The source **25% trigger chance** remains, with at most one follow-up per eligible cast. Only living enemies in the same platform group and source reach are eligible; it cannot trigger itself or create a replacement target.
+- **Improved MP Recovery** scales from **1% to 2% of maximum MP every ten seconds** by rank.
+- **Magic Claw** gains a rank-scaled direct bonus up to **18%**. Energy Bolt retains its cheaper cost and longer range.
+- **Teleport** uses half its source per-use MP before solo tuning, and only activates when a same-platform walk saves at least **150 ms**.
 
-Free hits use **40% of the captured damage multiplier**, before existing class/level policy:
-- Fighter Sword/Axe: up to three survivors, effective multiplier **0.56-0.80** per target.
-- Page Sword/Blunt: one survivor, **1.08-1.44**.
-- Spearman Spear/Polearm: one survivor, **1.04-1.40**, retaining **5-10% actual-damage lifesteal**. Healing is bounded by missing HP, 25% of player maximum HP and monster maximum HP; overkill does not create healing.
+### Slow, burn and poison
 
-Weapon stats, mastery, accuracy, critical rolls and defense still apply. Axe bleed and spear defense bypass retain their rules. Skill descriptions and comparisons show the free behavior. An obsolete paid Warrior Final Attack queue is cleared only at the explicit upgrade boundary; the first bonus requires a new eligible hit.
+Slow has a **six-second recast cooldown** and half its source MP and animation time. Effects apply to monster lives, so a replacement pack can be slowed without waiting for a dead pack's old duration. Automatic use skips short fights and immune targets.
 
-### Threaten
+Fire Arrow burn and Poison Breath poison keep separate bounded schedules. Previously paid effects survive the content upgrade.
 
-Threaten applies to monster lives and has a **six-second recast cooldown**, allowing a new pack to be weakened after earlier targets die. Source range, four-target limit, slow, duration and immunities remain.
+### Cleric choices
 
-Weapon-defense reduction uses the greater of the flat source amount **2-10** and **5-15%** of monster defense. MP is halved after the existing solo calculation, rounded up; cast timing is halved and rounded to a 30 ms animation step.
+**Heal below HP %** is an optional Attack rules tactic, **off by default**. It preserves the damage rotation, requires meaningful missing HP and pays normal cast time and MP. Active **Bless** discounts Heal MP by its source healing bonus, including when max-rank Heal already fills HP.
 
-Automatic use requires two nearby eligible monsters expected to survive at least two primary casts, or one physical threat expected to survive at least four. Short fights, empty encounters and immune targets are skipped without spending resources. Manual use remains available. Previously paid legacy effects retain their original expiry after upgrading.
+**Holy Arrow deals 70% of its previous direct damage on ordinary fields**, reducing its earlier advantage against living monsters. **Boss damage and Heal's undead damage remain unchanged.** A 30% direct-damage adjustment does not imply a flat 30% EXP loss: overkill, travel and spawn saturation affect actual rates. Boss status immunity and undead flags remain.
 
-### Physical Rush
+### Scope and balance limits
 
-Rush now dashes up to **100 map pixels** on the current foothold during its existing paid animation. Landed hits push eligible survivors ahead by up to **60 pixels**, bounded by the platform and spawn position; enemies return at 60 pixels per second. Repeated casts cannot push indefinitely.
+This pass covers Magician, Fire/Poison Wizard, Ice/Lightning Wizard and Cleric. Maps, rewards, drops and earlier class policies are unchanged. It does not claim every skill improves every rate or universal class parity. **Simulated parties remain deferred.**
 
-Six-target damage, two-second cooldown and original HP/MP costs remain. A missed cast still pays for and performs the dash. Nonimmune survivors retain 750 ms contact suppression. The character resists stagger during the dash but can still take damage; no vertical links or blanket immunity are added.
-
-Use Rush in attack rules with a suitable monster threshold; cooldowns fall through to the next ready attack. Directly selecting Rush uses Basic Attack during cooldown. It is a situational positioning option, not a mandatory replacement for Power Strike or Slash Blast.
-
-### Defense and balance limits
-
-Iron Body, Iron Will, Improved HP Recovery, Max HP Increase, Rage, mastery and boosters retain published values. Rage keeps its defense penalty. Recovery ranks improve potion efficiency, while passive regeneration stays at 1% of derived maximum HP per ten seconds at every learned rank. Iron Will avoids the 120 ms next-action interruption floor when a hit would delay the character; it does not subtract that time from every hit.
-
-Testing completed **1,668 controlled trials: 1,452 field trials and 216 boss attempts** across six Warrior weapon paths. All field trials completed their horizons and all sampled boss attempts won. These are comparable legal checkpoint builds, not a natural acquisition playthrough or universal profitability guarantee.
-
-Maps, monster EXP/mesos, drops and earlier Archer/Thief policies are unchanged. Magician balancing and simulated parties remain deferred.
-
-### Startup memory fix
-
-The initial candidate was withheld after native testing found Dart heap exhaustion. The rebuilt release loads current content and only historical versions referenced by saves, decodes large packs away from the UI thread and releases temporary validation packs. Background notifications use the same on-demand approach.
-
-All historical packs remain bundled, preserving old saves, backups and explicit upgrades. This changes loading and memory use, not saved rules or rewards. Corrected startup memory snapshots were much lower, but they are not peak-memory or physical-phone performance guarantees.
+Combat decisions use bounded current-state calculations. Existing background forecasting, caching and on-demand content loading remain; no new synchronous forecast or route search is added.
 
 ### Verification and saved progress
 
-The final complete Flutter suite passed **1,565 tests with no failures or skips**; **89 Node checks** and analysis passed. The signed rebuilt APK passed package, alignment and offline-permission checks.
+The release passed **1,601 Flutter tests**, **89 Node checks**, clean analysis, **858 controlled Mage trials** and ten exact historical replays. Package identity, release signature, 16 KB alignment, prior assets and frozen content were verified.
 
-Synthetic Android testing followed the existing 0.32 installation through the withheld candidate and corrected APK, without uninstalling or clearing data. Two cold launches and a separate resting Hunt-screen entry passed. All **56 prior backup records** and saved ownership were preserved; the character remained pinned to content 1.26. Repository tests cover the explicit 1.29 upgrade.
+A synthetic Android **0.33 to 0.34 in-place update** preserved the database before launch. Cold launch, restart, Hunt rendering and save-oracle checks passed, retaining all **56 prior backup records**. These checks used the test emulator; the player's phone was untouched.
 
-This was not a direct 0.32-to-final native test, sustained grinding test or inspection of the player's phone. The failed candidate is not distributed.
+Controlled builds use fixed legal levels and labelled equipment, not a natural gear-acquisition campaign. Desktop engine timings do not establish Android frame rate, latency or battery use.
 
 </details>
 
@@ -93,7 +76,7 @@ Hunt is a **0.30.0** example-character preview; Opening, Inventory and Quests re
 
 ## Game features
 
-**Published game: 0.33.0 | Content: 1.29.0 | Overview dated 30 October 2026**
+**Published game: 0.34.0 | Content: 1.30.0 | Overview dated 30 October 2026**
 
 ### Enter Victoria Island
 
@@ -319,7 +302,7 @@ On content 1.27, Hunter and Crossbowman Final Attack adds bonus hits without ext
 
 Power Knockback pushes eligible nearby enemies within their platform, suppressing contact attacks only while they are beyond contact reach; spells remain possible. Attack rules skip cooling-down choices. Debuffs consider range, immunity and existing coverage, independent slow effects retain their expiry, and automatic recovery avoids spending a cooldown at full resources. Focus and Nimble Feet check whether they help the current situation.
 
-Routing considers productive clusters reachable on the current platform before detouring elsewhere. Rewards, drop tables, spawns and shop prices are unchanged. Controlled tests do not establish universal profitability: some mage rotations and heavily invested archer builds remain costly. The Thief pass adds the optional tactics described below; the Warrior pass follows below; Mage tuning and parties remain deferred.
+Routing considers productive clusters reachable on the current platform before detouring elsewhere. Rewards, drop tables, spawns and shop prices are unchanged. Controlled tests do not establish universal profitability: some mage rotations and heavily invested archer builds remain costly. The Thief pass adds the optional tactics described below; the Warrior pass follows below; The Mage pass follows below; parties remain deferred.
 
 ### Thief tactics and defensive choices
 
@@ -327,7 +310,7 @@ Content 1.28 adds optional learned Drain, Disorder and Steal tactics in Attack r
 
 Dark Sight ends when an attack is paid for and grants a three-second guard for the next landed contact hit; enemy magic remains unprotected. Automatic use checks nearby durable threats and has a cast-time cost. Haste shortens existing jump links by up to 10% without changing climbs, falls or attack speed. Claw Mastery improves Lucky Seven's minimum-roll floor toward 65% without increasing its maximum.
 
-Utilities may trade EXP for survival, income or loot. Controlled builds do not prove every setup profitable or all classes balanced. Magician tuning and parties remain deferred.
+Utilities may trade EXP for survival, income or loot. Controlled builds do not prove every setup profitable or all classes balanced. The Mage pass follows below; parties remain deferred.
 
 ### Warrior damage, defense and positioning
 
@@ -335,13 +318,23 @@ On content 1.29, six Warrior Final Attacks add a free follow-up after a landed P
 
 Threaten uses a six-second recast cooldown, reduced cost/time and percentage-or-flat weapon-defense reduction. Automatic casting checks eligible durable threats instead of wasting a cast on short or empty fights. Rush physically dashes on the current foothold and pushes eligible survivors within bounded distances. It retains HP/MP costs, cooldown and incoming-damage exposure.
 
-Other defense and recovery values remain; usefulness depends on threats, supplies and build. Controlled results do not prove universal map profitability. Magician tuning and parties remain deferred.
+Other defense and recovery values remain; usefulness depends on threats, supplies and build. Controlled results do not prove universal map profitability. The Mage pass follows below; parties remain deferred.
 
 Startup loads only current content and historical versions needed by saved characters, with large JSON decoding away from the UI thread and temporary validation packs released afterward. All historical packs remain bundled for old saves and backups. The corrected startup avoids the memory exhaustion found in the withheld initial candidate.
 
+### Mage recovery, control and supply choices
+
+Content 1.30 makes Improved MP Recovery scale from 1% to 2% of maximum MP per ten seconds, gives Magic Claw up to 18% direct damage by rank, and halves Teleport's source MP cost before solo tuning. Teleport requires at least 150 ms saved over same-platform walking.
+
+Slow uses a six-second recast cooldown and half source MP/time, skipping unsuitable automatic targets. Burn and poison retain independent bounded schedules and previously paid effects survive migration.
+
+Cleric can enable **Heal below HP %** in Attack rules; it defaults off and keeps the normal damage rotation. Bless discounts Heal MP by its source healing bonus. Holy Arrow deals 70% of its earlier direct damage on ordinary fields; boss damage and Heal's undead damage remain unchanged. This is not a fixed percentage EXP change.
+
+Earlier class policies, maps, rewards and drops are retained. Controlled comparisons do not establish universal class parity. Parties remain deferred.
+
 ### Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.29** for Warrior bonus Final Attack, Threaten and physical Rush alongside earlier Thief, Archer and utility changes; new characters start on 1.29. Packs through 1.28 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.30** for Mage recovery, damage, control and supply changes alongside the earlier Warrior, Thief and Archer changes; new characters start on 1.30. Packs through 1.29 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.
 
@@ -359,7 +352,7 @@ The game stays offline. Check the [Releases page](https://github.com/iRCed7/rced
 - [Complete patch history](RCed-Idle-Patch-History.md) — all recorded releases and their changes.
 - [Standalone game features](RCed-Idle-Game-Features.md) — the feature guide as its own readable document.
 - [Grinding reference](RCed-Idle-Grinding-Reference.md) — how stats, skills, supplies and hourly estimates work.
-- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.33.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.33.0/RCed-Idle-Patch-History.md) as a file.
+- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.34.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.34.0/RCed-Idle-Patch-History.md) as a file.
 - [Browse all releases](https://github.com/iRCed7/rced-idle-releases/releases) — earlier archive entries contain patch notes only, without old game binaries. The staged 0.11.0 changes shipped in 0.12.0.
 
 The APK's SHA-256 checksum is attached to each game release.

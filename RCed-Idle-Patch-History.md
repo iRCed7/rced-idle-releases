@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.31.0**, updated on **29 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.32.0**, updated on **29 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.31.0**, updated on **29 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.32.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.32.0) | Thief, Assassin and Bandit |
 | [0.31.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.31.0) | Shared skill logic and archer balance |
 | [0.30.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.30.0) | Classic controls and crafting journal |
 | [0.29.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.29.0) | Professions and offline crafting |
@@ -40,6 +41,57 @@ Complete recorded release history through **0.31.0**, updated on **29 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.32.0 - Thief, Assassin and Bandit
+
+Released 29 October 2026. App version **0.32.0**, content version **1.28.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+Export a complete account backup, then **install over your existing app without uninstalling or clearing storage**. To enable the new rules for each character, use **Settings > Review content update > Back up & upgrade**. Existing characters keep their pinned rules until that action. The unchanged 1.27 pack remains bundled; points, items, appearances, professions, other characters and shared storage are preserved.
+
+### Optional attack tactics
+
+Open **Attack rules**, enable rules and choose learned tactics. Existing rotations are retained and **new tactics start off**.
+
+- **Drain:** use below a chosen HP percentage, then return to the normal attack. Healing comes from HP actually removed by landed hits, excluding overkill and misses. Rank scales damage conversion from 10% to 20% and the per-cast cap from 2% to 8% of maximum HP. Original MP/star costs apply, with a six-second cooldown. Set Drain above the potion threshold; 75% Drain and 65% potions is a starting point. Potions retain priority below their threshold. Directly selecting Drain uses basic attacks during cooldown.
+- **Disorder:** one automatic opening attempt per monster, including misses, against a reachable non-immune target expected to take at least four normal casts. MP and action time are halved with rounding. Physical attack reduction uses the greater of the source flat amount and 5-20% of monster attack. Source defense reduction and duration remain.
+- **Steal:** one automatic attempt per monster life, then return to the main attack. Successful theft retains source stun and the temporary attack buff. Eligible loot is selected independently of table order: the chance of any item combines eligible row probabilities, then at most one row is selected proportionally. No EXP or mesos is granted. Quest rules and bag capacity apply; global NX is excluded and boss loot cannot be stolen. Boss Steal may still grant its combat buff.
+
+Tactics use the focused target within normal platform/range rules, without unrelated detours. Disorder and Steal remember attempts through save/reload until that monster respawns. Comparisons preserve the ordinary rotation and describe tactic assumptions.
+
+### Dark Sight, Haste and Claw Mastery
+
+**Dark Sight** keeps concealment until a real attack is paid for. That attack arms a three-second guard against the next landed contact hit, reducing it by 25-50% by rank. Evasion does not consume it; magic is neither blocked nor consumes the guard. Base MP cost scales from 10 to 6 before the existing solo cost multiplier, with a 20-second cooldown. Automatic use requires a durable threat within 80 map pixels whose typical contact hit reaches at least 5% of maximum HP. It has a cast-time cost and is not permanent invulnerability.
+
+**Haste** retains capped movement speed. Jump additionally shortens existing jump links by 1% per jump point, capped at 10%. It creates no paths and does not accelerate climbing, falling or attacks. Route selection and travel use the same cost.
+
+**Claw Mastery** raises Lucky Seven's minimum-roll mastery floor from 50% toward 65%. Maximum damage, two-hit structure and star retrieval remain unchanged.
+
+Critical Recovery, Nimble Recovery, boosters, accuracy/evasion, Keen Eyes, Double Stab and Savage Blow retain their existing mechanics.
+
+### Balance results and limits
+
+Controlled testing completed **756 trials**: 636 screening field trials, 48 extended Drain trials and 72 boss attempts. All field trials completed their horizons, and all sampled boss attempts won. Utilities can trade EXP for survival, income or loot; three candidate map/build means still had negative net mesos.
+
+Monster EXP, mesos, raw drops, map layouts and the earlier Archer policy are unchanged. These are legal controlled checkpoint builds, not a natural level-1-to-70 playthrough or proof of universal class parity. Warrior and Magician passes and simulated parties remain deferred. Desktop simulation timings do not establish phone performance.
+
+### Verification and saved progress
+
+The final complete Flutter suite passed **1,502 tests with no failures or skips**; **89 Node checks** and analysis also passed. Earlier attempts were superseded by a final build including the corrected utility-aware supply estimate.
+
+The signed APK passed identity, alignment and offline-permission checks. After resolving a software-rendering emulator failure using the host-GPU configuration and reinstalling the same APK without clearing data, two cold-launch checks passed. All **56 prior backup records**, account identity, roster and shared storage were preserved.
+
+Native checks verified startup and checkpoint loading with content 1.26 still pinned, not an interactive Hunt playthrough or native 1.28 upgrade. Automated repository tests cover the backed-up content migration. The player's phone and personal save were untouched.
+
+### Game guides and release history
+
+- [Full features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+Feature and history snapshots are attached. Check GitHub manually for updates.
 
 ---
 

@@ -1,10 +1,10 @@
 # RCed Idle — Main Game Features
 
-**Published game: 0.31.0 | Content: 1.27.0 | Overview dated 29 October 2026**
+**Published game: 0.32.0 | Content: 1.28.0 | Overview dated 29 October 2026**
 
 [Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk) · [Latest release and patch notes](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.31.0; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
+RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.32.0; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
 
 Screens use example characters. Hunt, character selection and the crafting journal are from **0.30.0**; other images retain their explicit older capture versions. Older styling images illustrate the earlier targeted-coupon interface. Select an image for full size. Forecast values are illustrative.
 
@@ -232,10 +232,18 @@ On content 1.27, Hunter and Crossbowman Final Attack adds bonus hits without ext
 
 Power Knockback pushes eligible nearby enemies within their platform, suppressing contact attacks only while they are beyond contact reach; spells remain possible. Attack rules skip cooling-down choices. Debuffs consider range, immunity and existing coverage, independent slow effects retain their expiry, and automatic recovery avoids spending a cooldown at full resources. Focus and Nimble Feet check whether they help the current situation.
 
-Routing considers productive clusters reachable on the current platform before detouring elsewhere. Rewards, drop tables, spawns and shop prices are unchanged. Controlled tests do not establish universal profitability: some mage rotations and heavily invested archer builds remain costly. Further Warrior, Thief and Mage tuning and parties remain deferred.
+Routing considers productive clusters reachable on the current platform before detouring elsewhere. Rewards, drop tables, spawns and shop prices are unchanged. Controlled tests do not establish universal profitability: some mage rotations and heavily invested archer builds remain costly. The Thief pass adds the optional tactics described below; further Warrior and Mage tuning and parties remain deferred.
+
+## Thief tactics and defensive choices
+
+Content 1.28 adds optional learned Drain, Disorder and Steal tactics in Attack rules. New tactics start off; existing rotations remain. Drain activates below a chosen HP threshold and heals from actual damage, with a six-second cooldown. Set its threshold above the potion threshold if you want a chance to heal before potions. Disorder and Steal make one opening attempt per monster life, remembered through save/reload. Steal grants at most one eligible ordinary item, no EXP/mesos or global NX, and cannot steal boss loot.
+
+Dark Sight ends when an attack is paid for and grants a three-second guard for the next landed contact hit; enemy magic remains unprotected. Automatic use checks nearby durable threats and has a cast-time cost. Haste shortens existing jump links by up to 10% without changing climbs, falls or attack speed. Claw Mastery improves Lucky Seven's minimum-roll floor toward 65% without increasing its maximum.
+
+Utilities may trade EXP for survival, income or loot. Controlled builds do not prove every setup profitable or all classes balanced. Warrior and Magician tuning and parties remain deferred.
 
 ## Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.27** for shared utility corrections, archer bonus-hit Final Attack, physical Power Knockback and improved local routing alongside previous changes; new characters start on 1.27. Packs through 1.26 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.28** for Thief tactics, Dark Sight contact guard, Haste jump travel and Lucky Seven mastery alongside the earlier Archer and shared-utility changes; new characters start on 1.28. Packs through 1.27 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.

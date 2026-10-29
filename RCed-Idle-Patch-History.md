@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.32.0**, updated on **29 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.33.0**, updated on **30 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.32.0**, updated on **29 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.33.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.33.0) | Warrior balance and startup memory fix |
 | [0.32.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.32.0) | Thief, Assassin and Bandit |
 | [0.31.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.31.0) | Shared skill logic and archer balance |
 | [0.30.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.30.0) | Classic controls and crafting journal |
@@ -41,6 +42,72 @@ Complete recorded release history through **0.32.0**, updated on **29 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.33.0 - Warrior balance and startup memory fix
+
+Released 30 October 2026. App version **0.33.0**, content version **1.29.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+Export a complete account backup, then **install over the existing app without uninstalling or clearing storage**. Enable the new rules for each character through **Settings > Review content update > Back up & upgrade**. Existing characters keep their pinned version until that action. The unchanged 1.28 pack remains bundled; AP/SP, progress, equipment, inventory, shared storage, appearances, professions and other characters are retained.
+
+### Free Warrior Final Attack
+
+All six Warrior Final Attacks become bonus follow-ups after a landed **Power Strike or Slash Blast**, without an extra action, HP, MP or ammunition. The source **25% trigger chance** remains, with at most one follow-up per eligible cast. Only living enemies in the same platform group and source reach are eligible; it cannot trigger itself or create a replacement target.
+
+Free hits use **40% of the captured damage multiplier**, before existing class/level policy:
+- Fighter Sword/Axe: up to three survivors, effective multiplier **0.56-0.80** per target.
+- Page Sword/Blunt: one survivor, **1.08-1.44**.
+- Spearman Spear/Polearm: one survivor, **1.04-1.40**, retaining **5-10% actual-damage lifesteal**. Healing is bounded by missing HP, 25% of player maximum HP and monster maximum HP; overkill does not create healing.
+
+Weapon stats, mastery, accuracy, critical rolls and defense still apply. Axe bleed and spear defense bypass retain their rules. Skill descriptions and comparisons show the free behavior. An obsolete paid Warrior Final Attack queue is cleared only at the explicit upgrade boundary; the first bonus requires a new eligible hit.
+
+### Threaten
+
+Threaten applies to monster lives and has a **six-second recast cooldown**, allowing a new pack to be weakened after earlier targets die. Source range, four-target limit, slow, duration and immunities remain.
+
+Weapon-defense reduction uses the greater of the flat source amount **2-10** and **5-15%** of monster defense. MP is halved after the existing solo calculation, rounded up; cast timing is halved and rounded to a 30 ms animation step.
+
+Automatic use requires two nearby eligible monsters expected to survive at least two primary casts, or one physical threat expected to survive at least four. Short fights, empty encounters and immune targets are skipped without spending resources. Manual use remains available. Previously paid legacy effects retain their original expiry after upgrading.
+
+### Physical Rush
+
+Rush now dashes up to **100 map pixels** on the current foothold during its existing paid animation. Landed hits push eligible survivors ahead by up to **60 pixels**, bounded by the platform and spawn position; enemies return at 60 pixels per second. Repeated casts cannot push indefinitely.
+
+Six-target damage, two-second cooldown and original HP/MP costs remain. A missed cast still pays for and performs the dash. Nonimmune survivors retain 750 ms contact suppression. The character resists stagger during the dash but can still take damage; no vertical links or blanket immunity are added.
+
+Use Rush in attack rules with a suitable monster threshold; cooldowns fall through to the next ready attack. Directly selecting Rush uses Basic Attack during cooldown. It is a situational positioning option, not a mandatory replacement for Power Strike or Slash Blast.
+
+### Defense and balance limits
+
+Iron Body, Iron Will, Improved HP Recovery, Max HP Increase, Rage, mastery and boosters retain published values. Rage keeps its defense penalty. Recovery ranks improve potion efficiency, while passive regeneration stays at 1% of derived maximum HP per ten seconds at every learned rank. Iron Will avoids the 120 ms next-action interruption floor when a hit would delay the character; it does not subtract that time from every hit.
+
+Testing completed **1,668 controlled trials: 1,452 field trials and 216 boss attempts** across six Warrior weapon paths. All field trials completed their horizons and all sampled boss attempts won. These are comparable legal checkpoint builds, not a natural acquisition playthrough or universal profitability guarantee.
+
+Maps, monster EXP/mesos, drops and earlier Archer/Thief policies are unchanged. Magician balancing and simulated parties remain deferred.
+
+### Startup memory fix
+
+The initial candidate was withheld after native testing found Dart heap exhaustion. The rebuilt release loads current content and only historical versions referenced by saves, decodes large packs away from the UI thread and releases temporary validation packs. Background notifications use the same on-demand approach.
+
+All historical packs remain bundled, preserving old saves, backups and explicit upgrades. This changes loading and memory use, not saved rules or rewards. Corrected startup memory snapshots were much lower, but they are not peak-memory or physical-phone performance guarantees.
+
+### Verification and saved progress
+
+The final complete Flutter suite passed **1,565 tests with no failures or skips**; **89 Node checks** and analysis passed. The signed rebuilt APK passed package, alignment and offline-permission checks.
+
+Synthetic Android testing followed the existing 0.32 installation through the withheld candidate and corrected APK, without uninstalling or clearing data. Two cold launches and a separate resting Hunt-screen entry passed. All **56 prior backup records** and saved ownership were preserved; the character remained pinned to content 1.26. Repository tests cover the explicit 1.29 upgrade.
+
+This was not a direct 0.32-to-final native test, sustained grinding test or inspection of the player's phone. The failed candidate is not distributed.
+
+### Game guides and release history
+
+- [Full features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+Feature and history snapshots are attached. Check GitHub manually for updates.
 
 ---
 

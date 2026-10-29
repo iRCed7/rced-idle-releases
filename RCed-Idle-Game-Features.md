@@ -1,10 +1,10 @@
 # RCed Idle — Main Game Features
 
-**Published game: 0.32.0 | Content: 1.28.0 | Overview dated 29 October 2026**
+**Published game: 0.33.0 | Content: 1.29.0 | Overview dated 30 October 2026**
 
 [Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk) · [Latest release and patch notes](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.32.0; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
+RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.33.0; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
 
 Screens use example characters. Hunt, character selection and the crafting journal are from **0.30.0**; other images retain their explicit older capture versions. Older styling images illustrate the earlier targeted-coupon interface. Select an image for full size. Forecast values are illustrative.
 
@@ -228,11 +228,11 @@ The Classic character selector previews outfits on a treehouse and bridge, with 
 
 ## Archer balance and shared skill behavior
 
-On content 1.27, Hunter and Crossbowman Final Attack adds bonus hits without extra time or supplies, using a 25% trigger chance and 55% of the captured rank damage multiplier. It only hits surviving reachable enemies and cannot chain itself. Warrior Final Attack retains its previous behavior. Allocated SP and the player toggle remain.
+On content 1.27, Hunter and Crossbowman Final Attack adds bonus hits without extra time or supplies, using a 25% trigger chance and 55% of the captured rank damage multiplier. It only hits surviving reachable enemies and cannot chain itself. On content 1.29, Warrior Final Attack also becomes a free bonus hit, with its own policy described below. Allocated SP and the player toggle remain.
 
 Power Knockback pushes eligible nearby enemies within their platform, suppressing contact attacks only while they are beyond contact reach; spells remain possible. Attack rules skip cooling-down choices. Debuffs consider range, immunity and existing coverage, independent slow effects retain their expiry, and automatic recovery avoids spending a cooldown at full resources. Focus and Nimble Feet check whether they help the current situation.
 
-Routing considers productive clusters reachable on the current platform before detouring elsewhere. Rewards, drop tables, spawns and shop prices are unchanged. Controlled tests do not establish universal profitability: some mage rotations and heavily invested archer builds remain costly. The Thief pass adds the optional tactics described below; further Warrior and Mage tuning and parties remain deferred.
+Routing considers productive clusters reachable on the current platform before detouring elsewhere. Rewards, drop tables, spawns and shop prices are unchanged. Controlled tests do not establish universal profitability: some mage rotations and heavily invested archer builds remain costly. The Thief pass adds the optional tactics described below; the Warrior pass follows below; Mage tuning and parties remain deferred.
 
 ## Thief tactics and defensive choices
 
@@ -240,10 +240,20 @@ Content 1.28 adds optional learned Drain, Disorder and Steal tactics in Attack r
 
 Dark Sight ends when an attack is paid for and grants a three-second guard for the next landed contact hit; enemy magic remains unprotected. Automatic use checks nearby durable threats and has a cast-time cost. Haste shortens existing jump links by up to 10% without changing climbs, falls or attack speed. Claw Mastery improves Lucky Seven's minimum-roll floor toward 65% without increasing its maximum.
 
-Utilities may trade EXP for survival, income or loot. Controlled builds do not prove every setup profitable or all classes balanced. Warrior and Magician tuning and parties remain deferred.
+Utilities may trade EXP for survival, income or loot. Controlled builds do not prove every setup profitable or all classes balanced. Magician tuning and parties remain deferred.
+
+## Warrior damage, defense and positioning
+
+On content 1.29, six Warrior Final Attacks add a free follow-up after a landed Power Strike or Slash Blast, with a 25% chance and 40% of the captured multiplier. Fighter hits up to three surviving targets; Page and Spearman focus one. Spearman retains bounded actual-damage lifesteal. These follow-ups cost no extra action or supplies and cannot chain themselves.
+
+Threaten uses a six-second recast cooldown, reduced cost/time and percentage-or-flat weapon-defense reduction. Automatic casting checks eligible durable threats instead of wasting a cast on short or empty fights. Rush physically dashes on the current foothold and pushes eligible survivors within bounded distances. It retains HP/MP costs, cooldown and incoming-damage exposure.
+
+Other defense and recovery values remain; usefulness depends on threats, supplies and build. Controlled results do not prove universal map profitability. Magician tuning and parties remain deferred.
+
+Startup loads only current content and historical versions needed by saved characters, with large JSON decoding away from the UI thread and temporary validation packs released afterward. All historical packs remain bundled for old saves and backups. The corrected startup avoids the memory exhaustion found in the withheld initial candidate.
 
 ## Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.28** for Thief tactics, Dark Sight contact guard, Haste jump travel and Lucky Seven mastery alongside the earlier Archer and shared-utility changes; new characters start on 1.28. Packs through 1.27 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.29** for Warrior bonus Final Attack, Threaten and physical Rush alongside earlier Thief, Archer and utility changes; new characters start on 1.29. Packs through 1.28 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.

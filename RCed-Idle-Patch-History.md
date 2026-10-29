@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.29.0**, updated on **29 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.30.0**, updated on **29 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.29.0**, updated on **29 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.30.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.30.0) | Classic controls and crafting journal |
 | [0.29.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.29.0) | Professions and offline crafting |
 | [0.28.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.28.0) | Progression economy and net income |
 | [0.27.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.27.0) | Field rates, platform routes and boss loot |
@@ -38,6 +39,66 @@ Complete recorded release history through **0.29.0**, updated on **29 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.30.0 - Classic controls and crafting journal
+
+Released 29 October 2026. App version **0.30.0**, content version **1.26.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+Export a complete account backup, then **install over your existing app without uninstalling or clearing data**. For each existing character, use **Settings > Review content update > Back up & upgrade** to enable the new content rules. Content 1.25 remains bundled unchanged; learned professions, reserved jobs, equipment, cosmetics, other characters and shared storage are preserved.
+
+### Crafting journal and faster batches
+
+- Browse six profession tabs, mastery, recipe lists, output stats and a required-materials grid. Phones have a focused detail view; wider screens show list and detail columns.
+- Select a craftable ingredient to open its recipe, including across professions, then return to the original recipe.
+- Enter a quantity, use **MAX** for the affordable amount, or **Craft All**, with a 10,000-craft safety limit. Equipment-consuming recipes still require exact-item confirmation and run one at a time.
+- New jobs take **250 ms per craft** on content 1.26. Already reserved jobs keep their saved duration after upgrading.
+- Batches continue offline. Full-bag output remains held safely, and cancellation refunds only unfinished materials and fees.
+
+### Classic controls and character selection
+
+- New touch keycaps for attacks, buffs and supplies, with per-skill monster thresholds and matching shortcuts below Hunt. These are touch controls, not keyboard automation.
+- HP/MP shortcuts open the matching recovery selection. Throwing-star controls appear only for Thief characters.
+- Compact blue/orange Grind/Rest controls share a row with EXP, net mesos and next-level timing.
+- AP/SP allocation has adjacent arrows for individual points and a larger allocation plan.
+- Inventory displays all unlocked cells, loads large grids efficiently, hides the worn NX copy while retaining extra copies, and fixes the toolbar edge.
+- Equipment shops default to the active character's class, resetting on character changes; whole-number prices omit unnecessary decimals.
+- The character selector uses Classic treehouse and bridge artwork, outfits, a parchment stat card and wooden actions. Previewing a character does not activate it until confirmed.
+- The old standalone Android icon splash is removed. A brief matching background handoff leads into the existing animated opening and music.
+
+### Random hair and color unlocks
+
+On content 1.26, hairstyle coupons randomly unlock an unowned style while any remain, retaining the current color where supported. Color coupons randomly unlock a missing color of the current style while any remain. Once all eligible choices are owned, the dialog explains that another owned look may be selected. Acquired styles and colors remain free to reapply.
+
+Hair randomness is saved separately from combat and loot randomness. Existing looks, unlocks and coupons are retained. Earlier pinned packs keep their targeted coupon behavior until upgraded.
+
+### Movement recovery and platform routes
+
+Fixed a reproduced upgrade/resume error that could leave a paused climb with an expired movement segment. New upgrades preserve the pause cursor; already affected paused saves recover the short travel segment without resetting character progress, inventory or loot randomness.
+
+Routing commits the full trip to another platform and clears the monsters present on arrival before reconsidering a density detour. Respawns behind the character no longer cause an immediate ordinary-climb reversal, and fresh spawns do not extend the arrival commitment forever.
+
+### Balance limits and Final Attack
+
+Final Attack remains a paid single-target follow-up with its own animation, which can delay crowd attacks. Controlled same-build samples averaged about 6% less EXP with it enabled at level 52 and about 1.7% more at level 70. These are sampled results, not universal build advice; no arbitrary damage or cost adjustment was made.
+
+The solo audit still finds clustered map winners and some negative high-level mage/bow net-meso profiles. Balance work remains ongoing and **parties remain disabled**. Monster rewards, spawn limits and drop tables are unchanged.
+
+### Verification and saved progress
+
+Verification covered **1,409 distinct Flutter cases** across the initial regression run and successful reruns resolving all 18 initial failures, plus **89 Node checks** and clean analysis. This was not a single clean full-suite run.
+
+The signed APK passed identity, alignment and offline-permission checks. Synthetic Android tests passed in-place installation, content upgrade, crafting and restart checks. All **55 prior backup records** were preserved and a safety backup added. The user's phone and personal save were not modified or tested; physical-phone performance was not measured.
+
+### Game guides and release history
+
+- [Full game features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+Feature and history snapshots are attached. Check GitHub manually for future updates.
 
 ---
 

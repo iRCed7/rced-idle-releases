@@ -1,12 +1,12 @@
 # RCed Idle — Main Game Features
 
-**Published game: 0.29.0 · Content: 1.25.0 · Overview dated 29 October 2026**
+**Published game: 0.30.0 | Content: 1.26.0 | Overview dated 29 October 2026**
 
 [Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk) · [Latest release and patch notes](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.29.0; later releases may change or expand these features. The Lupin logo welcomes you during Android and in-game startup.
+RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.30.0; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
 
-Screens use example characters. Profession workshop screenshots are from the synthetic diagnostic account in **0.29.0**. The Tomb I scenery preview is from **0.27.0**. **Hunt is from 0.28.0**; the monster encyclopedia retains its **0.25.0** label; Opening, Inventory and Quests retain **0.24.0** labels; attack-potion controls and map cards retain **0.23.0** labels, and other previews retain **0.22.0** labels. Select any image to view it at full size. Some panels are isolated previews; forecast values are illustrative.
+Screens use example characters. Hunt, character selection and the crafting journal are from **0.30.0**; other images retain their explicit older capture versions. Older styling images illustrate the earlier targeted-coupon interface. Select an image for full size. Forecast values are illustrative.
 
 ## Enter Victoria Island
 
@@ -25,10 +25,10 @@ Opening preview — **0.24.0**.
 - No online account, internet connection, advertisements or real-money purchases are required to play.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.28.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.28.0-hunt.png" width="240" alt="RCed Idle 0.28.0 Hunt with NET MESO per hour, compact Start control, Home scroll and potion quickslots."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-hunt.png" width="240" alt="RCed Idle 0.30.0 Hunt with Grind controls, net income and touch quick slots."></a>
 </p>
 
-[Hunt (0.28.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.28.0-hunt.png)
+[Hunt (0.30.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-hunt.png)
 
 ## Four class families and ten second jobs
 
@@ -136,24 +136,18 @@ On current content, full bags do not stop EXP and mesos from ordinary hunting, b
 <p>
   <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png" width="240" alt="RCed Idle 0.24.0 Use inventory tab with potions, ammunition, food, search and item filters."></a>
   <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png" width="240" alt="RCed Idle 0.22.0 compact classic tooltip for a Brown Pole-Feather Hat with requirements, stats and Unequip, Compare and Scroll actions."></a>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-professions.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-professions.png" width="240" alt="RCed Idle 0.29.0 profession workshop showing two specializations, Arcforge mastery, recipe filters and reserved crafting costs."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-crafting.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-crafting.png" width="240" alt="RCed Idle 0.30.0 crafting journal with linked ingredients, quantity, MAX and Craft All."></a>
 </p>
 
-[Inventory](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png) · [Item details](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png) · [Professions (0.29.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-professions.png)
+[Inventory](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png) · [Item details](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png) · [Crafting journal (0.30.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-crafting.png)
 
 ## Professions and timed crafting
 
 Choose two permanent specializations per character from **Smithing, Weaponcrafting, Tailoring, Woodcrafting, Leatherworking and Arcforge**. Claim the level-10 milestone first. Each profession advances through ranks 1–8; character-level gates apply. Historical recorded crafts grant matching mastery when you learn the discipline, without duplicating items.
 
-Browse **279 recipes**, search and filter by equipment needs, and review output stats. Run one queue per character in batches of 1, 10 or 100. Crafting continues while resting, hunting and offline. Materials and fees are reserved up front; cancelling refunds only unfinished work. Finished output waits safely if your bag is full. Equipment-input recipes require exact-item confirmation and protect equipped, locked, scrolled, wishlisted and targeted gear.
+Browse **279 recipes** in a Classic journal with profession tabs, mastery, output stats and required-material grids. Click a craftable ingredient to follow its recipe and return to the parent. Phones use focused details; wide screens show two columns. Run one queue per character. Enter a quantity, use MAX or Craft All, up to 10,000 executions. New jobs on content 1.26 take 250 ms per craft; already reserved jobs retain their saved duration. Crafting continues while resting, hunting and offline. Materials and fees are reserved up front; cancelling refunds only unfinished work. Finished output waits safely if your bag is full. Equipment-input recipes require exact-item confirmation and protect equipped, locked, scrolled, wishlisted and targeted gear.
 
 Use shared storage to exchange supplies and output between characters. Some recipes need another specialization's materials. Ranks 9–10, housing, advanced-arrow and Fame recipes, optional catalysts and kits remain deferred. Parties are not enabled.
-
-<p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-crafting-output.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-crafting-output.png" width="240" alt="RCed Idle 0.29.0 Tailoring rank 2, equipment output stats and returned unfinished crafting materials."></a>
-</p>
-
-[Tailoring and output stats (0.29.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.29.0-crafting-output.png)
 
 ## Quests, milestones and the Special shop
 
@@ -161,7 +155,7 @@ Complete **16 active Classic quests**, including Hungry Ronnie at level 32, plus
 
 Every ten-level milestone can be claimed for **six more slots in each ordinary inventory pocket**. Certain milestones also grant reset coupons.
 
-The **Special shop** sells full AP/SP resets, hairstyle coupons, hair color coupons, random NX boxes and two-hour 2× EXP coupons for mesos. A Hairstyle Coupon costs **1,000,000 mesos** and unlocks a style while preserving the current color; a Hair Color Coupon costs **500,000 mesos** and changes the color of the currently worn style. These separate coupon rules require content 1.18 or later. Items are purchased first and activated separately. On content 1.20 or later, all six Special shop items share the **200-slot NX pocket**. Existing quantities are preserved on upgrade; overflow is retained, but transactions cannot increase occupied slots while over capacity. Extra EXP coupons extend the duration at the same 2× multiplier; their timers continue while paused or offline.
+The **Special shop** sells full AP/SP resets, hairstyle coupons, hair color coupons, random NX boxes and two-hour 2× EXP coupons for mesos. A Hairstyle Coupon costs **1,000,000 mesos** and unlocks a style while preserving the current color; a Hair Color Coupon costs **500,000 mesos** and changes the color of the currently worn style. Content 1.26 uses random unowned style/color unlocks; earlier packs retain their targeted rules. Items are purchased first and activated separately. On content 1.20 or later, all six Special shop items share the **200-slot NX pocket**. Existing quantities are preserved on upgrade; overflow is retained, but transactions cannot increase occupied slots while over capacity. Extra EXP coupons extend the duration at the same 2× multiplier; their timers continue while paused or offline.
 
 <p>
   <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-quests.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-quests.png" width="240" alt="RCed Idle 0.24.0 Quest Log with Classic, Daily, Weekly and Milestones tabs and Sam's Suggestion available."></a>
@@ -181,11 +175,11 @@ Send an individual item, one selected stack or a multi-selection directly from I
 Shared storage transfers mesos, stackable items and unequipped gear between characters. Equipment keeps its rolls, scroll results, history and locks. Equipped combat items and the last copy of an equipped NX appearance are protected. Characters on older content may need to upgrade before receiving newer items.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-characters.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-characters.png" width="240" alt="RCed Idle 0.22.0 character roster with two example characters, a locked third slot and Shared storage button."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-characters.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-characters.png" width="240" alt="RCed Idle 0.30.0 synthetic character selector with Classic treehouse and bridge artwork."></a>
   <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-shared-storage.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-shared-storage.png" width="240" alt="RCed Idle 0.22.0 shared storage with compact square item slots, category tabs, Deposit and Withdraw controls and search filters."></a>
 </p>
 
-[Characters](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-characters.png) · [Shared storage](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-shared-storage.png)
+[Characters](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-characters.png) · [Shared storage](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-shared-storage.png)
 
 ## Customize your appearance
 
@@ -193,9 +187,7 @@ Choose a name, skin, hairstyle and face, then watch equipped gear change your ch
 
 The current catalog includes **2,090 reward-eligible NX equipment items and weapon covers**, including **247 compatible weapon covers**, plus **190 source hairstyles across 1,496 exact color variants**. The two existing starter styles, Zeta and Unkempt Hair, bring Styling to **192 displayed style groups**. NX equipment changes appearance without replacing normal combat stats. The separate NX inventory pocket holds **200 slots**.
 
-On content 1.18 or later, saved hairstyles appear once in Styling. A Hairstyle Coupon unlocks a style while preserving your current color; switching to an owned style also uses that color when available. A style without the matching color is shown as unavailable rather than silently recoloring the character. Source palettes vary, and some styles only have Black.
-
-A Hair Color Coupon changes the currently worn style after confirmation and saves the resulting exact variant for that character. Saved colors remain free to select on their matching currently worn style, and an already-saved or current color cannot consume another coupon. Color ownership does not carry across every hairstyle or character. Existing saved variants remain intact.
+On content 1.26, hairstyle coupons randomly unlock an unowned style while any remain, retaining the current color where supported. Color coupons randomly unlock a missing color of the currently worn style while any remain. When all eligible options are owned, the dialog explains that another owned look may be selected. Acquired styles and exact colors remain free to reapply. Hair randomness has its own saved stream and does not advance combat or loot randomness. Earlier pinned packs keep targeted coupon behavior. Owned appearances and coupons are preserved.
 
 Use Back/Next arrows to browse named hairstyles and **Hide worn equipment** to see hair on the bare-character preview. The toggle does not unequip real items. Previews do not change saves or consume coupons; closing without saving preserves the original appearance.
 
@@ -228,8 +220,14 @@ Optional local notifications cover level-ups, target and rare drops, supply stop
 
 **Eighteen locally bundled music tracks include the login theme and explicit assignments for all 38 maps.** Thirty-one ordinary maps use audited source assignments; Drake's Meal Table uses the requested Sleepy Wood override. Five custom boss arenas inherit their background-map music, while Jr. Balrog retains its dedicated theme. Settings provides a toggle and volume slider, initially at 30% volume. Same-region travel does not restart the track. Playback stops when the app leaves the foreground, loses audio focus or headphones disconnect; foreground return starts the assigned track again. Music is offline, and changing its settings does not change character progress. Combat sounds have an independent Settings toggle and volume slider. The offline trial includes 45 monster hit reactions and four crossbow recordings; Double Shot and Final Attack: Crossbow reuse the basic crossbow clip. Other weapon-family attack sounds are outside the trial. Sounds follow live events without replaying an offline/resume backlog; some historical rotations remain silent.
 
+## Classic touch controls and safer movement
+
+Touch keycaps below Hunt configure attacks, buffs and supplies; HP/MP shortcuts open the matching recovery selection. Per-skill monster thresholds appear on the attack strip. Grind/Rest shares a compact row with EXP, net mesos and next-level timing. AP/SP allocation has one-point arrows and a larger plan. Shops default to the active character's class; inventory displays unlocked cells and hides the worn NX copy while keeping extras.
+
+The Classic character selector previews outfits on a treehouse and bridge, with a parchment stat card; preview selection does not switch the active character until confirmed. Content 1.26 fixes a paused-climb upgrade/resume exception, commits platform trips and clears the monsters present on arrival before choosing another detour. Spawn limits and monster rewards are unchanged. Solo balance remains under review; parties remain disabled.
+
 ## Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.25** for professions and timed crafting alongside earlier progression changes; new characters start on 1.25. Packs through 1.24 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.26** for improved routing, random coupons, the worn-NX bag policy and faster new crafts alongside professions and earlier changes; new characters start on 1.26. Packs through 1.25 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.

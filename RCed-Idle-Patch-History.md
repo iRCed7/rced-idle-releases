@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.30.0**, updated on **29 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.31.0**, updated on **29 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.30.0**, updated on **29 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.31.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.31.0) | Shared skill logic and archer balance |
 | [0.30.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.30.0) | Classic controls and crafting journal |
 | [0.29.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.29.0) | Professions and offline crafting |
 | [0.28.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.28.0) | Progression economy and net income |
@@ -39,6 +40,60 @@ Complete recorded release history through **0.30.0**, updated on **29 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.31.0 - Shared skill logic and archer balance
+
+Released 29 October 2026. App version **0.31.0**, content version **1.27.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+Export a complete account backup, then **install over the existing app without uninstalling or clearing data**. Existing characters remain on their saved rules until **Settings > Review content update > Back up & upgrade** is selected for each character. Content 1.26 remains bundled unchanged. Owned items, SP/AP, progress, appearances, professions, other characters and shared storage are preserved; only an obsolete queued archer Final Attack is cleared on upgrade.
+
+### Archer Final Attack
+
+Hunter and Crossbowman Final Attack now adds bonus hits to a landed eligible attack without an extra action, MP, HP or arrows, and without delaying the next attack. It cannot trigger itself. Only surviving enemies on the current platform and within range are eligible; clearing the group does not create another target or extra loot.
+
+The idle policy uses a **25% trigger chance and 55% of the captured rank's damage multiplier**, accounting for the removed animation and supply costs. Bow distributed hits and crossbow single-hit structure remain. Skill descriptions show the effective behavior. Your allocated SP and toggle are retained. **Warrior Final Attack keeps its earlier behavior** pending its own balance pass.
+
+### Power Knockback and better routing
+
+Power Knockback physically pushes surviving, non-immune monsters on the current platform. Rank determines distance up to 100 source-map pixels; monsters return at 60 pixels per second. The push stays within the platform and is bounded relative to spawn position. Contact damage is suppressed only outside the 80-pixel contact reach; enemy spells remain possible. A short animation shows the push.
+
+Automatic knockback rules count close enemies. Cooling-down skills now fall through to the next eligible attack. Automated attacks avoid Heal when no undead target is available; manually selected Heal still heals against living monsters.
+
+Routing considers productive groups reachable by walking on the current platform before taking a platform detour. Existing travel commitments and arrival-group clearing remain. This corrects unnecessary detours observed in Tomb I without a map-specific reward bonus.
+
+### Shared utility corrections
+
+- Slow effects retain their own strength and expiry; the strongest active slow applies without multiplying overlapping effects.
+- Debuffs filter range, immunity and existing effects before filling target limits, avoiding empty or already-covered automatic casts.
+- Incoming attack cadence reflects the living group's actual statuses, rather than treating the first monster as representative.
+- Automatic recovery keeps its cooldown when both resources are full. MP Eater at full player MP drains only when it can prevent an affordable enemy spell.
+- Automatic Focus and Nimble Feet check whether they can help current combat or travel; manual activation remains available.
+- Boss reports retain unique attempt IDs, including same-time retreats. Background notifications resolve characters still pinned to content 1.26.
+
+### Balance results and limits
+
+Controlled testing covered **900 field trials and 132 boss attempts**, plus **240 cross-class ten-minute sessions**. Longer paired level-52 Tomb I tests gained roughly 12% EXP with learned Final Attack enabled. A level-60 rank-1 Crossbowman Drake case was effectively neutral for EXP, with more kills and better net mesos. These are controlled builds, not promises for every equipment set or rotation.
+
+Monster EXP, mesos, drops, spawns and shop prices are unchanged. Some mage rotations and SP-heavy archer builds still have poor net mesos. **Warrior, Thief and Mage tuning and simulated parties remain deferred.** This is not a complete balance certification or an overall performance improvement.
+
+### Verification and saved progress
+
+The initial full Flutter suite passed 1,443 cases with four failures; all four were resolved by successful affected-suite reruns. Rerun counts overlap, so this is not a single clean full-suite result. All **89 Node checks** and final analysis passed.
+
+The signed APK passed identity, alignment and offline-permission checks. Synthetic Android in-place installation and two cold launches preserved the pinned 1.26 checkpoint and all **56 prior backup records**. Native checks verified startup and checkpoint loading, not an interactive Hunt playthrough or native 1.27 upgrade. Repository tests separately verified the backed-up migration with three characters, shared storage and an active craft.
+
+The player's phone and personal save were untouched. Physical-phone frame rate and battery use were not measured. Existing artwork, music, sounds and opening assets are unchanged.
+
+### Game guides and release history
+
+- [Full features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+Feature and history snapshots are attached. Check GitHub manually for updates.
 
 ---
 

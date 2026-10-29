@@ -10,67 +10,60 @@ An offline idle RPG for **Android 8.0+**. Build your characters, hunt for equipm
 
 ## Latest update
 
-**0.30.0 - Classic controls and crafting journal** · 29 October 2026
+**0.31.0 - Shared skill logic and archer balance** · 29 October 2026
 
 **[Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk)** · [Open the release page](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-- Explore the Classic crafting journal with ingredient recipe links and return navigation.
-- Enter quantities, use MAX or Craft All; new crafts take 250 ms each on content 1.26.
-- Use touch keycaps for skills and supplies, matching HP/MP shortcuts and compact Grind/Rest controls.
-- Browse the illustrated character selector, improved inventory and class-filtered shops.
-- Unlock random unowned hairstyles and colors with coupons on the new content pack.
-- Recover affected paused climbs and follow more consistent platform routes.
-- Install over your existing app, then back up and upgrade each character to content 1.26. Parties remain disabled.
+- Hunter and Crossbowman Final Attack adds bonus hits without extra attack time, MP or arrows.
+- Power Knockback physically pushes nearby monsters and suppresses contact damage while they remain out of reach.
+- Attack rules try the next eligible skill during cooldowns; debuffs and recovery avoid wasted automatic casts.
+- Slow effects retain independent expiry, and incoming attacks reflect each living monster's status.
+- Routing favors productive groups on the current platform before unnecessary detours.
+- Install over your app, then back up and upgrade each character to content 1.27. Other class tuning and parties remain deferred.
 
 > **Updating?** Install over your existing app; do not uninstall first. Export a complete account backup from Settings. Existing characters enable new content through **Review content update → Back up & upgrade**.
 
 <details>
-<summary>Full patch notes for 0.30.0</summary>
+<summary>Full patch notes for 0.31.0</summary>
 
-Released 29 October 2026. App version **0.30.0**, content version **1.26.0**. Requires **Android 8.0 or later**.
+Released 29 October 2026. App version **0.31.0**, content version **1.27.0**. Requires **Android 8.0 or later**.
 
-### Crafting journal and faster batches
+### Archer Final Attack
 
-- Browse six profession tabs, mastery, recipe lists, output stats and a required-materials grid. Phones have a focused detail view; wider screens show list and detail columns.
-- Select a craftable ingredient to open its recipe, including across professions, then return to the original recipe.
-- Enter a quantity, use **MAX** for the affordable amount, or **Craft All**, with a 10,000-craft safety limit. Equipment-consuming recipes still require exact-item confirmation and run one at a time.
-- New jobs take **250 ms per craft** on content 1.26. Already reserved jobs keep their saved duration after upgrading.
-- Batches continue offline. Full-bag output remains held safely, and cancellation refunds only unfinished materials and fees.
+Hunter and Crossbowman Final Attack now adds bonus hits to a landed eligible attack without an extra action, MP, HP or arrows, and without delaying the next attack. It cannot trigger itself. Only surviving enemies on the current platform and within range are eligible; clearing the group does not create another target or extra loot.
 
-### Classic controls and character selection
+The idle policy uses a **25% trigger chance and 55% of the captured rank's damage multiplier**, accounting for the removed animation and supply costs. Bow distributed hits and crossbow single-hit structure remain. Skill descriptions show the effective behavior. Your allocated SP and toggle are retained. **Warrior Final Attack keeps its earlier behavior** pending its own balance pass.
 
-- New touch keycaps for attacks, buffs and supplies, with per-skill monster thresholds and matching shortcuts below Hunt. These are touch controls, not keyboard automation.
-- HP/MP shortcuts open the matching recovery selection. Throwing-star controls appear only for Thief characters.
-- Compact blue/orange Grind/Rest controls share a row with EXP, net mesos and next-level timing.
-- AP/SP allocation has adjacent arrows for individual points and a larger allocation plan.
-- Inventory displays all unlocked cells, loads large grids efficiently, hides the worn NX copy while retaining extra copies, and fixes the toolbar edge.
-- Equipment shops default to the active character's class, resetting on character changes; whole-number prices omit unnecessary decimals.
-- The character selector uses Classic treehouse and bridge artwork, outfits, a parchment stat card and wooden actions. Previewing a character does not activate it until confirmed.
-- The old standalone Android icon splash is removed. A brief matching background handoff leads into the existing animated opening and music.
+### Power Knockback and better routing
 
-### Random hair and color unlocks
+Power Knockback physically pushes surviving, non-immune monsters on the current platform. Rank determines distance up to 100 source-map pixels; monsters return at 60 pixels per second. The push stays within the platform and is bounded relative to spawn position. Contact damage is suppressed only outside the 80-pixel contact reach; enemy spells remain possible. A short animation shows the push.
 
-On content 1.26, hairstyle coupons randomly unlock an unowned style while any remain, retaining the current color where supported. Color coupons randomly unlock a missing color of the current style while any remain. Once all eligible choices are owned, the dialog explains that another owned look may be selected. Acquired styles and colors remain free to reapply.
+Automatic knockback rules count close enemies. Cooling-down skills now fall through to the next eligible attack. Automated attacks avoid Heal when no undead target is available; manually selected Heal still heals against living monsters.
 
-Hair randomness is saved separately from combat and loot randomness. Existing looks, unlocks and coupons are retained. Earlier pinned packs keep their targeted coupon behavior until upgraded.
+Routing considers productive groups reachable by walking on the current platform before taking a platform detour. Existing travel commitments and arrival-group clearing remain. This corrects unnecessary detours observed in Tomb I without a map-specific reward bonus.
 
-### Movement recovery and platform routes
+### Shared utility corrections
 
-Fixed a reproduced upgrade/resume error that could leave a paused climb with an expired movement segment. New upgrades preserve the pause cursor; already affected paused saves recover the short travel segment without resetting character progress, inventory or loot randomness.
+- Slow effects retain their own strength and expiry; the strongest active slow applies without multiplying overlapping effects.
+- Debuffs filter range, immunity and existing effects before filling target limits, avoiding empty or already-covered automatic casts.
+- Incoming attack cadence reflects the living group's actual statuses, rather than treating the first monster as representative.
+- Automatic recovery keeps its cooldown when both resources are full. MP Eater at full player MP drains only when it can prevent an affordable enemy spell.
+- Automatic Focus and Nimble Feet check whether they can help current combat or travel; manual activation remains available.
+- Boss reports retain unique attempt IDs, including same-time retreats. Background notifications resolve characters still pinned to content 1.26.
 
-Routing commits the full trip to another platform and clears the monsters present on arrival before reconsidering a density detour. Respawns behind the character no longer cause an immediate ordinary-climb reversal, and fresh spawns do not extend the arrival commitment forever.
+### Balance results and limits
 
-### Balance limits and Final Attack
+Controlled testing covered **900 field trials and 132 boss attempts**, plus **240 cross-class ten-minute sessions**. Longer paired level-52 Tomb I tests gained roughly 12% EXP with learned Final Attack enabled. A level-60 rank-1 Crossbowman Drake case was effectively neutral for EXP, with more kills and better net mesos. These are controlled builds, not promises for every equipment set or rotation.
 
-Final Attack remains a paid single-target follow-up with its own animation, which can delay crowd attacks. Controlled same-build samples averaged about 6% less EXP with it enabled at level 52 and about 1.7% more at level 70. These are sampled results, not universal build advice; no arbitrary damage or cost adjustment was made.
-
-The solo audit still finds clustered map winners and some negative high-level mage/bow net-meso profiles. Balance work remains ongoing and **parties remain disabled**. Monster rewards, spawn limits and drop tables are unchanged.
+Monster EXP, mesos, drops, spawns and shop prices are unchanged. Some mage rotations and SP-heavy archer builds still have poor net mesos. **Warrior, Thief and Mage tuning and simulated parties remain deferred.** This is not a complete balance certification or an overall performance improvement.
 
 ### Verification and saved progress
 
-Verification covered **1,409 distinct Flutter cases** across the initial regression run and successful reruns resolving all 18 initial failures, plus **89 Node checks** and clean analysis. This was not a single clean full-suite run.
+The initial full Flutter suite passed 1,443 cases with four failures; all four were resolved by successful affected-suite reruns. Rerun counts overlap, so this is not a single clean full-suite result. All **89 Node checks** and final analysis passed.
 
-The signed APK passed identity, alignment and offline-permission checks. Synthetic Android tests passed in-place installation, content upgrade, crafting and restart checks. All **55 prior backup records** were preserved and a safety backup added. The user's phone and personal save were not modified or tested; physical-phone performance was not measured.
+The signed APK passed identity, alignment and offline-permission checks. Synthetic Android in-place installation and two cold launches preserved the pinned 1.26 checkpoint and all **56 prior backup records**. Native checks verified startup and checkpoint loading, not an interactive Hunt playthrough or native 1.27 upgrade. Repository tests separately verified the backed-up migration with three characters, shared storage and an active craft.
+
+The player's phone and personal save were untouched. Physical-phone frame rate and battery use were not measured. Existing artwork, music, sounds and opening assets are unchanged.
 
 </details>
 
@@ -88,7 +81,7 @@ Hunt is a **0.30.0** example-character preview; Opening, Inventory and Quests re
 
 ## Game features
 
-**Published game: 0.30.0 | Content: 1.26.0 | Overview dated 29 October 2026**
+**Published game: 0.31.0 | Content: 1.27.0 | Overview dated 29 October 2026**
 
 ### Enter Victoria Island
 
@@ -308,9 +301,17 @@ Touch keycaps below Hunt configure attacks, buffs and supplies; HP/MP shortcuts 
 
 The Classic character selector previews outfits on a treehouse and bridge, with a parchment stat card; preview selection does not switch the active character until confirmed. Content 1.26 fixes a paused-climb upgrade/resume exception, commits platform trips and clears the monsters present on arrival before choosing another detour. Spawn limits and monster rewards are unchanged. Solo balance remains under review; parties remain disabled.
 
+### Archer balance and shared skill behavior
+
+On content 1.27, Hunter and Crossbowman Final Attack adds bonus hits without extra time or supplies, using a 25% trigger chance and 55% of the captured rank damage multiplier. It only hits surviving reachable enemies and cannot chain itself. Warrior Final Attack retains its previous behavior. Allocated SP and the player toggle remain.
+
+Power Knockback pushes eligible nearby enemies within their platform, suppressing contact attacks only while they are beyond contact reach; spells remain possible. Attack rules skip cooling-down choices. Debuffs consider range, immunity and existing coverage, independent slow effects retain their expiry, and automatic recovery avoids spending a cooldown at full resources. Focus and Nimble Feet check whether they help the current situation.
+
+Routing considers productive clusters reachable on the current platform before detouring elsewhere. Rewards, drop tables, spawns and shop prices are unchanged. Controlled tests do not establish universal profitability: some mage rotations and heavily invested archer builds remain costly. Further Warrior, Thief and Mage tuning and parties remain deferred.
+
 ### Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.26** for improved routing, random coupons, the worn-NX bag policy and faster new crafts alongside professions and earlier changes; new characters start on 1.26. Packs through 1.25 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.27** for shared utility corrections, archer bonus-hit Final Attack, physical Power Knockback and improved local routing alongside previous changes; new characters start on 1.27. Packs through 1.26 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.
 
@@ -328,7 +329,7 @@ The game stays offline. Check the [Releases page](https://github.com/iRCed7/rced
 - [Complete patch history](RCed-Idle-Patch-History.md) — all recorded releases and their changes.
 - [Standalone game features](RCed-Idle-Game-Features.md) — the feature guide as its own readable document.
 - [Grinding reference](RCed-Idle-Grinding-Reference.md) — how stats, skills, supplies and hourly estimates work.
-- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.30.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.30.0/RCed-Idle-Patch-History.md) as a file.
+- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.31.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.31.0/RCed-Idle-Patch-History.md) as a file.
 - [Browse all releases](https://github.com/iRCed7/rced-idle-releases/releases) — earlier archive entries contain patch notes only, without old game binaries. The staged 0.11.0 changes shipped in 0.12.0.
 
 The APK's SHA-256 checksum is attached to each game release.

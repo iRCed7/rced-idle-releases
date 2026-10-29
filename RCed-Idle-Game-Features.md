@@ -1,10 +1,10 @@
 # RCed Idle — Main Game Features
 
-**Published game: 0.30.0 | Content: 1.26.0 | Overview dated 29 October 2026**
+**Published game: 0.31.0 | Content: 1.27.0 | Overview dated 29 October 2026**
 
 [Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk) · [Latest release and patch notes](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.30.0; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
+RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.31.0; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
 
 Screens use example characters. Hunt, character selection and the crafting journal are from **0.30.0**; other images retain their explicit older capture versions. Older styling images illustrate the earlier targeted-coupon interface. Select an image for full size. Forecast values are illustrative.
 
@@ -226,8 +226,16 @@ Touch keycaps below Hunt configure attacks, buffs and supplies; HP/MP shortcuts 
 
 The Classic character selector previews outfits on a treehouse and bridge, with a parchment stat card; preview selection does not switch the active character until confirmed. Content 1.26 fixes a paused-climb upgrade/resume exception, commits platform trips and clears the monsters present on arrival before choosing another detour. Spawn limits and monster rewards are unchanged. Solo balance remains under review; parties remain disabled.
 
+## Archer balance and shared skill behavior
+
+On content 1.27, Hunter and Crossbowman Final Attack adds bonus hits without extra time or supplies, using a 25% trigger chance and 55% of the captured rank damage multiplier. It only hits surviving reachable enemies and cannot chain itself. Warrior Final Attack retains its previous behavior. Allocated SP and the player toggle remain.
+
+Power Knockback pushes eligible nearby enemies within their platform, suppressing contact attacks only while they are beyond contact reach; spells remain possible. Attack rules skip cooling-down choices. Debuffs consider range, immunity and existing coverage, independent slow effects retain their expiry, and automatic recovery avoids spending a cooldown at full resources. Focus and Nimble Feet check whether they help the current situation.
+
+Routing considers productive clusters reachable on the current platform before detouring elsewhere. Rewards, drop tables, spawns and shop prices are unchanged. Controlled tests do not establish universal profitability: some mage rotations and heavily invested archer builds remain costly. Further Warrior, Thief and Mage tuning and parties remain deferred.
+
 ## Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.26** for improved routing, random coupons, the worn-NX bag policy and faster new crafts alongside professions and earlier changes; new characters start on 1.26. Packs through 1.25 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.27** for shared utility corrections, archer bonus-hit Final Attack, physical Power Knockback and improved local routing alongside previous changes; new characters start on 1.27. Packs through 1.26 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.

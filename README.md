@@ -6,89 +6,81 @@
 
 An offline idle RPG for **Android 8.0+**. Build your characters, hunt for equipment, develop your skills and progress while the game is closed.
 
-[Latest stable update](#latest-stable-update) · [Screenshots](#screenshots) · [Game features](#game-features) · [Install or update](#install-or-update) · [Patch history](RCed-Idle-Patch-History.md)
+[Latest update](#latest-update) · [Screenshots](#screenshots) · [Game features](#game-features) · [Install or update](#install-or-update) · [Patch history](RCed-Idle-Patch-History.md)
 
-## New UI test build
+## Latest update
 
-**[Download 0.35.0-ui-test (ARM64)](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.35.0-ui-test/RCed-Idle.apk)** | [UI test notes](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.0-ui-test)
-
-Try the painted interface and foldable layouts from the Art and UI update. This is a **device-test prerelease**, prepared for OnePlus Open; physical-device testing is pending. Game content matches 0.34.0. Export a backup and install over your existing app without uninstalling or clearing data. The UI arrives with the APK; no new content upgrade is required.
-
-The following are synthetic Flutter widget previews from this UI build. The stable-release screenshots further below keep their original capture labels.
-
-<a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png" width="240" alt="UI test prerelease: Hunt, synthetic widget capture"></a>
-<a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png" width="240" alt="UI test prerelease: Inventory, synthetic widget capture"></a>
-<a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-crafting.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-crafting.png" width="240" alt="UI test prerelease: Crafting, synthetic widget capture"></a>
-
-## Latest stable update
-
-**0.34.0 - Mage balance** · 30 October 2026
+**0.35.1 - New UI and database startup-lock fix** · 31 October 2026
 
 **[Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk)** · [Open the release page](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-- Improved MP Recovery scales by rank; Magic Claw gains up to 18% direct damage.
-- Teleport costs less MP and activates only for worthwhile same-platform travel.
-- Slow can cover replacement packs sooner; burn and poison keep independent schedules.
-- Cleric gains optional HP-based automatic Heal, with a Heal MP discount while Bless is active.
-- Holy Arrow field damage is reduced to 70%; boss damage and Heal's undead damage are retained.
-- Install over your app, then back up and upgrade each character to content 1.30. Parties remain deferred.
+- Includes the painted blue/gold UI, parchment panels and responsive layouts from the UI test build.
+- Fixes the reported SQLite database-lock startup error with targeted retries and safer notification connection ownership.
+- Background notifications read bounded snapshots without committing gameplay rewards.
+- Restores the character-name touch target and keeps Armor progression in Settings.
+- Emulator installation, restarts and save checks preserved all 56 prior backups.
+- Install over your existing app; do not uninstall or clear data. No content upgrade is required.
 
 > **Updating?** Install over your existing app; do not uninstall first. Export a complete account backup from Settings. Existing characters enable new content through **Review content update → Back up & upgrade**.
 
 <details>
-<summary>Full patch notes for 0.34.0</summary>
+<summary>Full patch notes for 0.35.1</summary>
 
-Released 30 October 2026. App version **0.34.0**, content version **1.30.0**. Requires **Android 8.0 or later**.
+Released 31 October 2026. App version **0.35.1**, Android build **36**, content **1.30.0**. Requires **Android 8.0 or later**.
 
-### Recovery, damage and travel
+### Startup database lock
 
-- **Improved MP Recovery** scales from **1% to 2% of maximum MP every ten seconds** by rank.
-- **Magic Claw** gains a rank-scaled direct bonus up to **18%**. Energy Bolt retains its cheaper cost and longer range.
-- **Teleport** uses half its source per-use MP before solo tuning, and only activates when a same-platform walk saves at least **150 ms**.
+This patch addresses the reported **SQLITE_BUSY startup error while reading PRAGMA journal_mode**.
 
-### Slow, burn and poison
+- Database opening retries only SQLite BUSY/LOCKED errors, up to six attempts. Asynchronous backoff totals 2.5 seconds; Android lock waits can add time. An uncontended open adds no wait. Other errors and exhausted retries remain visible.
+- Notification jobs use a bounded native read-only snapshot and close the connection before content loading or simulation. Foreground return cannot leave a Dart-owned notification connection behind.
+- Native reads run off the Android UI thread. Cancelled jobs suppress late replies.
+- Revision, time, checksum and pinned-content checks still reject stale notifications. Notifications never commit gameplay rewards.
+- The optional notification reader cannot repair, replace or delete the save database. No journal-mode conversion or database-schema migration is introduced.
 
-Slow has a **six-second recast cooldown** and half its source MP and animation time. Effects apply to monster lives, so a replacement pack can be slowed without waiting for a dead pack's old duration. Automatic use skips short fights and immune targets.
+The failure mechanism was reproduced in an isolated Android test. The original phone database and full native logs were unavailable, so the exact competing connection on that phone was not identified.
 
-Fire Arrow burn and Poison Breath poison keep separate bounded schedules. Previously paid effects survive the content upgrade.
+### Painted interface
 
-### Cleric choices
+This stable release includes the UI introduced in 0.35.0-ui-test: painted blue/gold navigation, parchment panels, coordinated tabs, inventory slots, item rows, skill/stat views, shops, quests and the crafting journal. Settings group backup/import actions in Save management. Narrow screens support scrolling and large text; Hunt, inventory and shop have expanded layouts for unfolded displays.
 
-**Heal below HP %** is an optional Attack rules tactic, **off by default**. It preserves the damage rotation, requires meaningful missing HP and pays normal cast time and MP. Active **Bless** discounts Heal MP by its source healing bonus, including when max-rank Heal already fills HP.
+The character-name button regains its 48-pixel minimum touch padding while keeping compact styling. The duplicate Armor progression button under equipped items is removed; its Settings entry remains.
 
-**Holy Arrow deals 70% of its previous direct damage on ordinary fields**, reducing its earlier advantage against living monsters. **Boss damage and Heal's undead damage remain unchanged.** A 30% direct-damage adjustment does not imply a flat 30% EXP loss: overkill, travel and spawn saturation affect actual rates. Boss status immunity and undead flags remain.
-
-### Scope and balance limits
-
-This pass covers Magician, Fire/Poison Wizard, Ice/Lightning Wizard and Cleric. Maps, rewards, drops and earlier class policies are unchanged. It does not claim every skill improves every rate or universal class parity. **Simulated parties remain deferred.**
-
-Combat decisions use bounded current-state calculations. Existing background forecasting, caching and on-demand content loading remain; no new synchronous forecast or route search is added.
+Game content stays at 1.30.0, with no gameplay rebalance, reset or automatic ruleset upgrade. All 56,671 Flutter assets match the UI test APK.
 
 ### Verification and saved progress
 
-The release passed **1,601 Flutter tests**, **89 Node checks**, clean analysis, **858 controlled Mage trials** and ten exact historical replays. Package identity, release signature, 16 KB alignment, prior assets and frozen content were verified.
+**1,668 Flutter regressions and 89 Node checks passed** before a redundant test import was removed; all 12 affected database tests passed again afterward, with clean final analysis. Additional evidence covers 25 notification checks and nine native Android lock/reader cases.
 
-A synthetic Android **0.33 to 0.34 in-place update** preserved the database before launch. Cold launch, restart, Hunt rendering and save-oracle checks passed, retaining all **56 prior backup records**. These checks used the test emulator; the player's phone was untouched.
+The signed APK passed package identity, 16 KB alignment, offline-permission and UI asset verification. Synthetic emulator installation from 0.34 to 0.35.1 preserved the database before launch. Cold launch, restart, Hunt rendering and save comparison passed, retaining all **56 prior backup records**.
 
-Controlled builds use fixed legal levels and labelled equipment, not a natural gear-acquisition campaign. Desktop engine timings do not establish Android frame rate, latency or battery use.
+A real background notification job matched exact replay without changing gameplay database bytes. Returning to the foreground during another active job passed without a lock or crash; original alert settings were restored and all characters left paused.
+
+Direct installation over the ARM64-only UI test APK was not tested on the x86_64 emulator; package and signing compatibility were checked separately. The player's phone data and physical-device folding/performance were not inspected.
 
 </details>
 
 ## Screenshots
 
-Hunt is a **0.30.0** example-character preview; Opening, Inventory and Quests retain **0.24.0** labels. Other module images in [Game features](#game-features) retain their explicit **0.23.0** or **0.22.0** capture labels. Select an image for full size; forecasts are illustrative.
+Hunt is a **0.35.0 UI test** example-character preview; Opening, Inventory and Quests retain **0.24.0** labels. Other module images in [Game features](#game-features) retain their explicit **0.23.0** or **0.22.0** capture labels. Select an image for full size; forecasts are illustrative.
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png" width="240" alt="RCed Idle 0.24.0 Victoria Island opening with illustrated artwork and Enter Victoria Island button"></a></p>
 
-<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-hunt.png" width="240" alt="RCed Idle 0.30.0 Hunt with NET MESO per hour, compact Start control, Home scroll and potion quickslots"></a></p>
+<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png" width="240" alt="RCed Idle 0.35.0 UI test Hunt with NET MESO per hour, compact Start control, Home scroll and potion quickslots"></a></p>
 
-<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png" width="240" alt="RCed Idle 0.24.0 Use inventory with item filters, ammunition, potions and compact navigation"></a></p>
+<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png" width="240" alt="RCed Idle 0.24.0 Use inventory with item filters, ammunition, potions and compact navigation"></a></p>
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-quests.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-quests.png" width="240" alt="RCed Idle 0.24.0 Quest log with Classic, Daily, Weekly and Milestones tabs"></a></p>
 
 ## Game features
 
-**Published game: 0.34.0 | Content: 1.30.0 | Overview dated 30 October 2026**
+**Published game: 0.35.1 | Content: 1.30.0 | Overview dated 31 October 2026**
+
+### Painted UI and reliable startup
+
+App 0.35.1 includes coordinated blue/gold navigation, parchment panels and aligned tabs, item rows, skill/stat readings, shops, quests and workshop controls. Settings groups backup/import actions in Save management. Narrow layouts support scrolling and large text; unfolded Hunt, inventory and shop use expanded layouts. Older screenshots below retain their historical capture labels.
+
+The database startup-lock fix retries transient BUSY/LOCKED opens and closes notification snapshot connections before simulation. Notification jobs remain read-only for gameplay progress. No save schema, gameplay rules or automatic content upgrade is introduced. Install over your existing app; no content upgrade is required for these UI/startup changes.
 
 ### Enter Victoria Island
 
@@ -107,10 +99,10 @@ Opening preview — **0.24.0**.
 - No online account, internet connection, advertisements or real-money purchases are required to play.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-hunt.png" width="240" alt="RCed Idle 0.30.0 Hunt with Grind controls, net income and touch quick slots."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png" width="240" alt="Painted Hunt interface, synthetic 0.35.0 UI test capture; artwork retained in 0.35.1."></a>
 </p>
 
-[Hunt (0.30.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-hunt.png)
+[Hunt (0.35.0 UI test capture)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png)
 
 ### Four class families and ten second jobs
 
@@ -216,12 +208,12 @@ On content 1.20 or later, bow and crossbow arrows stack to **5,000**; throwing s
 On current content, full bags do not stop EXP and mesos from ordinary hunting, but new item drops that cannot fit are skipped.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png" width="240" alt="RCed Idle 0.24.0 Use inventory tab with potions, ammunition, food, search and item filters."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png" width="240" alt="Painted inventory with parchment cells, synthetic 0.35.0 UI test capture."></a>
   <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png" width="240" alt="RCed Idle 0.22.0 compact classic tooltip for a Brown Pole-Feather Hat with requirements, stats and Unequip, Compare and Scroll actions."></a>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-crafting.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-crafting.png" width="240" alt="RCed Idle 0.30.0 crafting journal with linked ingredients, quantity, MAX and Craft All."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-crafting.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-crafting.png" width="240" alt="Painted crafting journal, synthetic 0.35.0 UI test capture."></a>
 </p>
 
-[Inventory](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png) · [Item details](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png) · [Crafting journal (0.30.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-crafting.png)
+[Inventory](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png) · [Item details](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png) · [Crafting journal (0.35.0 UI test capture)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-crafting.png)
 
 ### Professions and timed crafting
 
@@ -364,7 +356,7 @@ The game stays offline. Check the [Releases page](https://github.com/iRCed7/rced
 - [Complete patch history](RCed-Idle-Patch-History.md) — all recorded releases and their changes.
 - [Standalone game features](RCed-Idle-Game-Features.md) — the feature guide as its own readable document.
 - [Grinding reference](RCed-Idle-Grinding-Reference.md) — how stats, skills, supplies and hourly estimates work.
-- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.34.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.34.0/RCed-Idle-Patch-History.md) as a file.
+- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.35.1/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.35.1/RCed-Idle-Patch-History.md) as a file.
 - [Browse all releases](https://github.com/iRCed7/rced-idle-releases/releases) — earlier archive entries contain patch notes only, without old game binaries. The staged 0.11.0 changes shipped in 0.12.0.
 
 The APK's SHA-256 checksum is attached to each game release.

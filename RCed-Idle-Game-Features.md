@@ -1,12 +1,18 @@
 # RCed Idle — Main Game Features
 
-**Published game: 0.34.0 | Content: 1.30.0 | Overview dated 30 October 2026**
+**Published game: 0.35.1 | Content: 1.30.0 | Overview dated 31 October 2026**
 
 [Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk) · [Latest release and patch notes](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.34.0; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
+RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.35.1; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
 
-Screens use example characters. Hunt, character selection and the crafting journal are from **0.30.0**; other images retain their explicit older capture versions. Older styling images illustrate the earlier targeted-coupon interface. Select an image for full size. Forecast values are illustrative.
+Screens use example characters. Hunt, inventory and crafting previews are synthetic Flutter widget captures from **0.35.0-ui-test**; 0.35.1 preserves those UI assets. Other screenshots are explicitly labelled historical previews and show earlier interface styling. Physical-phone folding and performance are not established by these captures.
+
+## Painted UI and reliable startup
+
+App 0.35.1 includes coordinated blue/gold navigation, parchment panels and aligned tabs, item rows, skill/stat readings, shops, quests and workshop controls. Settings groups backup/import actions in Save management. Narrow layouts support scrolling and large text; unfolded Hunt, inventory and shop use expanded layouts. Older screenshots below retain their historical capture labels.
+
+The database startup-lock fix retries transient BUSY/LOCKED opens and closes notification snapshot connections before simulation. Notification jobs remain read-only for gameplay progress. No save schema, gameplay rules or automatic content upgrade is introduced. Install over your existing app; no content upgrade is required for these UI/startup changes.
 
 ## Enter Victoria Island
 
@@ -25,10 +31,10 @@ Opening preview — **0.24.0**.
 - No online account, internet connection, advertisements or real-money purchases are required to play.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-hunt.png" width="240" alt="RCed Idle 0.30.0 Hunt with Grind controls, net income and touch quick slots."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png" width="240" alt="Painted Hunt interface, synthetic 0.35.0 UI test capture; artwork retained in 0.35.1."></a>
 </p>
 
-[Hunt (0.30.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-hunt.png)
+[Hunt (0.35.0 UI test capture)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png)
 
 ## Four class families and ten second jobs
 
@@ -134,12 +140,12 @@ On content 1.20 or later, bow and crossbow arrows stack to **5,000**; throwing s
 On current content, full bags do not stop EXP and mesos from ordinary hunting, but new item drops that cannot fit are skipped.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png" width="240" alt="RCed Idle 0.24.0 Use inventory tab with potions, ammunition, food, search and item filters."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png" width="240" alt="Painted inventory with parchment cells, synthetic 0.35.0 UI test capture."></a>
   <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png" width="240" alt="RCed Idle 0.22.0 compact classic tooltip for a Brown Pole-Feather Hat with requirements, stats and Unequip, Compare and Scroll actions."></a>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-crafting.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-crafting.png" width="240" alt="RCed Idle 0.30.0 crafting journal with linked ingredients, quantity, MAX and Craft All."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-crafting.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-crafting.png" width="240" alt="Painted crafting journal, synthetic 0.35.0 UI test capture."></a>
 </p>
 
-[Inventory](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-inventory.png) · [Item details](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png) · [Crafting journal (0.30.0)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.30.0-crafting.png)
+[Inventory](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png) · [Item details](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.22.0-item-tooltip.png) · [Crafting journal (0.35.0 UI test capture)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-crafting.png)
 
 ## Professions and timed crafting
 

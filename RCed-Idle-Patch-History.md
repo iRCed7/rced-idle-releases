@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.34.0**, updated on **30 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.35.1**, updated on **31 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,8 @@ Complete recorded release history through **0.34.0**, updated on **30 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.35.1](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.1) | Painted UI and startup-lock fix |
+| [0.35.0-ui-test](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.0-ui-test) | ARM64 UI test prerelease, superseded by 0.35.1 |
 | [0.34.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.34.0) | Mage balance |
 | [0.33.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.33.0) | Warrior balance and startup memory fix |
 | [0.32.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.32.0) | Thief, Assassin and Bandit |
@@ -43,6 +45,59 @@ Complete recorded release history through **0.34.0**, updated on **30 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.35.1 - New UI and database startup-lock fix
+
+Released 31 October 2026. App version **0.35.1**, Android build **36**, content **1.30.0**. Requires **Android 8.0 or later**.
+
+### Install or update
+
+Export a complete account backup if the app opens, then **install over your existing app without uninstalling or clearing storage**. The same package and release signing identity are retained. Build 36 can update the 0.35.0 UI test build. **No content upgrade is required for this patch or its UI.** Existing characters retain their saved rules, items, professions, shared storage and safety backups.
+
+### Startup database lock
+
+This patch addresses the reported **SQLITE_BUSY startup error while reading PRAGMA journal_mode**.
+
+- Database opening retries only SQLite BUSY/LOCKED errors, up to six attempts. Asynchronous backoff totals 2.5 seconds; Android lock waits can add time. An uncontended open adds no wait. Other errors and exhausted retries remain visible.
+- Notification jobs use a bounded native read-only snapshot and close the connection before content loading or simulation. Foreground return cannot leave a Dart-owned notification connection behind.
+- Native reads run off the Android UI thread. Cancelled jobs suppress late replies.
+- Revision, time, checksum and pinned-content checks still reject stale notifications. Notifications never commit gameplay rewards.
+- The optional notification reader cannot repair, replace or delete the save database. No journal-mode conversion or database-schema migration is introduced.
+
+The failure mechanism was reproduced in an isolated Android test. The original phone database and full native logs were unavailable, so the exact competing connection on that phone was not identified.
+
+### Painted interface
+
+This stable release includes the UI introduced in 0.35.0-ui-test: painted blue/gold navigation, parchment panels, coordinated tabs, inventory slots, item rows, skill/stat views, shops, quests and the crafting journal. Settings group backup/import actions in Save management. Narrow screens support scrolling and large text; Hunt, inventory and shop have expanded layouts for unfolded displays.
+
+The character-name button regains its 48-pixel minimum touch padding while keeping compact styling. The duplicate Armor progression button under equipped items is removed; its Settings entry remains.
+
+Game content stays at 1.30.0, with no gameplay rebalance, reset or automatic ruleset upgrade. All 56,671 Flutter assets match the UI test APK.
+
+### Verification and saved progress
+
+**1,668 Flutter regressions and 89 Node checks passed** before a redundant test import was removed; all 12 affected database tests passed again afterward, with clean final analysis. Additional evidence covers 25 notification checks and nine native Android lock/reader cases.
+
+The signed APK passed package identity, 16 KB alignment, offline-permission and UI asset verification. Synthetic emulator installation from 0.34 to 0.35.1 preserved the database before launch. Cold launch, restart, Hunt rendering and save comparison passed, retaining all **56 prior backup records**.
+
+A real background notification job matched exact replay without changing gameplay database bytes. Returning to the foreground during another active job passed without a lock or crash; original alert settings were restored and all characters left paused.
+
+Direct installation over the ARM64-only UI test APK was not tested on the x86_64 emulator; package and signing compatibility were checked separately. The player's phone data and physical-device folding/performance were not inspected.
+
+### Game guides and release history
+
+- [Full game features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Complete patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+Feature and history snapshots are attached. Check GitHub manually for updates.
+
+---
+
+## RCed Idle 0.35.0-ui-test - UI device-test prerelease
+
+Published 30 October 2026 as an ARM64-only prerelease with painted UI and foldable layouts. 353 UI checks and packaging verification passed; physical-device/native save-preservation testing was pending. Content matched 0.34.0. Superseded by stable 0.35.1 with the startup-lock fix. [Original prerelease notes](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.0-ui-test).
 
 ---
 

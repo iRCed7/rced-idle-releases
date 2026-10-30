@@ -6,9 +6,21 @@
 
 An offline idle RPG for **Android 8.0+**. Build your characters, hunt for equipment, develop your skills and progress while the game is closed.
 
-[Latest update](#latest-update) · [Screenshots](#screenshots) · [Game features](#game-features) · [Install or update](#install-or-update) · [Patch history](RCed-Idle-Patch-History.md)
+[Latest stable update](#latest-stable-update) · [Screenshots](#screenshots) · [Game features](#game-features) · [Install or update](#install-or-update) · [Patch history](RCed-Idle-Patch-History.md)
 
-## Latest update
+## New UI test build
+
+**[Download 0.35.0-ui-test (ARM64)](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.35.0-ui-test/RCed-Idle.apk)** | [UI test notes](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.0-ui-test)
+
+Try the painted interface and foldable layouts from the Art and UI update. This is a **device-test prerelease**, prepared for OnePlus Open; physical-device testing is pending. Game content matches 0.34.0. Export a backup and install over your existing app without uninstalling or clearing data. The UI arrives with the APK; no new content upgrade is required.
+
+The following are synthetic Flutter widget previews from this UI build. The stable-release screenshots further below keep their original capture labels.
+
+<a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png" width="240" alt="UI test prerelease: Hunt, synthetic widget capture"></a>
+<a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png" width="240" alt="UI test prerelease: Inventory, synthetic widget capture"></a>
+<a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-crafting.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-crafting.png" width="240" alt="UI test prerelease: Crafting, synthetic widget capture"></a>
+
+## Latest stable update
 
 **0.34.0 - Mage balance** · 30 October 2026
 

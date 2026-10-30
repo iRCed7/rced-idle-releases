@@ -1,12 +1,12 @@
 # RCed Idle — Main Game Features
 
-**Published game: 0.35.1 | Content: 1.30.0 | Overview dated 31 October 2026**
+**Published game: 0.35.2 | Content: 1.30.0 | Overview dated 31 October 2026**
 
 [Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk) · [Latest release and patch notes](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.35.1; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
+RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.35.2; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
 
-Screens use example characters. Hunt, inventory and crafting previews are synthetic Flutter widget captures from **0.35.0-ui-test**; 0.35.1 preserves those UI assets. Other screenshots are explicitly labelled historical previews and show earlier interface styling. Physical-phone folding and performance are not established by these captures.
+Screens use example characters. Grind is a synthetic widget capture from **0.35.2**. Inventory and crafting retain their **0.35.0-ui-test** capture labels. The roster was updated in 0.35.2; the older character-selection screenshot is historical. Other screenshots are explicitly labelled historical previews and show earlier interface styling. Physical-phone folding and performance are not established by these captures.
 
 ## Painted UI and reliable startup
 
@@ -31,10 +31,10 @@ Opening preview — **0.24.0**.
 - No online account, internet connection, advertisements or real-money purchases are required to play.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png" width="240" alt="Painted Hunt interface, synthetic 0.35.0 UI test capture; artwork retained in 0.35.1."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.2-grind.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.2-grind.png" width="240" alt="Grind 0.35.2 with the Jr. Balrog boss shortcut and ready dot, synthetic character."></a>
 </p>
 
-[Hunt (0.35.0 UI test capture)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png)
+[Grind (0.35.2)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.2-grind.png)
 
 ## Four class families and ten second jobs
 
@@ -267,6 +267,12 @@ Slow uses a six-second recast cooldown and half source MP/time, skipping unsuita
 Cleric can enable **Heal below HP %** in Attack rules; it defaults off and keeps the normal damage rotation. Bless discounts Heal MP by its source healing bonus. Holy Arrow deals 70% of its earlier direct damage on ordinary fields; boss damage and Heal's undead damage remain unchanged. This is not a fixed percentage EXP change.
 
 Earlier class policies, maps, rewards and drops are retained. Controlled comparisons do not establish universal class parity. Parties remain deferred.
+
+## Grind boss shortcut and roster
+
+The main module is named **Grind**. Its Jr. Balrog shortcut opens Bosses directly; the red dot shows an off-cooldown boss at the character's recommended level or already defeated by that character. Creation must be complete, HP positive and no boss encounter active. Opening the page does not clear the dot. Higher-level bosses remain accessible; rewards and challenge rules are unchanged.
+
+The 0.35.2 roster uses revised tree/platform/empty-slot artwork and a responsive selector. Character and Quest content expands on unfolded displays. Existing selection and Play actions remain. This app/UI update needs no content upgrade.
 
 ## Keep your progress
 

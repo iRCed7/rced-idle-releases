@@ -10,53 +10,51 @@ An offline idle RPG for **Android 8.0+**. Build your characters, hunt for equipm
 
 ## Latest update
 
-**0.35.1 - New UI and database startup-lock fix** · 31 October 2026
+**0.35.2 - Grind boss shortcut and roster layout** · 31 October 2026
 
 **[Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk)** · [Open the release page](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-- Includes the painted blue/gold UI, parchment panels and responsive layouts from the UI test build.
-- Fixes the reported SQLite database-lock startup error with targeted retries and safer notification connection ownership.
-- Background notifications read bounded snapshots without committing gameplay rewards.
-- Restores the character-name touch target and keeps Armor progression in Settings.
-- Emulator installation, restarts and save checks preserved all 56 prior backups.
-- Install over your existing app; do not uninstall or clear data. No content upgrade is required.
+- Hunt is now named Grind across headings, navigation and return controls.
+- Open Bosses directly with the Jr. Balrog map shortcut.
+- A red dot identifies ready bosses at your recommended level or previously defeated.
+- Updated character selection uses reviewed roster art and wider Character/Quest layouts.
+- 122 focused tests and emulator update/restart checks passed, preserving all 56 backups.
+- Install over the existing app. No content upgrade is required.
 
 > **Updating?** Install over your existing app; do not uninstall first. Export a complete account backup from Settings. Existing characters enable new content through **Review content update → Back up & upgrade**.
 
 <details>
-<summary>Full patch notes for 0.35.1</summary>
+<summary>Full patch notes for 0.35.2</summary>
 
-Released 31 October 2026. App version **0.35.1**, Android build **36**, content **1.30.0**. Requires **Android 8.0 or later**.
+Released 31 October 2026. App **0.35.2**, Android build **37**, content **1.30.0**. Requires Android 8.0 or later.
 
-### Startup database lock
+### Grind and boss access
 
-This patch addresses the reported **SQLITE_BUSY startup error while reading PRAGMA journal_mode**.
+The main module is now called **Grind** in its heading, navigation and return controls. A still **Jr. Balrog shortcut** beside World map and Home opens the existing Bosses tab directly, without starting a challenge.
 
-- Database opening retries only SQLite BUSY/LOCKED errors, up to six attempts. Asynchronous backoff totals 2.5 seconds; Android lock waits can add time. An uncontended open adds no wait. Other errors and exhausted retries remain visible.
-- Notification jobs use a bounded native read-only snapshot and close the connection before content loading or simulation. Foreground return cannot leave a Dart-owned notification connection behind.
-- Native reads run off the Android UI thread. Cancelled jobs suppress late replies.
-- Revision, time, checksum and pinned-content checks still reject stale notifications. Notifications never commit gameplay rewards.
-- The optional notification reader cannot repair, replace or delete the save database. No journal-mode conversion or database-schema migration is introduced.
+The selected character gets a red dot when a boss is off cooldown and either:
+- The character has reached its recommended level, or
+- That character has defeated it before.
 
-The failure mechanism was reproduced in an isolated Android test. The original phone database and full native logs were unavailable, so the exact competing connection on that phone was not identified.
+Character creation must be complete, HP must be positive and no other boss fight may be active. Opening Bosses does not dismiss the dot. Readiness updates with cooldown expiry, ordinary offline catch-up and character switching.
 
-### Painted interface
+This is an alert rule, not a challenge restriction. Higher-level bosses remain accessible. Older packs without field bosses have no shortcut; older boss packs without cooldowns retain their rules. Rewards, damage, cooldowns and save formats are unchanged.
 
-This stable release includes the UI introduced in 0.35.0-ui-test: painted blue/gold navigation, parchment panels, coordinated tabs, inventory slots, item rows, skill/stat views, shops, quests and the crafting journal. Settings group backup/import actions in Save management. Narrow screens support scrolling and large text; Hunt, inventory and shop have expanded layouts for unfolded displays.
+### Roster and responsive layout
 
-The character-name button regains its 48-pixel minimum touch padding while keeping compact styling. The duplicate Armor progression button under equipped items is removed; its Settings entry remains.
+Includes three reviewed tree/platform/empty-slot images, a revised character selector and wider Character/Quest content on unfolded screens. Selection and Play retain their behavior. Crowded action strips scroll horizontally while keeping 48-pixel touch targets.
 
-Game content stays at 1.30.0, with no gameplay rebalance, reset or automatic ruleset upgrade. All 56,671 Flutter assets match the UI test APK.
+Readiness checks only six boss definitions and the current character ledger. It adds no forecast, simulation, database read or private timer.
 
 ### Verification and saved progress
 
-**1,668 Flutter regressions and 89 Node checks passed** before a redundant test import was removed; all 12 affected database tests passed again afterward, with clean final analysis. Additional evidence covers 25 notification checks and nine native Android lock/reader cases.
+**122 focused tests passed**: 70 readiness, shortcut, navigation and reward checks, plus 52 roster/responsive/quest UI tests. Full lib/test analysis is clean. This is focused validation, not a full-suite run.
 
-The signed APK passed package identity, 16 KB alignment, offline-permission and UI asset verification. Synthetic emulator installation from 0.34 to 0.35.1 preserved the database before launch. Cold launch, restart, Hunt rendering and save comparison passed, retaining all **56 prior backup records**.
+Package, signer and 16 KB alignment passed; all 56,670 prior asset payloads are retained, with three reviewed roster images added. Engine, persistence, Android code and game content match the previous release.
 
-A real background notification job matched exact replay without changing gameplay database bytes. Returning to the foreground during another active job passed without a lock or crash; original alert settings were restored and all characters left paused.
+An in-place 0.35.1 to 0.35.2 synthetic emulator update kept the database unchanged before launch. Cold launch/restart preserved the account, shared storage and all **56 prior backup records**. The installed shortcut and dot were reviewed, and tapping opened Bosses without a challenge. Physical-phone frame pacing and the player's save were not inspected.
 
-Direct installation over the ARM64-only UI test APK was not tested on the x86_64 emulator; package and signing compatibility were checked separately. The player's phone data and physical-device folding/performance were not inspected.
+Boss Mastery Trials, Expedition Gauntlets and Profession Work Orders remain proposals and are not included.
 
 </details>
 
@@ -66,7 +64,7 @@ Hunt is a **0.35.0 UI test** example-character preview; Opening, Inventory and Q
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.24.0-opening.png" width="240" alt="RCed Idle 0.24.0 Victoria Island opening with illustrated artwork and Enter Victoria Island button"></a></p>
 
-<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png" width="240" alt="RCed Idle 0.35.0 UI test Hunt with NET MESO per hour, compact Start control, Home scroll and potion quickslots"></a></p>
+<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.2-grind.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.2-grind.png" width="240" alt="Grind 0.35.2 with boss shortcut, synthetic widget capture"></a></p>
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-inventory.png" width="240" alt="RCed Idle 0.24.0 Use inventory with item filters, ammunition, potions and compact navigation"></a></p>
 
@@ -74,7 +72,7 @@ Hunt is a **0.35.0 UI test** example-character preview; Opening, Inventory and Q
 
 ## Game features
 
-**Published game: 0.35.1 | Content: 1.30.0 | Overview dated 31 October 2026**
+**Published game: 0.35.2 | Content: 1.30.0 | Overview dated 31 October 2026**
 
 ### Painted UI and reliable startup
 
@@ -99,10 +97,10 @@ Opening preview — **0.24.0**.
 - No online account, internet connection, advertisements or real-money purchases are required to play.
 
 <p>
-  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png" width="240" alt="Painted Hunt interface, synthetic 0.35.0 UI test capture; artwork retained in 0.35.1."></a>
+  <a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.2-grind.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.2-grind.png" width="240" alt="Grind 0.35.2 with the Jr. Balrog boss shortcut and ready dot, synthetic character."></a>
 </p>
 
-[Hunt (0.35.0 UI test capture)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.0-ui-test-hunt.png)
+[Grind (0.35.2)](https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.35.2-grind.png)
 
 ### Four class families and ten second jobs
 
@@ -336,6 +334,12 @@ Cleric can enable **Heal below HP %** in Attack rules; it defaults off and keeps
 
 Earlier class policies, maps, rewards and drops are retained. Controlled comparisons do not establish universal class parity. Parties remain deferred.
 
+### Grind boss shortcut and roster
+
+The main module is named **Grind**. Its Jr. Balrog shortcut opens Bosses directly; the red dot shows an off-cooldown boss at the character's recommended level or already defeated by that character. Creation must be complete, HP positive and no boss encounter active. Opening the page does not clear the dot. Higher-level bosses remain accessible; rewards and challenge rules are unchanged.
+
+The 0.35.2 roster uses revised tree/platform/empty-slot artwork and a responsive selector. Character and Quest content expands on unfolded displays. Existing selection and Play actions remain. This app/UI update needs no content upgrade.
+
 ### Keep your progress
 
 Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.30** for Mage recovery, damage, control and supply changes alongside the earlier Warrior, Thief and Archer changes; new characters start on 1.30. Packs through 1.29 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
@@ -356,7 +360,7 @@ The game stays offline. Check the [Releases page](https://github.com/iRCed7/rced
 - [Complete patch history](RCed-Idle-Patch-History.md) — all recorded releases and their changes.
 - [Standalone game features](RCed-Idle-Game-Features.md) — the feature guide as its own readable document.
 - [Grinding reference](RCed-Idle-Grinding-Reference.md) — how stats, skills, supplies and hourly estimates work.
-- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.35.1/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.35.1/RCed-Idle-Patch-History.md) as a file.
+- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.35.2/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.35.2/RCed-Idle-Patch-History.md) as a file.
 - [Browse all releases](https://github.com/iRCed7/rced-idle-releases/releases) — earlier archive entries contain patch notes only, without old game binaries. The staged 0.11.0 changes shipped in 0.12.0.
 
 The APK's SHA-256 checksum is attached to each game release.

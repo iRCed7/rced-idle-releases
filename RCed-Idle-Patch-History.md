@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.35.1**, updated on **31 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.35.2**, updated on **31 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.35.1**, updated on **31 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.35.2](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.2) | Grind boss shortcut and roster layout |
 | [0.35.1](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.1) | Painted UI and startup-lock fix |
 | [0.35.0-ui-test](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.0-ui-test) | ARM64 UI test prerelease, superseded by 0.35.1 |
 | [0.34.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.34.0) | Mage balance |
@@ -45,6 +46,51 @@ Complete recorded release history through **0.35.1**, updated on **31 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.35.2 - Grind boss shortcut and roster layout
+
+Released 31 October 2026. App **0.35.2**, Android build **37**, content **1.30.0**. Requires Android 8.0 or later.
+
+### Install or update
+
+Export a complete account backup, then **install over your existing app without uninstalling or clearing storage**. No content upgrade is needed. Saved rules, progress, shared storage and backups are retained.
+
+### Grind and boss access
+
+The main module is now called **Grind** in its heading, navigation and return controls. A still **Jr. Balrog shortcut** beside World map and Home opens the existing Bosses tab directly, without starting a challenge.
+
+The selected character gets a red dot when a boss is off cooldown and either:
+- The character has reached its recommended level, or
+- That character has defeated it before.
+
+Character creation must be complete, HP must be positive and no other boss fight may be active. Opening Bosses does not dismiss the dot. Readiness updates with cooldown expiry, ordinary offline catch-up and character switching.
+
+This is an alert rule, not a challenge restriction. Higher-level bosses remain accessible. Older packs without field bosses have no shortcut; older boss packs without cooldowns retain their rules. Rewards, damage, cooldowns and save formats are unchanged.
+
+### Roster and responsive layout
+
+Includes three reviewed tree/platform/empty-slot images, a revised character selector and wider Character/Quest content on unfolded screens. Selection and Play retain their behavior. Crowded action strips scroll horizontally while keeping 48-pixel touch targets.
+
+Readiness checks only six boss definitions and the current character ledger. It adds no forecast, simulation, database read or private timer.
+
+### Verification and saved progress
+
+**122 focused tests passed**: 70 readiness, shortcut, navigation and reward checks, plus 52 roster/responsive/quest UI tests. Full lib/test analysis is clean. This is focused validation, not a full-suite run.
+
+Package, signer and 16 KB alignment passed; all 56,670 prior asset payloads are retained, with three reviewed roster images added. Engine, persistence, Android code and game content match the previous release.
+
+An in-place 0.35.1 to 0.35.2 synthetic emulator update kept the database unchanged before launch. Cold launch/restart preserved the account, shared storage and all **56 prior backup records**. The installed shortcut and dot were reviewed, and tapping opened Bosses without a challenge. Physical-phone frame pacing and the player's save were not inspected.
+
+Boss Mastery Trials, Expedition Gauntlets and Profession Work Orders remain proposals and are not included.
+
+### Game guides and release history
+
+- [Features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+Feature and history snapshots are attached. Check GitHub manually for updates.
 
 ---
 

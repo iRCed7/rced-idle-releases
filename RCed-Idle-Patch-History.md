@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.35.2**, updated on **31 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.36.0**, updated on **31 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.35.2**, updated on **31 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.36.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.36.0) | Mano Mastery and boss relics |
 | [0.35.2](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.2) | Grind boss shortcut and roster layout |
 | [0.35.1](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.1) | Painted UI and startup-lock fix |
 | [0.35.0-ui-test](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.0-ui-test) | ARM64 UI test prerelease, superseded by 0.35.1 |
@@ -46,6 +47,59 @@ Complete recorded release history through **0.35.2**, updated on **31 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.36.0 - Mano Mastery and boss relics
+
+Released 31 October 2026. App **0.36.0**, Android build **38**, content **1.31.0**. Requires Android 8.0 or later.
+
+### Install or update
+
+Export a complete account backup, then **install over your existing app without uninstalling or clearing data**. Existing characters keep their pinned rules. Use **Settings > Save management > Review content update > Back up & upgrade** to enable content 1.31. The upgrade creates an internal safety backup. The unchanged 1.30 pack remains bundled.
+
+Defeat normal Mano, then open **Grind > Bosses > Mano Mastery**. Earn the previous tier's relic to unlock the next tier.
+
+### Three optional challenge tiers
+
+| Tier | Recommended level | HP | Attack multiplier | Time limit | Unique relic | Upgrade cap |
+| --- | ---: | ---: | ---: | --- | --- | --- |
+| Hard | 35 | 148,400 | 1.75x | 6 min | Shellwarden Charm | +3 |
+| Chaos | 50 | 445,200 | 3x | 8 min | Tideheart Crest | +4 |
+| Nightmare | 70 | 1,298,500 | 5x | 10 min | Ancient Mano Aegis | +5 |
+
+Mano keeps its normal status immunities and neutral elemental matchup. Recommended levels are guidance rather than entry locks. Normal map gates and boss cooldowns remain.
+
+### Guaranteed relics and upgrades
+
+Each character's first rewarded victory at a tier grants its unique relic. One **Boss Relic** can be active, separate from ordinary gear and NX. Equip it in Mastery; Character equipment provides a shortcut.
+
+Hard/Chaos/Nightmare base bonuses are 60/100/160 HP, 30/50/80 MP, 6/10/16 weapon and magic defense, and 1/2/3 to all four stats. Every upgrade adds 20 HP, 10 MP, 3 defenses and 1 to each stat. Upgrades always succeed, with no destruction.
+
+Every rewarded victory grants one matching fragment and a 25% matching-core chance. Ten fragments make a core. Upgrade ranks cost 1, 1, 2, 2 and 3 cores as applicable to the tier cap. Meso costs are 25,000/75,000/150,000 by tier, multiplied by the new rank. Materials are character/tier-specific and use no inventory slots.
+
+### Reward charges, tokens and free practice
+
+Mastery begins with **two account-wide reward charges**. After the first Mastery action saves its ledger, two charges accrue per UTC day, capped at ten. Earlier days do not accrue retroactively. Charges are spent only on victory; practice and losses are free.
+
+The account's first tier clear awards three tokens. Weekly highest-tier entitlement is 3/4/5 tokens; improving the tier pays only the difference. The week resets Monday UTC. Twelve tokens buy a Random NX Box using the existing pool.
+
+Combat runs on a copy with full resources, fresh buffs and supplied consumables. It does not spend live combat supplies, change normal boss cooldowns or award ordinary battle EXP/mesos. Mastery results and the shared charge ledger commit atomically; durable receipts reject duplicate reward attempts. Ordinary grinding still reconciles normally.
+
+### Verification and limits
+
+**1,702 Flutter tests**, **89 Node checks** and analysis passed. **600 controlled trials** covered ten branches, three tiers and twenty seeds, with all recommended-level checkpoints clearing. Thirty under-level controls, ten maximum-relic builds and exact historical replays were also checked.
+
+A level-50 Bandit cleared Nightmare in one lower-level control. Minimum clear levels and cross-class strength are not equalized; results use legal fixed checkpoints rather than natural gear-acquisition journeys. Faster kills do not increase the shared daily reward entitlement.
+
+Signed APK, alignment and assets passed. Synthetic emulator in-place update from 0.35.2, cold launches and save checks passed with pinned rules and historical backups preserved. Installed-game checks confirmed Hard/Chaos rewarded clears, relic equip/persistence and free Nightmare practice after restart. The player's phone and physical-device performance were not inspected.
+
+### Game guides and release history
+
+- [Features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+Feature and history snapshots are attached. Check GitHub manually for updates.
 
 ---
 

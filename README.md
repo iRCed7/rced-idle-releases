@@ -10,51 +10,58 @@ An offline idle RPG for **Android 8.0+**. Build your characters, hunt for equipm
 
 ## Latest update
 
-**0.35.2 - Grind boss shortcut and roster layout** · 31 October 2026
+**0.36.0 - Mano Mastery and boss relics** · 31 October 2026
 
 **[Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk)** · [Open the release page](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-- Hunt is now named Grind across headings, navigation and return controls.
-- Open Bosses directly with the Jr. Balrog map shortcut.
-- A red dot identifies ready bosses at your recommended level or previously defeated.
-- Updated character selection uses reviewed roster art and wider Character/Quest layouts.
-- 122 focused tests and emulator update/restart checks passed, preserving all 56 backups.
-- Install over the existing app. No content upgrade is required.
+- Unlock Hard, Chaos and Nightmare Mano after defeating normal Mano.
+- Earn three unique boss relics, with guaranteed first rewarded clears and upgrades to +3/+4/+5.
+- Rewarded victories grant fragments and core chances; upgrades always succeed.
+- Share daily reward charges across the account, earn weekly tokens and practice for free.
+- Combat calculations run in the background; Mastery rewards use atomic, duplicate-protected saves.
+- Install over the existing app, then back up and upgrade each character to content 1.31.
+- All ten branches cleared recommended checkpoints; an early Bandit Nightmare clear remains a balance exception.
 
 > **Updating?** Install over your existing app; do not uninstall first. Export a complete account backup from Settings. Existing characters enable new content through **Review content update → Back up & upgrade**.
 
 <details>
-<summary>Full patch notes for 0.35.2</summary>
+<summary>Full patch notes for 0.36.0</summary>
 
-Released 31 October 2026. App **0.35.2**, Android build **37**, content **1.30.0**. Requires Android 8.0 or later.
+Released 31 October 2026. App **0.36.0**, Android build **38**, content **1.31.0**. Requires Android 8.0 or later.
 
-### Grind and boss access
+### Three optional challenge tiers
 
-The main module is now called **Grind** in its heading, navigation and return controls. A still **Jr. Balrog shortcut** beside World map and Home opens the existing Bosses tab directly, without starting a challenge.
+| Tier | Recommended level | HP | Attack multiplier | Time limit | Unique relic | Upgrade cap |
+| --- | ---: | ---: | ---: | --- | --- | --- |
+| Hard | 35 | 148,400 | 1.75x | 6 min | Shellwarden Charm | +3 |
+| Chaos | 50 | 445,200 | 3x | 8 min | Tideheart Crest | +4 |
+| Nightmare | 70 | 1,298,500 | 5x | 10 min | Ancient Mano Aegis | +5 |
 
-The selected character gets a red dot when a boss is off cooldown and either:
-- The character has reached its recommended level, or
-- That character has defeated it before.
+Mano keeps its normal status immunities and neutral elemental matchup. Recommended levels are guidance rather than entry locks. Normal map gates and boss cooldowns remain.
 
-Character creation must be complete, HP must be positive and no other boss fight may be active. Opening Bosses does not dismiss the dot. Readiness updates with cooldown expiry, ordinary offline catch-up and character switching.
+### Guaranteed relics and upgrades
 
-This is an alert rule, not a challenge restriction. Higher-level bosses remain accessible. Older packs without field bosses have no shortcut; older boss packs without cooldowns retain their rules. Rewards, damage, cooldowns and save formats are unchanged.
+Each character's first rewarded victory at a tier grants its unique relic. One **Boss Relic** can be active, separate from ordinary gear and NX. Equip it in Mastery; Character equipment provides a shortcut.
 
-### Roster and responsive layout
+Hard/Chaos/Nightmare base bonuses are 60/100/160 HP, 30/50/80 MP, 6/10/16 weapon and magic defense, and 1/2/3 to all four stats. Every upgrade adds 20 HP, 10 MP, 3 defenses and 1 to each stat. Upgrades always succeed, with no destruction.
 
-Includes three reviewed tree/platform/empty-slot images, a revised character selector and wider Character/Quest content on unfolded screens. Selection and Play retain their behavior. Crowded action strips scroll horizontally while keeping 48-pixel touch targets.
+Every rewarded victory grants one matching fragment and a 25% matching-core chance. Ten fragments make a core. Upgrade ranks cost 1, 1, 2, 2 and 3 cores as applicable to the tier cap. Meso costs are 25,000/75,000/150,000 by tier, multiplied by the new rank. Materials are character/tier-specific and use no inventory slots.
 
-Readiness checks only six boss definitions and the current character ledger. It adds no forecast, simulation, database read or private timer.
+### Reward charges, tokens and free practice
 
-### Verification and saved progress
+Mastery begins with **two account-wide reward charges**. After the first Mastery action saves its ledger, two charges accrue per UTC day, capped at ten. Earlier days do not accrue retroactively. Charges are spent only on victory; practice and losses are free.
 
-**122 focused tests passed**: 70 readiness, shortcut, navigation and reward checks, plus 52 roster/responsive/quest UI tests. Full lib/test analysis is clean. This is focused validation, not a full-suite run.
+The account's first tier clear awards three tokens. Weekly highest-tier entitlement is 3/4/5 tokens; improving the tier pays only the difference. The week resets Monday UTC. Twelve tokens buy a Random NX Box using the existing pool.
 
-Package, signer and 16 KB alignment passed; all 56,670 prior asset payloads are retained, with three reviewed roster images added. Engine, persistence, Android code and game content match the previous release.
+Combat runs on a copy with full resources, fresh buffs and supplied consumables. It does not spend live combat supplies, change normal boss cooldowns or award ordinary battle EXP/mesos. Mastery results and the shared charge ledger commit atomically; durable receipts reject duplicate reward attempts. Ordinary grinding still reconciles normally.
 
-An in-place 0.35.1 to 0.35.2 synthetic emulator update kept the database unchanged before launch. Cold launch/restart preserved the account, shared storage and all **56 prior backup records**. The installed shortcut and dot were reviewed, and tapping opened Bosses without a challenge. Physical-phone frame pacing and the player's save were not inspected.
+### Verification and limits
 
-Boss Mastery Trials, Expedition Gauntlets and Profession Work Orders remain proposals and are not included.
+**1,702 Flutter tests**, **89 Node checks** and analysis passed. **600 controlled trials** covered ten branches, three tiers and twenty seeds, with all recommended-level checkpoints clearing. Thirty under-level controls, ten maximum-relic builds and exact historical replays were also checked.
+
+A level-50 Bandit cleared Nightmare in one lower-level control. Minimum clear levels and cross-class strength are not equalized; results use legal fixed checkpoints rather than natural gear-acquisition journeys. Faster kills do not increase the shared daily reward entitlement.
+
+Signed APK, alignment and assets passed. Synthetic emulator in-place update from 0.35.2, cold launches and save checks passed with pinned rules and historical backups preserved. Installed-game checks confirmed Hard/Chaos rewarded clears, relic equip/persistence and free Nightmare practice after restart. The player's phone and physical-device performance were not inspected.
 
 </details>
 
@@ -72,7 +79,7 @@ Hunt is a **0.35.0 UI test** example-character preview; Opening, Inventory and Q
 
 ## Game features
 
-**Published game: 0.35.2 | Content: 1.30.0 | Overview dated 31 October 2026**
+**Published game: 0.36.0 | Content: 1.31.0 | Overview dated 31 October 2026**
 
 ### Painted UI and reliable startup
 
@@ -340,9 +347,21 @@ The main module is named **Grind**. Its Jr. Balrog shortcut opens Bosses directl
 
 The 0.35.2 roster uses revised tree/platform/empty-slot artwork and a responsive selector. Character and Quest content expands on unfolded displays. Existing selection and Play actions remain. This app/UI update needs no content upgrade.
 
+### Mano Mastery and boss relics
+
+On content 1.31, defeat normal Mano and open **Grind > Bosses > Mano Mastery**. Hard, Chaos and Nightmare recommend levels 35, 50 and 70, with 6/8/10-minute limits. The previous tier's relic unlocks the next. Recommended levels are guidance, and a level-50 Bandit cleared one Nightmare control; class parity is not claimed.
+
+Each tier's first rewarded character clear guarantees its relic: Shellwarden Charm, Tideheart Crest or Ancient Mano Aegis. Equip one Boss Relic separately from gear/NX. Upgrade caps are +3/+4/+5; upgrades always succeed and add HP, MP, defense and all stats. Wins grant a fragment and a 25% matching-core chance; ten fragments make a core.
+
+Reward charges are account-wide: two initially, then two per UTC day after activation, capped at ten. Victory spends a charge; practice and losses are free. First-tier clears and weekly highest-tier entitlement grant tokens, with improvement differences paid and Monday UTC resets. Twelve tokens buy a Random NX Box.
+
+Copied combat runs with supplied consumables without spending live resources or changing normal boss cooldowns, quests or combat rewards. Mastery results commit with the shared ledger atomically. All ten branches cleared the 600 recommended-checkpoint trials; these do not establish natural progression or equal minimum clear levels.
+
+<p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.36.0-mano-mastery.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.36.0-mano-mastery.png" width="240" alt="Mano Mastery 0.36.0 with Hard, Chaos and Nightmare tiers, reward charges and relic information; synthetic emulator capture."></a></p>
+
 ### Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.30** for Mage recovery, damage, control and supply changes alongside the earlier Warrior, Thief and Archer changes; new characters start on 1.30. Packs through 1.29 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.31** to unlock Mano Mastery and boss relics alongside previous content changes; new characters start on 1.31. Packs through 1.30 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.
 
@@ -360,7 +379,7 @@ The game stays offline. Check the [Releases page](https://github.com/iRCed7/rced
 - [Complete patch history](RCed-Idle-Patch-History.md) — all recorded releases and their changes.
 - [Standalone game features](RCed-Idle-Game-Features.md) — the feature guide as its own readable document.
 - [Grinding reference](RCed-Idle-Grinding-Reference.md) — how stats, skills, supplies and hourly estimates work.
-- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.35.2/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.35.2/RCed-Idle-Patch-History.md) as a file.
+- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.36.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.36.0/RCed-Idle-Patch-History.md) as a file.
 - [Browse all releases](https://github.com/iRCed7/rced-idle-releases/releases) — earlier archive entries contain patch notes only, without old game binaries. The staged 0.11.0 changes shipped in 0.12.0.
 
 The APK's SHA-256 checksum is attached to each game release.

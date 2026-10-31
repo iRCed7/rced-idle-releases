@@ -1,12 +1,12 @@
 # RCed Idle — Main Game Features
 
-**Published game: 0.36.0 | Content: 1.31.0 | Overview dated 31 October 2026**
+**Published game: 0.37.0 | Content: 1.32.0 | Overview dated 31 October 2026**
 
 [Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk) · [Latest release and patch notes](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.36.0; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
+RCed Idle is an offline idle RPG for **Android 8.0 or later**, with classic character artwork, equipment hunting, skill builds and long-term progression. This overview describes version 0.37.0; later releases may change or expand these features. The Lupin logo welcomes you during the in-game opening. The old icon-only Android splash is removed; a brief matching background handoff precedes the animated opening.
 
-Screens use example characters. Mano Mastery is a **0.36.0 synthetic diagnostic emulator capture**. Grind is a synthetic widget capture from **0.35.2**. Inventory and crafting retain their **0.35.0-ui-test** capture labels. The roster was updated in 0.35.2; the older character-selection screenshot is historical. Other screenshots are explicitly labelled historical previews and show earlier interface styling. Physical-phone folding and performance are not established by these captures.
+Screens use example characters. Boss playback and trophy slots are **0.37.0 synthetic diagnostic emulator captures**; the Mano-only image remains a historical 0.36.0 preview. Grind is a synthetic widget capture from **0.35.2**. Inventory and crafting retain their **0.35.0-ui-test** capture labels. The roster was updated in 0.35.2; the older character-selection screenshot is historical. Other screenshots are explicitly labelled historical previews and show earlier interface styling. Physical-phone folding and performance are not established by these captures.
 
 ## Painted UI and reliable startup
 
@@ -278,7 +278,7 @@ The 0.35.2 roster uses revised tree/platform/empty-slot artwork and a responsive
 
 On content 1.31, defeat normal Mano and open **Grind > Bosses > Mano Mastery**. Hard, Chaos and Nightmare recommend levels 35, 50 and 70, with 6/8/10-minute limits. The previous tier's relic unlocks the next. Recommended levels are guidance, and a level-50 Bandit cleared one Nightmare control; class parity is not claimed.
 
-Each tier's first rewarded character clear guarantees its relic: Shellwarden Charm, Tideheart Crest or Ancient Mano Aegis. Equip one Boss Relic separately from gear/NX. Upgrade caps are +3/+4/+5; upgrades always succeed and add HP, MP, defense and all stats. Wins grant a fragment and a 25% matching-core chance; ten fragments make a core.
+Each tier's first rewarded character clear guarantees its relic: Shellwarden Charm, Tideheart Crest or Ancient Mano Aegis. Content 1.31 allowed one Boss Relic separately from gear/NX; content 1.32 expands this to three trophy slots, with at most one trophy from each boss. Upgrade caps are +3/+4/+5; upgrades always succeed and add HP, MP, defense and all stats. Wins grant a fragment and a 25% matching-core chance; ten fragments make a core.
 
 Reward charges are account-wide: two initially, then two per UTC day after activation, capped at ten. Victory spends a charge; practice and losses are free. First-tier clears and weekly highest-tier entitlement grant tokens, with improvement differences paid and Monday UTC resets. Twelve tokens buy a Random NX Box.
 
@@ -286,8 +286,22 @@ Copied combat runs with supplied consumables without spending live resources or 
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.36.0-mano-mastery.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.36.0-mano-mastery.png" width="240" alt="Mano Mastery 0.36.0 with Hard, Chaos and Nightmare tiers, reward charges and relic information; synthetic emulator capture."></a></p>
 
+## All-boss Mastery, trophies and fight playback
+
+Content 1.32 extends Hard, Chaos and Nightmare to Mano, Stumpy, Mushmom, Shade, Zombie Mushmom and Jr. Balrog. Clear each normal boss and earn the previous tier trophy to progress. Equip three trophies in Character > Equips, at most one per boss. Existing Mano relic ranks/materials and the equipped relic are retained.
+
+Trophy roles cover defense, vitality, attack, accuracy, warding and critical rate. Tier upgrades cap at +3/+4/+5 and always succeed. Guaranteed first rewarded clears, fragment/core rewards, shared daily charge limits and weekly highest-tier token entitlement continue. Normal boss cooldowns and loot remain separate.
+
+Watch actual simulated combat timelines at 1x/2x/4x, with pause, replay and skip. Rewards commit before playback; closing the viewer cannot cancel or reroll them. Playback pauses in the background and does no combat work per animation frame. Trials use isolated supplies and preserve live possessions. Only the latest timeline is retained.
+
+540 controlled trials cleared at the tested recommended checkpoints across all ten branches. Gear coverage above level 70 is incomplete; class advantages and unequal minimum clear levels remain.
+
+<a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.37.0-boss-fight.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.37.0-boss-fight.png" width="240" alt="Hard Stumpy animated fight playback, 0.37.0 synthetic diagnostic emulator capture"></a>
+<a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.37.0-trophy-slots.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.37.0-trophy-slots.png" width="240" alt="Three equipped golden boss trophies, 0.37.0 synthetic diagnostic emulator capture"></a>
+
+
 ## Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.31** to unlock Mano Mastery and boss relics alongside previous content changes; new characters start on 1.31. Packs through 1.30 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.32** to unlock all six bosses Mastery tiers, three trophy slots and combat playback alongside previous changes; new characters start on 1.32. Packs through 1.31 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.

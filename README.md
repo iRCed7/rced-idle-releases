@@ -10,58 +10,64 @@ An offline idle RPG for **Android 8.0+**. Build your characters, hunt for equipm
 
 ## Latest update
 
-**0.36.0 - Mano Mastery and boss relics** · 31 October 2026
+**0.37.0 - Boss trophies and visible Mastery fights** · 31 October 2026
 
 **[Download the latest APK](https://github.com/iRCed7/rced-idle-releases/releases/latest/download/RCed-Idle.apk)** · [Open the release page](https://github.com/iRCed7/rced-idle-releases/releases/latest)
 
-- Unlock Hard, Chaos and Nightmare Mano after defeating normal Mano.
-- Earn three unique boss relics, with guaranteed first rewarded clears and upgrades to +3/+4/+5.
-- Rewarded victories grant fragments and core chances; upgrades always succeed.
-- Share daily reward charges across the account, earn weekly tokens and practice for free.
-- Combat calculations run in the background; Mastery rewards use atomic, duplicate-protected saves.
-- Install over the existing app, then back up and upgrade each character to content 1.31.
-- All ten branches cleared recommended checkpoints; an early Bandit Nightmare clear remains a balance exception.
+- Challenge Hard, Chaos and Nightmare Mastery tiers for all six field bosses.
+- Equip three golden trophies, with at most one from each boss; existing Mano relic progress is retained.
+- Watch simulated fights with pause, replay, speed controls and skip-to-result.
+- First rewarded tier clears guarantee trophies; upgrade and shared reward-charge rules continue.
+- 1,712 Flutter tests, 90 content checks and 540 controlled class trials passed.
+- Install over the existing app, then back up and upgrade each character to content 1.32.
 
 > **Updating?** Install over your existing app; do not uninstall first. Export a complete account backup from Settings. Existing characters enable new content through **Review content update → Back up & upgrade**.
 
 <details>
-<summary>Full patch notes for 0.36.0</summary>
+<summary>Full patch notes for 0.37.0</summary>
 
-Released 31 October 2026. App **0.36.0**, Android build **38**, content **1.31.0**. Requires Android 8.0 or later.
+Released 31 October 2026. App **0.37.0**, Android build **39**, content **1.32.0**. Requires Android 8.0 or later.
 
-### Three optional challenge tiers
+### Mastery for all six bosses
 
-| Tier | Recommended level | HP | Attack multiplier | Time limit | Unique relic | Upgrade cap |
-| --- | ---: | ---: | ---: | --- | --- | --- |
-| Hard | 35 | 148,400 | 1.75x | 6 min | Shellwarden Charm | +3 |
-| Chaos | 50 | 445,200 | 3x | 8 min | Tideheart Crest | +4 |
-| Nightmare | 70 | 1,298,500 | 5x | 10 min | Ancient Mano Aegis | +5 |
+Mano, Stumpy, Mushmom, Shade, Zombie Mushmom and Jr. Balrog now have Hard, Chaos and Nightmare trials. Clear the normal boss, then earn each preceding tier's trophy. Recommended levels are guidance, not entry locks.
 
-Mano keeps its normal status immunities and neutral elemental matchup. Recommended levels are guidance rather than entry locks. Normal map gates and boss cooldowns remain.
+| Boss | Trophy role | Hard / Chaos / Nightmare recommended levels |
+| --- | --- | --- |
+| Mano | Defense | 35 / 50 / 70 |
+| Stumpy | Vitality | 45 / 60 / 75 |
+| Mushmom | Attack | 50 / 65 / 80 |
+| Shade | Accuracy | 60 / 75 / 85 |
+| Zombie Mushmom | Warding | 70 / 80 / 90 |
+| Jr. Balrog | Critical rate | 80 / 90 / 100 |
 
-### Guaranteed relics and upgrades
+Normal boss rewards, map unlocks and six-hour cooldowns are unchanged. Tier evasion scales by 1.15x / 1.35x / 1.60x; existing elemental matchups remain. Accuracy helps through the existing hit formulas, with no extra benefit once hit chance reaches 100%.
 
-Each character's first rewarded victory at a tier grants its unique relic. One **Boss Relic** can be active, separate from ordinary gear and NX. Equip it in Mastery; Character equipment provides a shortcut.
+### Three trophy slots
 
-Hard/Chaos/Nightmare base bonuses are 60/100/160 HP, 30/50/80 MP, 6/10/16 weapon and magic defense, and 1/2/3 to all four stats. Every upgrade adds 20 HP, 10 MP, 3 defenses and 1 to each stat. Upgrades always succeed, with no destruction.
+Equip three trophies in **Character > Equips**, at most one per boss. A different tier replaces that boss's equipped trophy; the collection keeps all earned tiers, ranks and materials. Trophies use no inventory or NX slots and replace no normal gear.
 
-Every rewarded victory grants one matching fragment and a 25% matching-core chance. Ten fragments make a core. Upgrade ranks cost 1, 1, 2, 2 and 3 cores as applicable to the tier cap. Meso costs are 25,000/75,000/150,000 by tier, multiplied by the new rank. Materials are character/tier-specific and use no inventory slots.
+Existing Mano relic keys, upgrades, cores and fragments are retained; an equipped old relic appears in the first slot. Golden trophy icons are integrated with their original PNG masters preserved and capped runtime decoding.
 
-### Reward charges, tokens and free practice
+First rewarded tier clears guarantee their trophies. Upgrade caps stay +3/+4/+5. Wins give a matching fragment and a 25% core chance; ten fragments make a core. Upgrades always succeed, using 1/1/2/2/3 cores and the tier's base meso cost multiplied by new rank.
 
-Mastery begins with **two account-wide reward charges**. After the first Mastery action saves its ledger, two charges accrue per UTC day, capped at ten. Earlier days do not accrue retroactively. Charges are spent only on victory; practice and losses are free.
+Two daily UTC reward charges are shared across all bosses and characters, capped at ten after ledger activation. Losses/practice spend no charge. Each account's first boss/tier clear grants three tokens. Weekly highest-tier entitlement stays 3/4/5 across all bosses, paying only improvement differences. Twelve tokens buy the existing Random NX Box.
 
-The account's first tier clear awards three tokens. Weekly highest-tier entitlement is 3/4/5 tokens; improving the tier pays only the difference. The week resets Monday UTC. Twelve tokens buy a Random NX Box using the existing pool.
+### Animated fight playback
 
-Combat runs on a copy with full resources, fresh buffs and supplied consumables. It does not spend live combat supplies, change normal boss cooldowns or award ordinary battle EXP/mesos. Mastery results and the shared charge ledger commit atomically; durable receipts reject duplicate reward attempts. Ordinary grinding still reconciles normally.
+Fights run once in the checkpoint worker using actual combat and produce a bounded half-second timeline. View attacks, critical hits, misses, damage, potion recovery, player HP/MP and boss HP, with **1x/2x/4x speed, pause, replay and skip-to-result**.
+
+Rewards commit atomically before playback. Closing or skipping does not cancel or reroll the result. Playback pauses in the background, performs no combat calculations per animation frame and retains only the last fight.
+
+This visualizes simulated combat rather than manual dodging. Trials use isolated full resources and refilled selected supplies, without spending live inventory, combat RNG or mesos or changing normal boss cooldowns. Normal elapsed grinding still reconciles.
 
 ### Verification and limits
 
-**1,702 Flutter tests**, **89 Node checks** and analysis passed. **600 controlled trials** covered ten branches, three tiers and twenty seeds, with all recommended-level checkpoints clearing. Thirty under-level controls, ten maximum-relic builds and exact historical replays were also checked.
+**1,712 Flutter tests**, **90 Node checks**, clean analysis and **540 controlled class trials** passed. Every tested recommended checkpoint cleared. Builds use legal progression and common-value gear capped at level 70 because higher-level gear coverage is incomplete. These are not natural level-1-to-100 journeys or proof of equal minimum clear levels; class and elemental advantages remain.
 
-A level-50 Bandit cleared Nightmare in one lower-level control. Minimum clear levels and cross-class strength are not equalized; results use legal fixed checkpoints rather than natural gear-acquisition journeys. Faster kills do not increase the shared daily reward entitlement.
+Synthetic emulator in-place update from 0.36.0, cold launch/restart and save checks preserved the existing account and historical backups. Native trophy slots, a Stumpy practice battle and persisted combat timeline were checked with live possessions unchanged. No physical phone was tested.
 
-Signed APK, alignment and assets passed. Synthetic emulator in-place update from 0.35.2, cold launches and save checks passed with pinned rules and historical backups preserved. Installed-game checks confirmed Hard/Chaos rewarded clears, relic equip/persistence and free Nightmare practice after restart. The player's phone and physical-device performance were not inspected.
+The redesigned percentage HP bar is deferred to a later patch.
 
 </details>
 
@@ -79,7 +85,7 @@ Hunt is a **0.35.0 UI test** example-character preview; Opening, Inventory and Q
 
 ## Game features
 
-**Published game: 0.36.0 | Content: 1.31.0 | Overview dated 31 October 2026**
+**Published game: 0.37.0 | Content: 1.32.0 | Overview dated 31 October 2026**
 
 ### Painted UI and reliable startup
 
@@ -351,7 +357,7 @@ The 0.35.2 roster uses revised tree/platform/empty-slot artwork and a responsive
 
 On content 1.31, defeat normal Mano and open **Grind > Bosses > Mano Mastery**. Hard, Chaos and Nightmare recommend levels 35, 50 and 70, with 6/8/10-minute limits. The previous tier's relic unlocks the next. Recommended levels are guidance, and a level-50 Bandit cleared one Nightmare control; class parity is not claimed.
 
-Each tier's first rewarded character clear guarantees its relic: Shellwarden Charm, Tideheart Crest or Ancient Mano Aegis. Equip one Boss Relic separately from gear/NX. Upgrade caps are +3/+4/+5; upgrades always succeed and add HP, MP, defense and all stats. Wins grant a fragment and a 25% matching-core chance; ten fragments make a core.
+Each tier's first rewarded character clear guarantees its relic: Shellwarden Charm, Tideheart Crest or Ancient Mano Aegis. Content 1.31 allowed one Boss Relic separately from gear/NX; content 1.32 expands this to three trophy slots, with at most one trophy from each boss. Upgrade caps are +3/+4/+5; upgrades always succeed and add HP, MP, defense and all stats. Wins grant a fragment and a 25% matching-core chance; ten fragments make a core.
 
 Reward charges are account-wide: two initially, then two per UTC day after activation, capped at ten. Victory spends a charge; practice and losses are free. First-tier clears and weekly highest-tier entitlement grant tokens, with improvement differences paid and Monday UTC resets. Twelve tokens buy a Random NX Box.
 
@@ -359,9 +365,23 @@ Copied combat runs with supplied consumables without spending live resources or 
 
 <p><a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.36.0-mano-mastery.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.36.0-mano-mastery.png" width="240" alt="Mano Mastery 0.36.0 with Hard, Chaos and Nightmare tiers, reward charges and relic information; synthetic emulator capture."></a></p>
 
+### All-boss Mastery, trophies and fight playback
+
+Content 1.32 extends Hard, Chaos and Nightmare to Mano, Stumpy, Mushmom, Shade, Zombie Mushmom and Jr. Balrog. Clear each normal boss and earn the previous tier trophy to progress. Equip three trophies in Character > Equips, at most one per boss. Existing Mano relic ranks/materials and the equipped relic are retained.
+
+Trophy roles cover defense, vitality, attack, accuracy, warding and critical rate. Tier upgrades cap at +3/+4/+5 and always succeed. Guaranteed first rewarded clears, fragment/core rewards, shared daily charge limits and weekly highest-tier token entitlement continue. Normal boss cooldowns and loot remain separate.
+
+Watch actual simulated combat timelines at 1x/2x/4x, with pause, replay and skip. Rewards commit before playback; closing the viewer cannot cancel or reroll them. Playback pauses in the background and does no combat work per animation frame. Trials use isolated supplies and preserve live possessions. Only the latest timeline is retained.
+
+540 controlled trials cleared at the tested recommended checkpoints across all ten branches. Gear coverage above level 70 is incomplete; class advantages and unequal minimum clear levels remain.
+
+<a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.37.0-boss-fight.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.37.0-boss-fight.png" width="240" alt="Hard Stumpy animated fight playback, 0.37.0 synthetic diagnostic emulator capture"></a>
+<a href="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.37.0-trophy-slots.png"><img src="https://raw.githubusercontent.com/iRCed7/rced-idle-releases/main/media/screenshots/v0.37.0-trophy-slots.png" width="240" alt="Three equipped golden boss trophies, 0.37.0 synthetic diagnostic emulator capture"></a>
+
+
 ### Keep your progress
 
-Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.31** to unlock Mano Mastery and boss relics alongside previous content changes; new characters start on 1.31. Packs through 1.30 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
+Export and import a **complete account backup** from Settings, including every character and shared storage. Existing characters retain their current content rules until you choose **Review content update → Back up & upgrade**, which settles pending time under the old rules and creates a safety backup. Upgrade each character independently to **content 1.32** to unlock all six bosses Mastery tiers, three trophy slots and combat playback alongside previous changes; new characters start on 1.32. Packs through 1.31 retain their original simulation until upgraded. Earlier pinned content keeps its own rules, including the exact-variant hair behavior on 1.17. Installing the APK alone does not switch a character's content pack. The animated opening, Hunt interface and music arrive with the app update.
 
 Check GitHub manually for new releases. **Install updates over your existing app; do not uninstall first.** Export a backup before updating. The game does not automatically check for or download updates.
 
@@ -379,7 +399,7 @@ The game stays offline. Check the [Releases page](https://github.com/iRCed7/rced
 - [Complete patch history](RCed-Idle-Patch-History.md) — all recorded releases and their changes.
 - [Standalone game features](RCed-Idle-Game-Features.md) — the feature guide as its own readable document.
 - [Grinding reference](RCed-Idle-Grinding-Reference.md) — how stats, skills, supplies and hourly estimates work.
-- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.36.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.36.0/RCed-Idle-Patch-History.md) as a file.
+- [Download the feature guide](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.37.0/RCed-Idle-Game-Features.md) or [patch history](https://github.com/iRCed7/rced-idle-releases/releases/download/v0.37.0/RCed-Idle-Patch-History.md) as a file.
 - [Browse all releases](https://github.com/iRCed7/rced-idle-releases/releases) — earlier archive entries contain patch notes only, without old game binaries. The staged 0.11.0 changes shipped in 0.12.0.
 
 The APK's SHA-256 checksum is attached to each game release.

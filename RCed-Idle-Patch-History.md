@@ -1,6 +1,6 @@
 # RCed Idle — Patch History
 
-Complete recorded release history through **0.36.0**, updated on **31 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
+Complete recorded release history through **0.37.0**, updated on **31 October 2026**. Earlier entries describe the features and balance at that time; later updates may replace those rules. Historical verification dates are retained, while these GitHub archive entries were added on 27 October 2026.
 
 [Download the latest game](https://github.com/iRCed7/rced-idle-releases/releases/latest) · [Main game features](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
 
@@ -10,6 +10,7 @@ Complete recorded release history through **0.36.0**, updated on **31 October 20
 
 | Version | Main update |
 | --- | --- |
+| [0.37.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.37.0) | All-boss trophies and visible Mastery fights |
 | [0.36.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.36.0) | Mano Mastery and boss relics |
 | [0.35.2](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.2) | Grind boss shortcut and roster layout |
 | [0.35.1](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.35.1) | Painted UI and startup-lock fix |
@@ -47,6 +48,64 @@ Complete recorded release history through **0.36.0**, updated on **31 October 20
 | [0.3.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.3.0) | Armor progression and supply planning |
 | [0.2.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.2.0) | Full Crossbowman skill book and source artwork |
 | [0.1.0](https://github.com/iRCed7/rced-idle-releases/releases/tag/v0.1.0) | First playable adventure |
+
+---
+
+## RCed Idle 0.37.0 - Boss trophies and visible Mastery fights
+
+Released 31 October 2026. App **0.37.0**, Android build **39**, content **1.32.0**. Requires Android 8.0 or later.
+
+### Install or update
+
+Export a complete account backup, then **install over your existing app without uninstalling or clearing data**. Enable content 1.32 through **Settings > Save management > Review content update > Back up & upgrade**. Existing characters retain their pinned rules until upgraded. Content 1.31 remains bundled unchanged.
+
+### Mastery for all six bosses
+
+Mano, Stumpy, Mushmom, Shade, Zombie Mushmom and Jr. Balrog now have Hard, Chaos and Nightmare trials. Clear the normal boss, then earn each preceding tier's trophy. Recommended levels are guidance, not entry locks.
+
+| Boss | Trophy role | Hard / Chaos / Nightmare recommended levels |
+| --- | --- | --- |
+| Mano | Defense | 35 / 50 / 70 |
+| Stumpy | Vitality | 45 / 60 / 75 |
+| Mushmom | Attack | 50 / 65 / 80 |
+| Shade | Accuracy | 60 / 75 / 85 |
+| Zombie Mushmom | Warding | 70 / 80 / 90 |
+| Jr. Balrog | Critical rate | 80 / 90 / 100 |
+
+Normal boss rewards, map unlocks and six-hour cooldowns are unchanged. Tier evasion scales by 1.15x / 1.35x / 1.60x; existing elemental matchups remain. Accuracy helps through the existing hit formulas, with no extra benefit once hit chance reaches 100%.
+
+### Three trophy slots
+
+Equip three trophies in **Character > Equips**, at most one per boss. A different tier replaces that boss's equipped trophy; the collection keeps all earned tiers, ranks and materials. Trophies use no inventory or NX slots and replace no normal gear.
+
+Existing Mano relic keys, upgrades, cores and fragments are retained; an equipped old relic appears in the first slot. Golden trophy icons are integrated with their original PNG masters preserved and capped runtime decoding.
+
+First rewarded tier clears guarantee their trophies. Upgrade caps stay +3/+4/+5. Wins give a matching fragment and a 25% core chance; ten fragments make a core. Upgrades always succeed, using 1/1/2/2/3 cores and the tier's base meso cost multiplied by new rank.
+
+Two daily UTC reward charges are shared across all bosses and characters, capped at ten after ledger activation. Losses/practice spend no charge. Each account's first boss/tier clear grants three tokens. Weekly highest-tier entitlement stays 3/4/5 across all bosses, paying only improvement differences. Twelve tokens buy the existing Random NX Box.
+
+### Animated fight playback
+
+Fights run once in the checkpoint worker using actual combat and produce a bounded half-second timeline. View attacks, critical hits, misses, damage, potion recovery, player HP/MP and boss HP, with **1x/2x/4x speed, pause, replay and skip-to-result**.
+
+Rewards commit atomically before playback. Closing or skipping does not cancel or reroll the result. Playback pauses in the background, performs no combat calculations per animation frame and retains only the last fight.
+
+This visualizes simulated combat rather than manual dodging. Trials use isolated full resources and refilled selected supplies, without spending live inventory, combat RNG or mesos or changing normal boss cooldowns. Normal elapsed grinding still reconciles.
+
+### Verification and limits
+
+**1,712 Flutter tests**, **90 Node checks**, clean analysis and **540 controlled class trials** passed. Every tested recommended checkpoint cleared. Builds use legal progression and common-value gear capped at level 70 because higher-level gear coverage is incomplete. These are not natural level-1-to-100 journeys or proof of equal minimum clear levels; class and elemental advantages remain.
+
+Synthetic emulator in-place update from 0.36.0, cold launch/restart and save checks preserved the existing account and historical backups. Native trophy slots, a Stumpy practice battle and persisted combat timeline were checked with live possessions unchanged. No physical phone was tested.
+
+The redesigned percentage HP bar is deferred to a later patch.
+
+### Game guides and release history
+
+- [Features and screenshots](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Game-Features.md)
+- [Patch history](https://github.com/iRCed7/rced-idle-releases/blob/main/RCed-Idle-Patch-History.md)
+
+Feature and history snapshots are attached. Check GitHub manually for updates.
 
 ---
 
